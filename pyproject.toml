@@ -5,6 +5,9 @@ description = "State-transition fidelity audit for financial agent evaluation"
 requires-python = ">=3.10"
 dependencies = []
 
+[project.optional-dependencies]
+agents = ["anthropic>=1.0"]
+
 [build-system]
 requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"

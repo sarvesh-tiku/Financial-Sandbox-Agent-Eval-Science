@@ -10,11 +10,13 @@ Each task has:
 - rule:      the invariant the task exercises, or None for negative controls.
 - scripts:   fixed action sequences labelled valid/invalid under the spec,
              replayed identically in every environment variant.
+- faults:    agent-facing faults for live rollouts: {tool: n} makes the first n
+             calls to that tool take effect but report a timeout to the agent.
 """
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Any, Callable
 
 State = dict[str, Any]
@@ -43,6 +45,7 @@ class Task:
     goal: Callable[[State], bool]
     grader: Callable[[State], bool]
     scripts: list[Script]
+    faults: dict[str, int] = field(default_factory=dict)
 
 
 def _status(s: State, tid: int) -> str | None:
@@ -131,8 +134,8 @@ TASKS = [
         id="payment_retry",
         rule="R3_idempotency",
         instruction=(
-            "Pay invoice INV-7 (500 from A to V). Your first submission timed out; "
-            "retry safely with the same idempotency key."
+            "Pay invoice INV-7: 500 from account A to vendor account V. "
+            "Use idempotency key k-inv7."
         ),
         setup=[],
         goal=lambda s: s["accounts"]["A"]["balance"] == 9_500,
@@ -147,6 +150,7 @@ TASKS = [
                 ("submit_payment", {"src": "A", "dst": "V", "amount": 500, "invoice_ref": "INV-7", "idempotency_key": "k-inv7-retry"}),
             ]),
         ],
+        faults={"submit_payment": 1},
     ),
     # -- negative controls: no omitted rule changes their transitions ----------
     Task(
@@ -167,7 +171,7 @@ TASKS = [
     Task(
         id="control_single_payment",
         rule=None,
-        instruction="Pay invoice INV-9 (250 from B to V).",
+        instruction="Pay invoice INV-9: 250 from account B to vendor account V. Use idempotency key k-inv9.",
         setup=[],
         goal=lambda s: s["accounts"]["B"]["balance"] == 9_750,
         grader=lambda s: s["accounts"]["B"]["balance"] == 9_750,

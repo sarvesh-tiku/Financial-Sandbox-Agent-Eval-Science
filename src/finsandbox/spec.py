@@ -106,6 +106,14 @@ class ReferenceModel:
         t["approved_for"] = f"{t['payee']}|{t['amount']}"
         return Verdict(True)
 
+    def _cancel_transfer(self, transfer_id: int) -> Verdict:
+        t = self.s["transfers"].get(transfer_id)
+        if t is None or t["status"] not in ("pending", "approved"):
+            return Verdict(False, error="transfer not cancellable")
+        t["status"] = "cancelled"
+        t["approved_for"] = None
+        return Verdict(True)
+
     def _execute_transfer(self, transfer_id: int) -> Verdict:
         t = self.s["transfers"].get(transfer_id)
         if t is None:

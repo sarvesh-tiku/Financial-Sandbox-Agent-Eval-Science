@@ -202,6 +202,14 @@ class BankEnv:
         self.db.execute("UPDATE transfers SET status = 'approved' WHERE id = ?", (transfer_id,))
         return {"transfer_id": transfer_id, "status": "approved"}
 
+    def tool_cancel_transfer(self, transfer_id: int) -> dict[str, Any]:
+        t = self._transfer(transfer_id)
+        if t["status"] not in ("pending", "approved"):
+            raise ToolError(f"transfer {transfer_id} is {t['status']} and cannot be cancelled")
+        self.db.execute("UPDATE transfers SET status = 'cancelled' WHERE id = ?", (transfer_id,))
+        self.db.execute("UPDATE approvals SET active = 0 WHERE transfer_id = ?", (transfer_id,))
+        return {"transfer_id": transfer_id, "status": "cancelled"}
+
     def tool_execute_transfer(self, transfer_id: int) -> dict[str, Any]:
         t = self._transfer(transfer_id)
         if t["status"] != "approved":
