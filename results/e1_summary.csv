@@ -1,0 +1,9 @@
+variant,scope,episodes,episodes_with_discrepancy,env_violations,outcome_false_pass,outcome_false_failure,outcome_silent_env_violation,outcome_changed_vs_reference,state_match_false_pass,state_match_false_failure,state_match_silent_env_violation,state_match_changed_vs_reference
+reference,rule_tasks,8,0,0,2,0,0,0,2,0,0,0
+reference,controls,7,0,0,0,0,0,0,0,0,0,0
+no_freeze_propagation,rule_tasks,8,4,0,1,2,0,3,0,0,0,2
+no_freeze_propagation,controls,7,0,0,0,0,0,0,0,0,0,0
+no_approval_invalidation,rule_tasks,8,2,1,3,0,1,1,3,0,1,1
+no_approval_invalidation,controls,7,0,0,0,0,0,0,0,0,0,0
+no_idempotency,rule_tasks,8,1,1,2,1,0,1,2,0,1,0
+no_idempotency,controls,7,0,0,0,0,0,0,0,0,0,0

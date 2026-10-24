@@ -44,33 +44,43 @@ state; the grader verdict on the **implemented** final state. Disagreements are
 ## Run
 
 ```bash
-PYTHONPATH=src python -m finsandbox.replay          # prints table, writes results/replay.csv
+PYTHONPATH=src python -m finsandbox.experiments     # all experiments -> results/ (~10 s, stdlib only)
+PYTHONPATH=src python -m finsandbox.replay          # just the replay table
 PYTHONPATH=src python -m unittest discover -s tests
+python paper/make_figures.py                        # needs matplotlib
+cd paper && pdflatex main && bibtex main && pdflatex main && pdflatex main
 ```
 
-No dependencies beyond the Python standard library (3.10+).
+Live LLM rollouts (`src/finsandbox/agent.py`, needs `pip install anthropic` and
+`ANTHROPIC_API_KEY`) use the same tools, oracle, and graders; they have not been run yet.
 
-## Current findings (scripted trajectories)
+## Experiments
 
-- **Reference environment:** zero transition discrepancies on every script (oracle
-  validated), but the outcome grader still false-passes 2 episodes where the agent
-  attempted a prohibited execution that the environment rejected. Outcome graders
-  are blind to attempts even when the environment is correct.
-- **R1 omitted:** careful agents that freeze an account or skip a frozen account's
-  transfer are **false-failed** (grader expects `blocked` / an empty queue); an agent
-  that executes everything is **false-passed** with a realized outflow from a frozen account.
-- **R2 omitted:** skipping re-approval after a payee change executes against a
-  stale approval and is **false-passed**. The correct trajectory still passes, but
-  with a hidden state discrepancy (a transition defect that does not change the verdict).
-- **R3 omitted:** a correct same-key retry double-debits and is **false-failed**;
-  the violation is attributed to the environment.
-- **Negative controls:** unaffected by every defect.
+- **E1 counterfactual replay**: 15 scripted trajectories x 4 environments.
+- **E2 behaviour profiles**: 8 deterministic agents (every subset of freeze awareness,
+  approval discipline, retry discipline); skill credit and ranking agreement.
+- **E3 paired stochastic agents**: profiles that slip at random (p=0.95 on known
+  skills, 0.3 otherwise), 50 episodes/task, shared draws across variants, bootstrap CIs.
 
-## Next steps
+Two graders are audited against the oracle: an **outcome** predicate grader and a
+**state-match** grader (gold trajectory replayed in the same environment, tau-bench style).
 
-- Paired LLM agent rollouts through the same tool interface (fixed tasks, budgets, seeds)
-- More tasks per rule and more controls; per-rule effect sizes with paired statistics
-- Combined-defect variants and alternative grader designs (e.g., state-diff graders)
+## Key results
+
+- Oracle validated: 0 discrepancies in the reference environment; all 21 control
+  episodes (incl. near-miss controls) unaffected by every defect.
+- **Attempt blindness**: in the *correct* environment both graders pass rejected
+  prohibited attempts, giving freeze awareness 0 credit (true +2).
+- **R1 omitted**: outcome grader false-fails careful agents, false-passes the queue
+  drainer; freeze-awareness credit becomes -1, Kendall tau_b 0.75 -> 0.49. The
+  state-match grader's ranking becomes *perfect* (defect makes mistakes visible in state).
+- **R2 omitted**: both graders pass execution without re-approval; the affected task
+  passes for every agent; a correct run silently executes under a stale approval.
+- **R3 omitted**: outcome grader false-fails correct retries (-0.94 for competent agents)
+  and gives retry discipline 0 credit; state-match reports no change while passing
+  double debits.
+
+Paper: `paper/main.tex` / `paper/main.pdf`.
 
 ## Scope
 

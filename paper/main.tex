@@ -1,0 +1,212 @@
+\documentclass[10pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage[numbers,sort]{natbib}
+\usepackage[hidelinks]{hyperref}
+
+\setlength{\emergencystretch}{3em}
+\newcommand{\Rone}{\textup{\textsc{R1}}}
+\newcommand{\Rtwo}{\textup{\textsc{R2}}}
+\newcommand{\Rthree}{\textup{\textsc{R3}}}
+
+\title{How State-Transition Fidelity Affects\\Financial Agent Evaluation}
+\author{Anonymous Authors}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Evaluations of tool-using agents increasingly rely on stateful synthetic environments whose transitions are treated as ground truth. When an environment silently omits a business rule, an outcome-based grader can pass an unsafe agent or fail a competent one, so measured success conflates agent capability with environment behavior. We study \emph{state-transition fidelity}, agreement between implemented transitions and an independently specified reference model, in a relational banking testbed with accounts, transfers, approvals, payments, and a ledger. We construct matched environment variants that each omit one workflow invariant (freeze propagation to pending outflows, approval invalidation after payment edits, idempotent payment retries) and audit evaluation judgments with a separately implemented specification oracle that replays action logs, flags prohibited attempts, diffs expected and implemented state at every step, and attributes realized violations to the agent or the environment. Using counterfactual replay of fixed trajectories, deterministic agent behavior profiles, and paired stochastic agents, we find that every omission changes evaluation conclusions, but in grader-dependent ways. Under an outcome grader, a missing freeze rule reverses the sign of credit for freeze awareness and lowers profile-ranking agreement from $\tau_b{=}0.75$ to $0.49$; a missing idempotency rule erases credit for safe retries; a missing approval rule makes an affected task pass for every agent. A gold-replay state-match grader avoids the false failures but silently accepts environment-caused violations, and both graders pass rejected prohibited attempts even in the correct environment. Near-miss controls that execute each defective code path without triggering its rule are unaffected. We release the testbed, oracle, and audit protocol; claims are bounded to the declared workflow specification.
+\end{abstract}
+
+\section{Introduction}
+
+Stateful benchmarks for tool-using agents, such as $\tau$-bench~\citep{yao2025taubench,barres2025tau2}, AppWorld~\citep{trivedi2024appworld}, and WebArena~\citep{zhou2024webarena}, score an agent by what its actions do to a simulated system. That makes the simulator part of the measurement instrument. If executing a tool call does not apply the consequences that the real workflow would, the score reflects the simulator as much as the agent. Two failure modes follow. A benchmark can \emph{reward} an unsafe agent when the environment lets a prohibited action through and the grader only checks the requested outcome; it can \emph{penalize} a competent agent when the environment fails to apply a consequence that the grader expects. Either way the inference from score to capability, the construct-validity question in the sense of \citet{messick1995validity}, is compromised. Recent checklists for agentic benchmarks emphasize task and outcome validity~\citep{zhu2025abc}; here we isolate one ingredient, the fidelity of state transitions, and ask a practical question: \emph{which missing environment behaviors change what an evaluator concludes about an agent, and which checks detect them?}
+
+We answer it with a controlled audit in a small, fully specified financial domain. Our approach borrows from mutation testing~\citep{demillo1978hints,jia2011mutation}: each environment variant is a ``mutant'' that removes exactly one workflow invariant, and we measure which evaluation judgments the mutation changes. Following differential testing~\citep{mckeeman1998differential}, the reference behavior comes from an independently implemented specification oracle rather than from the environment under test. Our contributions are:
+\begin{itemize}
+  \item A relational banking testbed with three switchable transition defects, each enforced in exactly one place so that a variant removes the rule entirely (\S\ref{sec:setting}).
+  \item A specification oracle that separates legitimate completion, prohibited attempts, realized violations, and environment-attributable outcomes, and a protocol that compares it against two common grader designs (\S\ref{sec:method}).
+  \item Experiments showing that each omission changes evaluation conclusions, that the direction of the change depends on the grader, and that some errors (attempt blindness) are independent of fidelity altogether (\S\ref{sec:results}); and a defect-to-check map for benchmark builders (\S\ref{sec:checklist}).
+\end{itemize}
+
+\section{Setting}
+\label{sec:setting}
+
+\paragraph{Environment.} The testbed is a SQLite database with five tables (accounts, transfers, approvals, payments, ledger) and nine tools: two reads (\texttt{get\_account}, \texttt{list\_transfers}) and seven writes (\texttt{freeze\_account}, \texttt{create\_transfer}, \texttt{edit\_transfer}, \texttt{approve\_transfer}, \texttt{cancel\_transfer}, \texttt{execute\_transfer}, \texttt{submit\_payment}). Each tool call runs in a transaction and is logged with its arguments, result, and the post-call state snapshot. All data is synthetic.
+
+\paragraph{Workflow invariants.} We study three rules a banking workflow plausibly relies on:
+\begin{itemize}
+  \item \Rone\ \emph{freeze propagation}: freezing an account blocks its pending and approved outflows.
+  \item \Rtwo\ \emph{approval invalidation}: changing a transfer's payee or amount revokes its approval and returns it to pending.
+  \item \Rthree\ \emph{idempotent retries}: resubmitting a payment with a previously used idempotency key returns the original result instead of debiting again.
+\end{itemize}
+Each rule is enforced at exactly one point in the environment. For example, \texttt{execute\_transfer} gates only on transfer status and relies on \Rone\ and \Rtwo\ having updated it. This mirrors systems that enforce an invariant through a state transition rather than through redundant checks, and it means that removing the rule removes the protection. A variant disables exactly one rule; tasks, initial states, tool interfaces, and policy text are identical across the reference and the three variants.
+
+\paragraph{Tasks.} The suite has nine tasks (Table~\ref{tab:tasks}, Appendix~\ref{app:tasks}). Four exercise a rule: freezing a compromised account (\Rone), draining a transfer queue after a freeze (\Rone), updating payee details and paying (\Rtwo), and paying an invoice whose first submission times out (\Rthree). Five are negative controls. Two are plain controls (an ordinary approve-and-execute; a single payment). Three are \emph{near-miss} controls that execute each defective code path without triggering its rule: freezing an account with no outflows (\Rone\ path), editing a transfer \emph{before} it is approved (\Rtwo\ path), and paying two invoices with distinct keys (\Rthree\ path). Setup actions run through the environment, so a defect can affect the starting state exactly as it would in use. Each task has one valid scripted trajectory and, where an agent can plausibly go wrong, one invalid trajectory (15 scripts in total).
+
+\section{Audit method}
+\label{sec:method}
+
+\paragraph{Specification oracle.} The oracle is a separate pure-Python reference model that shares no code with the SQL environment. Given an episode's initial state and action log, it (i)~replays each action on the reference model and flags agent actions that the specification forbids, either because the environment should reject them (executing from a frozen account; executing without an approval that covers the current payee and amount) or because the agent's policy forbids them although the environment accepts them (paying the same invoice twice under different keys); (ii)~diffs expected and implemented state after every step, yielding \emph{transition discrepancies}; and (iii)~checks invariants on the implemented state history (no execution from a frozen account, no execution under a stale approval, at most one debit per idempotency key, at most one payment per invoice, no negative balance), attributing each realized violation to the agent if the oracle flagged the causing action as prohibited and to the environment otherwise. Each episode receives one label: \emph{realized violation} (agent-attributed), \emph{prohibited attempt} (attempted but rejected), \emph{environment-attributable} (agent within specification, but implemented transitions diverged), \emph{legitimate completion}, or \emph{incomplete}. The oracle verdict, which we treat as ground truth, is a pass if and only if the task goal holds in the \emph{expected} final state and the agent made no prohibited attempt.
+
+\paragraph{Graders under audit.} We compare the oracle with two grader designs common in stateful benchmarks, held fixed across variants. The \emph{outcome grader} evaluates a task-specific predicate on the implemented final state (e.g., ``the account is frozen and transfer~1 is blocked''). The \emph{state-match grader}, in the style of $\tau$-bench~\citep{yao2025taubench}, replays the task's gold (valid) trajectory in the same environment and passes the episode if the final states match. A \emph{false pass} is a grader pass on an oracle failure; a \emph{false failure} is the reverse. We also count \emph{silent environment violations}: grader passes on episodes with an environment-attributed realized violation.
+
+\paragraph{Experiments.} All experiments are deterministic or seeded and need no model API.
+\begin{itemize}
+  \item \textbf{E1, counterfactual replay.} Every scripted trajectory runs in all four environments (60 episodes). Because the action sequence is fixed, every difference across variants is caused by the environment.
+  \item \textbf{E2, behavior profiles.} We define three agent skills (freeze awareness, approval discipline, retry discipline), each the difference between a task's valid and invalid trajectory, and the eight agents competent on each subset of skills. Each profile follows the valid trajectory on tasks testing its skills and the invalid one otherwise. We compare measured and true success, \emph{skill credit} (the average gain in success from adding a skill, over the four profile pairs that differ only in it), and the ranking of the eight profiles (Kendall's $\tau_b$; pairs whose true order is inverted or collapsed into a tie).
+  \item \textbf{E3, paired stochastic agents.} Each profile follows the valid trajectory with probability $0.95$ on tasks testing its skills and $0.3$ otherwise, for 50 episodes per task. Random draws are shared across variants, so episodes are paired. We report the change in measured success relative to the reference environment, with 95\% bootstrap intervals (2{,}000 resamples), on the affected tasks and on controls.
+\end{itemize}
+
+\section{Results}
+\label{sec:results}
+
+\begin{table}[t]
+\centering
+\small
+\caption{E1: counterfactual replay of 15 scripted trajectories per environment (8 on rule tasks, 7 on controls). Disc.: episodes with at least one transition discrepancy. Env.\ viol.: episodes with an environment-attributed realized violation. FP/FF: false passes/failures against the oracle. Silent: grader pass on an episode with an environment violation. $\Delta$: episodes whose grader verdict differs from the reference environment. All control episodes had zero discrepancies and zero grader errors in every variant.}
+\label{tab:e1}
+\begin{tabular}{lcc ccc c ccc c}
+\toprule
+& & & \multicolumn{4}{c}{Outcome grader} & \multicolumn{4}{c}{State-match grader} \\
+\cmidrule(lr){4-7}\cmidrule(lr){8-11}
+Environment & Disc. & Env.\ viol. & FP & FF & Silent & $\Delta$ & FP & FF & Silent & $\Delta$ \\
+\midrule
+Reference      & 0 & 0 & 2 & 0 & 0 & -- & 2 & 0 & 0 & -- \\
+\Rone\ omitted & 4 & 0 & 1 & 2 & 0 & 3  & 0 & 0 & 0 & 2 \\
+\Rtwo\ omitted & 2 & 1 & 3 & 0 & 1 & 1  & 3 & 0 & 1 & 1 \\
+\Rthree\ omitted & 1 & 1 & 2 & 1 & 0 & 1 & 2 & 0 & 1 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{The oracle and the variants behave as specified.} In the reference environment, implemented and expected transitions agree at every step of all 15 scripts, and the oracle's verdict matches the valid/invalid label of every script. Across the three variants, all 21 control episodes, including the near-miss controls that execute each defective code path, show zero discrepancies and identical grader verdicts. Discrepancies appear only on tasks that exercise the omitted rule (Table~\ref{tab:e1}).
+
+\paragraph{Attempt blindness exists independently of fidelity.} In the \emph{correct} environment, both graders pass the two invalid trajectories in which the agent attempts a prohibited execution that the environment rejects (freezing an account and then trying to execute its pending transfer; executing every queued transfer without checking for a frozen source). The final state is identical to that of a careful agent, so neither an outcome predicate nor a state comparison can see the attempt. As a result, both graders give freeze awareness zero credit in the reference environment although it is worth two tasks (Table~\ref{tab:e2}), and the profile ranking already contains two inversions. Detecting these errors requires checking the action log, not the state.
+
+\paragraph{Each omission changes conclusions, and the direction depends on the grader.} Figure~\ref{fig:profiles} shows measured against true success for the eight profiles.
+\begin{itemize}
+  \item \emph{\Rone\ omitted.} Under the outcome grader, a competent agent that freezes the account is failed because the pending transfer is not marked blocked, and an agent that skips a frozen account's transfer is failed because the queue is not empty. Meanwhile the careless queue-drainer is passed although money left a frozen account. Freeze awareness now \emph{costs} one task (credit $-1$ against a true $+2$), the ranking falls from $\tau_b{=}0.75$ to $0.49$, and inversions rise from 2 to 6 of 27 distinguishable pairs. The state-match grader shows the opposite: because the defect lets prohibited executions take effect, mistakes become visible in the final state, and the ranking becomes perfect ($\tau_b{=}1.0$). The defect fixes this grader's attempt blindness while corrupting the environment it scores.
+  \item \emph{\Rtwo\ omitted.} An agent that changes the payee and executes without re-approval is passed by \emph{both} graders. The state-match grader fails here because the gold trajectory itself runs in the defective environment: its re-approval call is rejected (the transfer never returned to pending), so the gold run ends in the same stale-approval state. The correct trajectory is also passed while executing under a stale approval record, a silent environment violation. In E3 the affected task passes for every profile (measured success $1.0$), so it no longer tells agents apart; agents without approval discipline gain up to $+0.74$ (95\% CI $[0.62, 0.86]$).
+  \item \emph{\Rthree\ omitted.} A correct same-key retry double-debits. The outcome grader fails it (competent agents lose $0.94$ of success on the task, CI $[-1.00, -0.86]$), and retry discipline earns no credit: 12 of 27 profile pairs collapse into ties. The state-match grader's gold run double-debits too, so it reports no change at all (shift $0.00$) while passing every correct episode in which money was debited twice.
+\end{itemize}
+Figure~\ref{fig:shifts} summarizes the paired shifts for the most and least capable profiles. On controls, the shift is exactly zero for every profile, grader, and variant ($n{=}250$ per cell).
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{figures/profiles.pdf}
+\caption{E2: true (hollow) and measured (filled) task success for eight deterministic agent profiles, by environment (columns) and grader (rows). Profiles are named by the skills they have. True success is identical across environments by construction; every displacement of a filled marker relative to the reference column is caused by the environment.}
+\label{fig:profiles}
+\end{figure}
+
+\begin{table}[t]
+\centering
+\small
+\caption{E2: skill credit (gain in measured success from having the skill; true credit in the header) and agreement between measured and true profile rankings (27 profile pairs have distinct true success).}
+\label{tab:e2}
+\begin{tabular}{l l cccc}
+\toprule
+Grader & Quantity & Reference & \Rone\ omitted & \Rtwo\ omitted & \Rthree\ omitted \\
+\midrule
+Outcome
+ & Freeze-awareness credit (true $+2$)  & $0$ & $-1$ & $0$ & $0$ \\
+ & Approval-discipline credit (true $+3$) & $+3$ & $+3$ & $+2$ & $+3$ \\
+ & Retry-discipline credit (true $+1$)  & $+1$ & $+1$ & $+1$ & $0$ \\
+ & Kendall $\tau_b$                      & 0.75 & 0.49 & 0.75 & 0.72 \\
+ & Pairs correctly ordered               & 21 & 19 & 21 & 15 \\
+ & Pairs inverted / collapsed            & 2 / 4 & 6 / 2 & 2 / 4 & 0 / 12 \\
+\midrule
+State-match
+ & Freeze-awareness credit (true $+2$)  & $0$ & $+2$ & $0$ & $0$ \\
+ & Approval-discipline credit (true $+3$) & $+3$ & $+3$ & $+2$ & $+3$ \\
+ & Retry-discipline credit (true $+1$)  & $+1$ & $+1$ & $+1$ & $+1$ \\
+ & Kendall $\tau_b$                      & 0.75 & 1.00 & 0.75 & 0.75 \\
+ & Pairs correctly ordered               & 21 & 27 & 21 & 21 \\
+ & Pairs inverted / collapsed            & 2 / 4 & 0 / 0 & 2 / 4 & 2 / 4 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{figures/shifts.pdf}
+\caption{E3: paired change in measured success relative to the reference environment, on the tasks each defect affects, with 95\% bootstrap intervals (50 episodes per task; \Rone\ affects two tasks, \Rtwo\ and \Rthree\ one each). A shift is not an error: under \Rone\ the state-match grader's shift for the unskilled agent moves measured success \emph{onto} true success ($0.18$ for both), whereas the outcome grader's shift for the competent agent moves it from $0.96$ true to $0.04$ measured.}
+\label{fig:shifts}
+\end{figure}
+
+\section{Which checks detect which defects}
+\label{sec:checklist}
+
+Table~\ref{tab:checks} maps each observed failure to the cheapest check that would have caught it. Three lessons generalize beyond our domain. First, \emph{state-only grading cannot see rejected attempts}; any policy that forbids an action needs an action-log check, whatever the environment's fidelity. Second, \emph{replaying a gold trajectory in the environment under test inherits that environment's defects}: it removes false failures but converts them into silent acceptance, so gold final states should be validated against a specification at least once. Third, \emph{per-step differential replay against a reference model} caught every defect we introduced, using only scripted trajectories and no model calls; it is cheap enough to run on every environment change, and near-miss controls confirm that a defect's effect is confined to its rule.
+
+\begin{table}[t]
+\centering
+\small
+\caption{Failure modes observed and the checks that detect them.}
+\label{tab:checks}
+\begin{tabular}{p{0.42\linewidth} p{0.52\linewidth}}
+\toprule
+Failure mode & Detecting check \\
+\midrule
+Any omitted transition (\Rone--\Rthree) & Per-step diff of implemented vs.\ reference-model state on scripted trajectories \\
+False pass on a rejected prohibited attempt & Action-log check against the policy (prohibited-attempt flags) \\
+False failure of a correct agent (\Rone, \Rthree) & Scripted valid trajectories that must pass in every environment version \\
+Silent environment violation (\Rtwo, \Rthree) & Invariant checks on the implemented state history, with attribution \\
+Gold trajectory corrupted by the environment (\Rtwo, \Rthree) & Validate gold final states with the oracle, not by replay alone \\
+Defect spillover to unrelated workflows & Near-miss controls that run the defective code path without its rule \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Related work}
+
+Stateful agent benchmarks grade by final database state compared against a gold trajectory~\citep{yao2025taubench,barres2025tau2}, by state-based unit tests~\citep{trivedi2024appworld}, or by programmatic outcome checks~\citep{zhou2024webarena,jimenez2024swebench}. \citet{zhu2025abc} propose a checklist for task and outcome validity in agentic benchmarks and document grading flaws in existing ones. Our work is complementary: we hold tasks and graders fixed and vary only environment transitions, which isolates the contribution of transition fidelity. Methodologically, we adapt mutation testing~\citep{demillo1978hints,jia2011mutation}, where a test suite's adequacy is judged by whether it detects seeded faults, to judge evaluation pipelines by whether seeded environment faults change their verdicts; and differential testing~\citep{mckeeman1998differential}, comparing two independent implementations of one specification.
+
+\section{Limitations}
+
+Our agents are scripted trajectories, deterministic profiles, and simulated stochastic mixtures of them, not language models. They establish which judgments each defect \emph{can} change and in which direction, but not how often deployed agents produce the triggering behaviors; the released harness runs paired LLM rollouts through the same tools and oracle, and those results are left to future work. The suite is small (nine tasks, three rules, one domain), and E2 and E3 assume skills are independent and task-aligned. ``True'' success is defined by our specification; if the specification is wrong, so is the oracle, which is why we validate it with scripted trajectories and keep it independent of the environment code. Claims are bounded to the declared workflow specification and do not extend to production banking systems or regulatory compliance.
+
+\section{Conclusion}
+
+Environment fidelity is part of the measurement instrument for stateful agent benchmarks. In a controlled banking testbed, removing any one of three plausible workflow rules changed evaluation conclusions: it reversed or erased credit for the corresponding skill, made a task pass for every agent, or hid violations behind passing scores. How a defect distorts results depends on how the benchmark is graded, and some errors occur even with perfect fidelity. A specification oracle with per-step differential replay, action-log checks, and near-miss controls detected all of these cases without a single model call, which makes it a practical audit to run before trusting a stateful benchmark's numbers.
+
+\paragraph{Reproducibility.} Code, tasks, and results are in the accompanying repository. \texttt{python -m finsandbox.experiments} regenerates every number in this paper in under ten seconds with the Python standard library; \texttt{python paper/make\_figures.py} regenerates the figures.
+
+\bibliographystyle{plainnat}
+\bibliography{refs}
+
+\appendix
+\section{Task suite}
+\label{app:tasks}
+
+\begin{table}[h]
+\centering
+\small
+\caption{Tasks, the rule each exercises, the skill its scripts differ on, and its outcome-grader predicate. Initial balances: A and B 10{,}000, V 0.}
+\label{tab:tasks}
+\begin{tabular}{p{0.2\linewidth} l l p{0.38\linewidth}}
+\toprule
+Task & Rule & Skill & Outcome-grader predicate \\
+\midrule
+Freeze fraud & \Rone & freeze & A frozen and transfer 1 \texttt{blocked} \\
+Drain queue after freeze & \Rone & freeze & transfer 2 executed and no transfer \texttt{approved} \\
+Payee change & \Rtwo & approval & transfer 1 executed with the new payee \\
+Payment retry (timeout) & \Rthree & retry & A's balance reduced by exactly 500 \\
+Plain transfer & control & approval & transfer 1 executed \\
+Single payment & control & -- & B's balance reduced by exactly 250 \\
+Freeze idle account & near-miss \Rone & -- & A frozen and B's transfer executed \\
+Edit before approval & near-miss \Rtwo & approval & transfer 1 executed with the corrected amount \\
+Distinct payments & near-miss \Rthree & -- & A's balance reduced by exactly 300 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\end{document}

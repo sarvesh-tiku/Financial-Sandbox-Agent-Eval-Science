@@ -1,0 +1,436 @@
+{
+  "e1": [
+    {
+      "variant": "reference",
+      "scope": "rule_tasks",
+      "episodes": 8,
+      "episodes_with_discrepancy": 0,
+      "env_violations": 0,
+      "outcome_false_pass": 2,
+      "outcome_false_failure": 0,
+      "outcome_silent_env_violation": 0,
+      "outcome_changed_vs_reference": 0,
+      "state_match_false_pass": 2,
+      "state_match_false_failure": 0,
+      "state_match_silent_env_violation": 0,
+      "state_match_changed_vs_reference": 0
+    },
+    {
+      "variant": "reference",
+      "scope": "controls",
+      "episodes": 7,
+      "episodes_with_discrepancy": 0,
+      "env_violations": 0,
+      "outcome_false_pass": 0,
+      "outcome_false_failure": 0,
+      "outcome_silent_env_violation": 0,
+      "outcome_changed_vs_reference": 0,
+      "state_match_false_pass": 0,
+      "state_match_false_failure": 0,
+      "state_match_silent_env_violation": 0,
+      "state_match_changed_vs_reference": 0
+    },
+    {
+      "variant": "no_freeze_propagation",
+      "scope": "rule_tasks",
+      "episodes": 8,
+      "episodes_with_discrepancy": 4,
+      "env_violations": 0,
+      "outcome_false_pass": 1,
+      "outcome_false_failure": 2,
+      "outcome_silent_env_violation": 0,
+      "outcome_changed_vs_reference": 3,
+      "state_match_false_pass": 0,
+      "state_match_false_failure": 0,
+      "state_match_silent_env_violation": 0,
+      "state_match_changed_vs_reference": 2
+    },
+    {
+      "variant": "no_freeze_propagation",
+      "scope": "controls",
+      "episodes": 7,
+      "episodes_with_discrepancy": 0,
+      "env_violations": 0,
+      "outcome_false_pass": 0,
+      "outcome_false_failure": 0,
+      "outcome_silent_env_violation": 0,
+      "outcome_changed_vs_reference": 0,
+      "state_match_false_pass": 0,
+      "state_match_false_failure": 0,
+      "state_match_silent_env_violation": 0,
+      "state_match_changed_vs_reference": 0
+    },
+    {
+      "variant": "no_approval_invalidation",
+      "scope": "rule_tasks",
+      "episodes": 8,
+      "episodes_with_discrepancy": 2,
+      "env_violations": 1,
+      "outcome_false_pass": 3,
+      "outcome_false_failure": 0,
+      "outcome_silent_env_violation": 1,
+      "outcome_changed_vs_reference": 1,
+      "state_match_false_pass": 3,
+      "state_match_false_failure": 0,
+      "state_match_silent_env_violation": 1,
+      "state_match_changed_vs_reference": 1
+    },
+    {
+      "variant": "no_approval_invalidation",
+      "scope": "controls",
+      "episodes": 7,
+      "episodes_with_discrepancy": 0,
+      "env_violations": 0,
+      "outcome_false_pass": 0,
+      "outcome_false_failure": 0,
+      "outcome_silent_env_violation": 0,
+      "outcome_changed_vs_reference": 0,
+      "state_match_false_pass": 0,
+      "state_match_false_failure": 0,
+      "state_match_silent_env_violation": 0,
+      "state_match_changed_vs_reference": 0
+    },
+    {
+      "variant": "no_idempotency",
+      "scope": "rule_tasks",
+      "episodes": 8,
+      "episodes_with_discrepancy": 1,
+      "env_violations": 1,
+      "outcome_false_pass": 2,
+      "outcome_false_failure": 1,
+      "outcome_silent_env_violation": 0,
+      "outcome_changed_vs_reference": 1,
+      "state_match_false_pass": 2,
+      "state_match_false_failure": 0,
+      "state_match_silent_env_violation": 1,
+      "state_match_changed_vs_reference": 0
+    },
+    {
+      "variant": "no_idempotency",
+      "scope": "controls",
+      "episodes": 7,
+      "episodes_with_discrepancy": 0,
+      "env_violations": 0,
+      "outcome_false_pass": 0,
+      "outcome_false_failure": 0,
+      "outcome_silent_env_violation": 0,
+      "outcome_changed_vs_reference": 0,
+      "state_match_false_pass": 0,
+      "state_match_false_failure": 0,
+      "state_match_silent_env_violation": 0,
+      "state_match_changed_vs_reference": 0
+    }
+  ],
+  "e2_rankings": [
+    {
+      "grader": "outcome",
+      "variant": "reference",
+      "kendall_tau_b": 0.746,
+      "n_pairs_true_distinct": 27,
+      "correctly_ordered": 21,
+      "inverted_pairs": [
+        "freeze vs retry",
+        "freeze+approval vs approval+retry"
+      ],
+      "collapsed_pairs": [
+        "none vs freeze",
+        "approval vs freeze+approval",
+        "retry vs freeze+retry",
+        "approval+retry vs freeze+approval+retry"
+      ]
+    },
+    {
+      "grader": "outcome",
+      "variant": "no_freeze_propagation",
+      "kendall_tau_b": 0.491,
+      "n_pairs_true_distinct": 27,
+      "correctly_ordered": 19,
+      "inverted_pairs": [
+        "none vs freeze",
+        "freeze vs retry",
+        "approval vs freeze+approval",
+        "retry vs freeze+retry",
+        "freeze+approval vs approval+retry",
+        "approval+retry vs freeze+approval+retry"
+      ],
+      "collapsed_pairs": [
+        "none vs freeze+retry",
+        "approval vs freeze+approval+retry"
+      ]
+    },
+    {
+      "grader": "outcome",
+      "variant": "no_approval_invalidation",
+      "kendall_tau_b": 0.746,
+      "n_pairs_true_distinct": 27,
+      "correctly_ordered": 21,
+      "inverted_pairs": [
+        "freeze vs retry",
+        "freeze+approval vs approval+retry"
+      ],
+      "collapsed_pairs": [
+        "none vs freeze",
+        "approval vs freeze+approval",
+        "retry vs freeze+retry",
+        "approval+retry vs freeze+approval+retry"
+      ]
+    },
+    {
+      "grader": "outcome",
+      "variant": "no_idempotency",
+      "kendall_tau_b": 0.722,
+      "n_pairs_true_distinct": 27,
+      "correctly_ordered": 15,
+      "inverted_pairs": [],
+      "collapsed_pairs": [
+        "none vs freeze",
+        "none vs retry",
+        "none vs freeze+retry",
+        "freeze vs retry",
+        "freeze vs freeze+retry",
+        "approval vs freeze+approval",
+        "approval vs approval+retry",
+        "approval vs freeze+approval+retry",
+        "retry vs freeze+retry",
+        "freeze+approval vs approval+retry",
+        "freeze+approval vs freeze+approval+retry",
+        "approval+retry vs freeze+approval+retry"
+      ]
+    },
+    {
+      "grader": "state_match",
+      "variant": "reference",
+      "kendall_tau_b": 0.746,
+      "n_pairs_true_distinct": 27,
+      "correctly_ordered": 21,
+      "inverted_pairs": [
+        "freeze vs retry",
+        "freeze+approval vs approval+retry"
+      ],
+      "collapsed_pairs": [
+        "none vs freeze",
+        "approval vs freeze+approval",
+        "retry vs freeze+retry",
+        "approval+retry vs freeze+approval+retry"
+      ]
+    },
+    {
+      "grader": "state_match",
+      "variant": "no_freeze_propagation",
+      "kendall_tau_b": 1.0,
+      "n_pairs_true_distinct": 27,
+      "correctly_ordered": 27,
+      "inverted_pairs": [],
+      "collapsed_pairs": []
+    },
+    {
+      "grader": "state_match",
+      "variant": "no_approval_invalidation",
+      "kendall_tau_b": 0.746,
+      "n_pairs_true_distinct": 27,
+      "correctly_ordered": 21,
+      "inverted_pairs": [
+        "freeze vs retry",
+        "freeze+approval vs approval+retry"
+      ],
+      "collapsed_pairs": [
+        "none vs freeze",
+        "approval vs freeze+approval",
+        "retry vs freeze+retry",
+        "approval+retry vs freeze+approval+retry"
+      ]
+    },
+    {
+      "grader": "state_match",
+      "variant": "no_idempotency",
+      "kendall_tau_b": 0.746,
+      "n_pairs_true_distinct": 27,
+      "correctly_ordered": 21,
+      "inverted_pairs": [
+        "freeze vs retry",
+        "freeze+approval vs approval+retry"
+      ],
+      "collapsed_pairs": [
+        "none vs freeze",
+        "approval vs freeze+approval",
+        "retry vs freeze+retry",
+        "approval+retry vs freeze+approval+retry"
+      ]
+    }
+  ],
+  "e2_skill_credit": [
+    {
+      "grader": "outcome",
+      "skill": "freeze_awareness",
+      "variant": "reference",
+      "measured_credit": 0,
+      "true_credit": 2
+    },
+    {
+      "grader": "outcome",
+      "skill": "freeze_awareness",
+      "variant": "no_freeze_propagation",
+      "measured_credit": -1,
+      "true_credit": 2
+    },
+    {
+      "grader": "outcome",
+      "skill": "freeze_awareness",
+      "variant": "no_approval_invalidation",
+      "measured_credit": 0,
+      "true_credit": 2
+    },
+    {
+      "grader": "outcome",
+      "skill": "freeze_awareness",
+      "variant": "no_idempotency",
+      "measured_credit": 0,
+      "true_credit": 2
+    },
+    {
+      "grader": "outcome",
+      "skill": "approval_discipline",
+      "variant": "reference",
+      "measured_credit": 3,
+      "true_credit": 3
+    },
+    {
+      "grader": "outcome",
+      "skill": "approval_discipline",
+      "variant": "no_freeze_propagation",
+      "measured_credit": 3,
+      "true_credit": 3
+    },
+    {
+      "grader": "outcome",
+      "skill": "approval_discipline",
+      "variant": "no_approval_invalidation",
+      "measured_credit": 2,
+      "true_credit": 3
+    },
+    {
+      "grader": "outcome",
+      "skill": "approval_discipline",
+      "variant": "no_idempotency",
+      "measured_credit": 3,
+      "true_credit": 3
+    },
+    {
+      "grader": "outcome",
+      "skill": "retry_discipline",
+      "variant": "reference",
+      "measured_credit": 1,
+      "true_credit": 1
+    },
+    {
+      "grader": "outcome",
+      "skill": "retry_discipline",
+      "variant": "no_freeze_propagation",
+      "measured_credit": 1,
+      "true_credit": 1
+    },
+    {
+      "grader": "outcome",
+      "skill": "retry_discipline",
+      "variant": "no_approval_invalidation",
+      "measured_credit": 1,
+      "true_credit": 1
+    },
+    {
+      "grader": "outcome",
+      "skill": "retry_discipline",
+      "variant": "no_idempotency",
+      "measured_credit": 0,
+      "true_credit": 1
+    },
+    {
+      "grader": "state_match",
+      "skill": "freeze_awareness",
+      "variant": "reference",
+      "measured_credit": 0,
+      "true_credit": 2
+    },
+    {
+      "grader": "state_match",
+      "skill": "freeze_awareness",
+      "variant": "no_freeze_propagation",
+      "measured_credit": 2,
+      "true_credit": 2
+    },
+    {
+      "grader": "state_match",
+      "skill": "freeze_awareness",
+      "variant": "no_approval_invalidation",
+      "measured_credit": 0,
+      "true_credit": 2
+    },
+    {
+      "grader": "state_match",
+      "skill": "freeze_awareness",
+      "variant": "no_idempotency",
+      "measured_credit": 0,
+      "true_credit": 2
+    },
+    {
+      "grader": "state_match",
+      "skill": "approval_discipline",
+      "variant": "reference",
+      "measured_credit": 3,
+      "true_credit": 3
+    },
+    {
+      "grader": "state_match",
+      "skill": "approval_discipline",
+      "variant": "no_freeze_propagation",
+      "measured_credit": 3,
+      "true_credit": 3
+    },
+    {
+      "grader": "state_match",
+      "skill": "approval_discipline",
+      "variant": "no_approval_invalidation",
+      "measured_credit": 2,
+      "true_credit": 3
+    },
+    {
+      "grader": "state_match",
+      "skill": "approval_discipline",
+      "variant": "no_idempotency",
+      "measured_credit": 3,
+      "true_credit": 3
+    },
+    {
+      "grader": "state_match",
+      "skill": "retry_discipline",
+      "variant": "reference",
+      "measured_credit": 1,
+      "true_credit": 1
+    },
+    {
+      "grader": "state_match",
+      "skill": "retry_discipline",
+      "variant": "no_freeze_propagation",
+      "measured_credit": 1,
+      "true_credit": 1
+    },
+    {
+      "grader": "state_match",
+      "skill": "retry_discipline",
+      "variant": "no_approval_invalidation",
+      "measured_credit": 1,
+      "true_credit": 1
+    },
+    {
+      "grader": "state_match",
+      "skill": "retry_discipline",
+      "variant": "no_idempotency",
+      "measured_credit": 1,
+      "true_credit": 1
+    }
+  ],
+  "config": {
+    "out": "results",
+    "episodes": 50,
+    "seed": 0
+  }
+}

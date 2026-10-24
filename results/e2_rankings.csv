@@ -1,0 +1,9 @@
+grader,variant,kendall_tau_b,n_pairs_true_distinct,correctly_ordered,inverted_pairs,collapsed_pairs
+outcome,reference,0.746,27,21,freeze vs retry;freeze+approval vs approval+retry,none vs freeze;approval vs freeze+approval;retry vs freeze+retry;approval+retry vs freeze+approval+retry
+outcome,no_freeze_propagation,0.491,27,19,none vs freeze;freeze vs retry;approval vs freeze+approval;retry vs freeze+retry;freeze+approval vs approval+retry;approval+retry vs freeze+approval+retry,none vs freeze+retry;approval vs freeze+approval+retry
+outcome,no_approval_invalidation,0.746,27,21,freeze vs retry;freeze+approval vs approval+retry,none vs freeze;approval vs freeze+approval;retry vs freeze+retry;approval+retry vs freeze+approval+retry
+outcome,no_idempotency,0.722,27,15,,none vs freeze;none vs retry;none vs freeze+retry;freeze vs retry;freeze vs freeze+retry;approval vs freeze+approval;approval vs approval+retry;approval vs freeze+approval+retry;retry vs freeze+retry;freeze+approval vs approval+retry;freeze+approval vs freeze+approval+retry;approval+retry vs freeze+approval+retry
+state_match,reference,0.746,27,21,freeze vs retry;freeze+approval vs approval+retry,none vs freeze;approval vs freeze+approval;retry vs freeze+retry;approval+retry vs freeze+approval+retry
+state_match,no_freeze_propagation,1.0,27,27,,
+state_match,no_approval_invalidation,0.746,27,21,freeze vs retry;freeze+approval vs approval+retry,none vs freeze;approval vs freeze+approval;retry vs freeze+retry;approval+retry vs freeze+approval+retry
+state_match,no_idempotency,0.746,27,21,freeze vs retry;freeze+approval vs approval+retry,none vs freeze;approval vs freeze+approval;retry vs freeze+retry;approval+retry vs freeze+approval+retry
