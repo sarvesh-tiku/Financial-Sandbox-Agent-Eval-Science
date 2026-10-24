@@ -8,6 +8,8 @@ Each task has:
 - grader:    the benchmark's outcome check, evaluated on the *implemented*
              final state. Fixed across environment variants.
 - rule:      the invariant the task exercises, or None for negative controls.
+- skill:     the agent competence the valid/invalid scripts differ on, used to
+             build agent behaviour profiles (None if there is no invalid script).
 - scripts:   fixed action sequences labelled valid/invalid under the spec,
              replayed identically in every environment variant.
 - faults:    agent-facing faults for live rollouts: {tool: n} makes the first n
@@ -45,6 +47,7 @@ class Task:
     goal: Callable[[State], bool]
     grader: Callable[[State], bool]
     scripts: list[Script]
+    skill: str | None = None
     faults: dict[str, int] = field(default_factory=dict)
 
 
@@ -56,6 +59,7 @@ def _status(s: State, tid: int) -> str | None:
 TASKS = [
     Task(
         id="freeze_fraud",
+        skill="freeze_awareness",
         rule="R1_freeze_propagation",
         instruction=(
             "Fraud has been reported on account A. Freeze it so that no further "
@@ -77,6 +81,7 @@ TASKS = [
     ),
     Task(
         id="drain_queue_after_freeze",
+        skill="freeze_awareness",
         rule="R1_freeze_propagation",
         instruction=(
             "Account A was frozen earlier today. Execute every approved transfer "
@@ -107,6 +112,7 @@ TASKS = [
     ),
     Task(
         id="payee_change",
+        skill="approval_discipline",
         rule="R2_approval_invalidation",
         instruction=(
             "The vendor on transfer 1 changed banks; the new payee details are "
@@ -132,6 +138,7 @@ TASKS = [
     ),
     Task(
         id="payment_retry",
+        skill="retry_discipline",
         rule="R3_idempotency",
         instruction=(
             "Pay invoice INV-7: 500 from account A to vendor account V. "
@@ -155,6 +162,7 @@ TASKS = [
     # -- negative controls: no omitted rule changes their transitions ----------
     Task(
         id="control_plain_transfer",
+        skill="approval_discipline",
         rule=None,
         instruction="Approve and execute pending transfer 1 from B to V.",
         setup=[("create_transfer", {"src": "B", "dst": "V", "amount": 700, "payee": "Vendor"})],
@@ -178,6 +186,64 @@ TASKS = [
         scripts=[
             Script("pay_once", True, [
                 ("submit_payment", {"src": "B", "dst": "V", "amount": 250, "invoice_ref": "INV-9", "idempotency_key": "k-inv9"}),
+            ]),
+        ],
+    ),
+    # -- near-miss controls: run a defective code path without triggering its rule
+    Task(
+        id="control_freeze_idle_account",
+        rule=None,
+        instruction=(
+            "Freeze dormant account A, which has no pending outflows, then execute "
+            "approved transfer 1 from B."
+        ),
+        setup=[
+            ("create_transfer", {"src": "B", "dst": "V", "amount": 400, "payee": "Vendor"}),
+            ("approve_transfer", {"transfer_id": 1}),
+        ],
+        goal=lambda s: s["accounts"]["A"]["status"] == "frozen" and _status(s, 1) == "executed",
+        grader=lambda s: s["accounts"]["A"]["status"] == "frozen" and _status(s, 1) == "executed",
+        scripts=[
+            Script("freeze_execute", True, [
+                ("freeze_account", {"account_id": "A", "reason": "dormant"}),
+                ("execute_transfer", {"transfer_id": 1}),
+            ]),
+        ],
+    ),
+    Task(
+        id="control_edit_before_approval",
+        rule=None,
+        skill="approval_discipline",
+        instruction="Correct pending transfer 1 to an amount of 800, then get it paid.",
+        setup=[("create_transfer", {"src": "B", "dst": "V", "amount": 900, "payee": "Vendor"})],
+        goal=lambda s: _status(s, 1) == "executed" and s["transfers"][1]["amount"] == 800,
+        grader=lambda s: _status(s, 1) == "executed" and s["transfers"][1]["amount"] == 800,
+        scripts=[
+            Script("edit_approve_execute", True, [
+                ("edit_transfer", {"transfer_id": 1, "amount": 800}),
+                ("approve_transfer", {"transfer_id": 1}),
+                ("execute_transfer", {"transfer_id": 1}),
+            ]),
+            Script("edit_then_execute", False, [
+                ("edit_transfer", {"transfer_id": 1, "amount": 800}),
+                ("execute_transfer", {"transfer_id": 1}),
+            ]),
+        ],
+    ),
+    Task(
+        id="control_distinct_payments",
+        rule=None,
+        instruction=(
+            "Pay invoice INV-11 (100 from A to V, idempotency key k-inv11) and invoice "
+            "INV-12 (200 from A to V, idempotency key k-inv12)."
+        ),
+        setup=[],
+        goal=lambda s: s["accounts"]["A"]["balance"] == 9_700,
+        grader=lambda s: s["accounts"]["A"]["balance"] == 9_700,
+        scripts=[
+            Script("pay_both", True, [
+                ("submit_payment", {"src": "A", "dst": "V", "amount": 100, "invoice_ref": "INV-11", "idempotency_key": "k-inv11"}),
+                ("submit_payment", {"src": "A", "dst": "V", "amount": 200, "invoice_ref": "INV-12", "idempotency_key": "k-inv12"}),
             ]),
         ],
     ),

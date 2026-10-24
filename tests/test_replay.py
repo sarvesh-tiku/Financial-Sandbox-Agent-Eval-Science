@@ -67,6 +67,25 @@ class ReplayTest(unittest.TestCase):
         for key, expected in cases.items():
             self.assertEqual(self.by_key[key].grader_error, expected, key)
 
+    def test_state_match_grader(self):
+        # Gold replay runs through the same defect, so no false failures...
+        for e in self.episodes:
+            self.assertNotEqual(e.match_error, "false_failure", (e.task.id, e.script, e.variant))
+        # ...but environment-caused violations pass silently.
+        for key in [("payment_retry", "retry_same_key", "no_idempotency"),
+                    ("payee_change", "edit_reapprove_execute", "no_approval_invalidation")]:
+            e = self.by_key[key]
+            self.assertTrue(e.env_violation and e.match_pass, key)
+        e = self.by_key[("payee_change", "edit_then_execute", "no_approval_invalidation")]
+        self.assertEqual(e.match_error, "false_pass")
+
+    def test_attempt_blindness_in_reference(self):
+        # Both graders pass rejected prohibited attempts in the correct environment.
+        for task in ("freeze_fraud", "drain_queue_after_freeze"):
+            e = next(e for e in self.episodes if e.task.id == task and e.variant == "reference"
+                     and not e.script_valid)
+            self.assertEqual((e.grader_error, e.match_error), ("false_pass", "false_pass"))
+
     def test_violation_attribution(self):
         e = self.by_key[("payment_retry", "retry_same_key", "no_idempotency")]
         self.assertEqual({v["attributed_to"] for v in e.report.violations}, {"environment"})

@@ -28,6 +28,7 @@ class Episode:
     script_valid: bool
     report: OracleReport
     final: dict[str, Any]
+    gold_final: dict[str, Any] | None = None
 
     @property
     def oracle_pass(self) -> bool:
@@ -38,12 +39,29 @@ class Episode:
         return self.task.grader(self.final)
 
     @property
-    def grader_error(self) -> str:
-        if self.grader_pass and not self.oracle_pass:
+    def match_pass(self) -> bool:
+        """State-match grader: final state equals that of the gold trajectory
+        replayed in the same environment (the tau-bench style of grading)."""
+        return self.gold_final is not None and self.final == self.gold_final
+
+    def _error(self, grader_pass: bool) -> str:
+        if grader_pass and not self.oracle_pass:
             return "false_pass"
-        if self.oracle_pass and not self.grader_pass:
+        if self.oracle_pass and not grader_pass:
             return "false_failure"
         return ""
+
+    @property
+    def grader_error(self) -> str:
+        return self._error(self.grader_pass)
+
+    @property
+    def match_error(self) -> str:
+        return self._error(self.match_pass)
+
+    @property
+    def env_violation(self) -> bool:
+        return any(v["attributed_to"] == "environment" for v in self.report.violations)
 
     @property
     def label(self) -> str:
@@ -57,6 +75,17 @@ class Episode:
         return "legitimate_completion" if self.oracle_pass else "incomplete"
 
 
+def gold_state(task: Task, variant: str) -> dict[str, Any]:
+    """Final state of the task's first valid script, run in the given variant."""
+    gold = next(s for s in task.scripts if s.valid)
+    env = BankEnv(ACCOUNTS, VARIANTS[variant])
+    for tool, args in [*task.setup, *gold.actions]:
+        env.call(tool, args)
+    final = env.snapshot()
+    env.db.close()
+    return final
+
+
 def run_episode(task: Task, variant: str, actions: list[Action], script: str = "",
                 script_valid: bool = True) -> Episode:
     env = BankEnv(ACCOUNTS, VARIANTS[variant])
@@ -67,7 +96,7 @@ def run_episode(task: Task, variant: str, actions: list[Action], script: str = "
     report = audit(env.initial_snapshot, env.log)
     final = env.snapshot()
     env.db.close()
-    return Episode(task, variant, script, script_valid, report, final)
+    return Episode(task, variant, script, script_valid, report, final, gold_state(task, variant))
 
 
 def replay_all() -> list[Episode]:
@@ -88,6 +117,9 @@ def to_row(ep: Episode) -> dict[str, Any]:
         "oracle_pass": ep.oracle_pass,
         "grader_pass": ep.grader_pass,
         "grader_error": ep.grader_error,
+        "match_pass": ep.match_pass,
+        "match_error": ep.match_error,
+        "env_violation": ep.env_violation,
         "label": ep.label,
         "n_discrepancies": len(r.discrepancies),
         "first_divergence_step": r.first_divergence_step,

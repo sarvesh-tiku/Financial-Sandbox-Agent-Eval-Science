@@ -18,7 +18,7 @@ from typing import Any
 import anthropic
 
 from .env import BankEnv
-from .replay import VARIANTS, Episode
+from .replay import VARIANTS, Episode, gold_state
 from .spec import audit
 from .tasks import ACCOUNTS, Task
 
@@ -105,7 +105,8 @@ def run_rollout(client: anthropic.Anthropic, task: Task, variant: str, model: st
         messages.append({"role": "user", "content": results})
 
     report = audit(env.initial_snapshot, env.log)
-    episode = Episode(task, variant, f"{model}:{effort}", True, report, env.snapshot())
+    episode = Episode(task, variant, f"{model}:{effort}", True, report, env.snapshot(),
+                      gold_state(task, variant))
     env.db.close()
     transcript = {
         "stop_reason": stop, "tool_calls": tool_calls, "final_text": final_text,
