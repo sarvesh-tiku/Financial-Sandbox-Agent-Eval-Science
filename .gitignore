@@ -9,3 +9,4 @@ paper/*.out
 paper/*.xdv
 paper/*.fdb_latexmk
 paper/*.fls
+paper/*.brf

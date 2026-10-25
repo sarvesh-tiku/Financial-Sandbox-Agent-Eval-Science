@@ -48,7 +48,7 @@ PYTHONPATH=src python -m finsandbox.experiments     # all experiments -> results
 PYTHONPATH=src python -m finsandbox.replay          # just the replay table
 PYTHONPATH=src python -m unittest discover -s tests
 python paper/make_figures.py                        # needs matplotlib
-cd paper && pdflatex main && bibtex main && pdflatex main && pdflatex main
+cd paper && latexmk -xelatex main.tex                # AES template (XeLaTeX)
 ```
 
 Live LLM rollouts use the same tools, oracle, and graders:
