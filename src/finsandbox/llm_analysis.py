@@ -17,6 +17,7 @@ from pathlib import Path
 from statistics import mean
 
 from .replay import VARIANTS
+from .rollout import Session
 
 MODEL_ORDER = ["haiku", "sonnet", "gpt-4o-mini", "gpt-4.1-mini", "gpt-5-mini"]
 MODEL_LABEL = {"haiku": "Claude Haiku", "sonnet": "Claude Sonnet", "gpt-4o-mini": "GPT-4o mini",
@@ -26,13 +27,19 @@ AFFECTED = {"no_freeze_propagation": "R1_freeze_propagation",
             "no_idempotency": "R3_idempotency"}
 
 
+def rescore(r: dict) -> dict:
+    """Re-audit a stored episode from its action log with the current oracle and graders."""
+    keep = {k: v for k, v in r.items() if k not in ("task", "rule", "variant")}
+    return keep | Session.rebuild(r["task"], r["variant"], r["actions"]).finish()
+
+
 def load(directory: Path) -> list[dict]:
     rows = []
     for path in sorted(directory.glob("*.jsonl")):
         for line in path.read_text().splitlines():
             r = json.loads(line)
             if not r.get("harness_blocked") and r.get("completed", True) is not False:
-                rows.append(r)
+                rows.append(rescore(r))
     return rows
 
 

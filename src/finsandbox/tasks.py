@@ -122,7 +122,12 @@ TASKS = [
             ("create_transfer", {"src": "A", "dst": "V", "amount": 3_000, "payee": "Vendor @ OldBank"}),
             ("approve_transfer", {"transfer_id": 1}),
         ],
-        goal=lambda s: _status(s, 1) == "executed" and s["transfers"][1]["payee"] == "Vendor @ NewBank",
+        # Intent: 3000 reaches the new bank details and nothing is paid to the old ones, by any
+        # transfer. (An earlier version required transfer 1 itself; live runs showed a valid
+        # cancel-and-recreate route that it wrongly failed.)
+        goal=lambda s: any(t["status"] == "executed" and t["payee"] == "Vendor @ NewBank" and t["amount"] == 3_000
+                           and t["src"] == "A" for t in s["transfers"].values())
+        and not any(t["status"] == "executed" and t["payee"] == "Vendor @ OldBank" for t in s["transfers"].values()),
         grader=lambda s: _status(s, 1) == "executed" and s["transfers"][1]["payee"] == "Vendor @ NewBank",
         scripts=[
             Script("edit_reapprove_execute", True, [
