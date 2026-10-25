@@ -1,7 +1,9 @@
 {
   "episodes": {
     "gpt-4.1-mini": 360,
+    "gpt-4.1": 360,
     "gpt-4o-mini": 360,
-    "gpt-5-mini": 360
+    "gpt-5-mini": 360,
+    "gpt-5": 180
   }
 }

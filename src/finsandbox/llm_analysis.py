@@ -136,8 +136,18 @@ def main() -> None:
                                "n_reference": len(ys), "shift": round(mean(xs) - mean(ys), 3),
                                "ci_low": lo, "ci_high": hi})
 
+    leaderboard = []  # per model and environment, over all four rule tasks
+    for model in models:
+        for v in VARIANTS:
+            eps = [r for r in rows if r["model"] == model and r["variant"] == v and r["rule"] != "control"]
+            if eps:
+                leaderboard.append({"model": model, "variant": v, "n": len(eps),
+                                    "oracle": mean(r["oracle_pass"] for r in eps),
+                                    "outcome": mean(r["grader_pass"] for r in eps),
+                                    "state_match": mean(r["match_pass"] for r in eps)})
+
     beh = behaviours(rows)
-    for name, data in (("cells", table), ("shifts", shifts), ("behaviours", beh)):
+    for name, data in (("cells", table), ("shifts", shifts), ("behaviours", beh), ("leaderboard", leaderboard)):
         with (args.out / f"{name}.csv").open("w", newline="") as f:
             w = csv.DictWriter(f, fieldnames=list(data[0]))
             w.writeheader()

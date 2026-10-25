@@ -35,7 +35,7 @@ def read(path):
 def fig_profiles(rows, out):
     profiles = list(dict.fromkeys(r["profile"] for r in rows))
     n_tasks = int(rows[0]["n_tasks"])
-    fig, axes = plt.subplots(2, 4, figsize=(7.0, 3.6), sharex=True, sharey=True)
+    fig, axes = plt.subplots(2, 4, figsize=(7.0, 2.8), sharex=True, sharey=True)
     for i, grader in enumerate(GRADER_LABEL):
         for j, v in enumerate(VARIANTS):
             ax = axes[i, j]
@@ -107,7 +107,7 @@ def fig_verdicts(rows, out):
     rule_rows = [r for r in rows if r["rule"] != "control"]
     scripts = list(dict.fromkeys((r["task"], r["script"], r["script_valid"]) for r in rule_rows))
     agree = "#efeeeb"
-    fig, axes = plt.subplots(1, 2, figsize=(7.0, 2.5), sharey=True, gridspec_kw={"wspace": 0.08})
+    fig, axes = plt.subplots(1, 2, figsize=(7.0, 2.25), sharey=True, gridspec_kw={"wspace": 0.08})
     for ax, (grader, err_key) in zip(axes, (("outcome", "grader_error"), ("state_match", "match_error"))):
         for y, (task, script, valid) in enumerate(scripts):
             for x, v in enumerate(VARIANTS):
@@ -151,7 +151,7 @@ LLM_MODELS = [("gpt-4o-mini", "GPT-4o mini"), ("gpt-4.1-mini", "GPT-4.1 mini"), 
 
 def fig_llm(rows, out):
     defects = VARIANTS[1:]
-    fig, axes = plt.subplots(2, 3, figsize=(7.0, 3.6), sharex=True, sharey=True)
+    fig, axes = plt.subplots(2, 3, figsize=(7.0, 2.8), sharex=True, sharey=True)
     for i, (grader, key) in enumerate((("outcome", "outcome"), ("state_match", "state_match"))):
         for j, v in enumerate(defects):
             ax = axes[i, j]
@@ -187,6 +187,40 @@ def fig_llm(rows, out):
     fig.savefig(out / "llm.png", dpi=200)
 
 
+def fig_leaderboard(rows, out):
+    """Slope chart: true vs measured success per model, reference vs R2 omitted."""
+    highlight = {"gpt-5": BLUE, "gpt-4.1": ORANGE}
+    label = dict(LLM_MODELS)
+    fig, axes = plt.subplots(1, 2, figsize=(3.4, 1.9), sharey=True)
+    for ax, v, title in zip(axes, ("reference", "no_approval_invalidation"), ("Reference", "R2 omitted")):
+        cells = [r for r in rows if r["variant"] == v]
+        ends = sorted((float(r["outcome"]), r["model"]) for r in cells if r["model"] in highlight)
+        label_y = {m: y for y, m in ends}
+        if len(ends) == 2 and ends[1][0] - ends[0][0] < 0.08:  # keep the two labels apart
+            mid = (ends[0][0] + ends[1][0]) / 2
+            label_y[ends[0][1]], label_y[ends[1][1]] = mid - 0.04, mid + 0.04
+        for r in sorted(cells, key=lambda r: r["model"] in highlight):
+            color = highlight.get(r["model"], RULE)
+            t, m = float(r["oracle"]), float(r["outcome"])
+            ax.plot([0, 1], [t, m], color=color, lw=2 if r["model"] in highlight else 1.2, zorder=2,
+                    solid_capstyle="round")
+            ax.scatter([0, 1], [t, m], s=14, color=color, zorder=3, edgecolor="white", lw=0.6)
+            if r["model"] in highlight:
+                ax.text(1.06, label_y[r["model"]], label[r["model"]], va="center", fontsize=6.5, color=INK)
+        ax.set_xlim(-0.15, 1.6)
+        ax.set_xticks([0, 1], ["true", "measured"])
+        ax.set_ylim(0.4, 1.05)
+        ax.set_title(title)
+        ax.grid(axis="y", color=RULE, lw=0.5)
+        ax.set_axisbelow(True)
+        ax.tick_params(length=0)
+        for side in ("top", "right", "left"):
+            ax.spines[side].set_visible(False)
+    axes[0].set_ylabel("success on rule tasks")
+    fig.savefig(out / "leaderboard.pdf")
+    fig.savefig(out / "leaderboard.png", dpi=200)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--results", type=Path, default=Path("results"))
@@ -198,6 +232,7 @@ def main():
     fig_verdicts(read(args.results / "e1_replay.csv"), args.out)
     if (args.results / "llm_summary" / "cells.csv").exists():
         fig_llm(read(args.results / "llm_summary" / "cells.csv"), args.out)
+        fig_leaderboard(read(args.results / "llm_summary" / "leaderboard.csv"), args.out)
 
 
 if __name__ == "__main__":
