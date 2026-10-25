@@ -14,3 +14,6 @@ Each bibliography entry in `refs.bib` was checked against a primary record.
 | demillo1978hints | Crossref, DOI 10.1109/C-M.1978.218136 | Computer 11(4):34-41, April 1978 |
 | jia2011mutation | Crossref, DOI 10.1109/TSE.2010.62 | IEEE TSE 37(5):649-678, 2011 |
 | mckeeman1998differential | Original article PDF (journal pages) | Digital Technical Journal 10(1), pp. 100-107 (8 pages, header on every page) |
+
+Reproduce with `python paper/verify_sources.py` (arXiv API, Crossref API, and the
+McKeeman article PDF; prints PASS/FAIL per field). Prose checks: `python paper/style_check.py`.
