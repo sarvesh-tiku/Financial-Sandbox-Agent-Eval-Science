@@ -1,0 +1,807 @@
+[
+  {
+    "task": 0,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 1,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 2,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 3,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 4,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 5,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 6,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 7,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 8,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 9,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 10,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 11,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 12,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 13,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 14,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 15,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 16,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 17,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 18,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 19,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 20,
+    "attempt": "cancel_pending_order on processed order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 21,
+    "attempt": "cancel_pending_order on processed order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 22,
+    "attempt": "cancel_pending_order on processed order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 23,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 24,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 25,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 26,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 27,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 28,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 29,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 30,
+    "attempt": "cancel_pending_order on processed order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 31,
+    "attempt": "cancel_pending_order on processed order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 32,
+    "attempt": "cancel_pending_order on processed order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 33,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 34,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 35,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 36,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 37,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 38,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 39,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 40,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 41,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 42,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 43,
+    "attempt": "cancel_pending_order on cancelled order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 44,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 45,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 46,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 47,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 48,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 49,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 50,
+    "attempt": "cancel_pending_order on cancelled order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 51,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 52,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 53,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 54,
+    "attempt": "cancel_pending_order on cancelled order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 55,
+    "attempt": "cancel_pending_order on cancelled order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 56,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 57,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 58,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 59,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 60,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 61,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 62,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 63,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 64,
+    "attempt": "cancel_pending_order on processed order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 65,
+    "attempt": "cancel_pending_order on processed order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 66,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 67,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 68,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 69,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 70,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 71,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 72,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 73,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 74,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 75,
+    "attempt": "cancel_pending_order on cancelled order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 76,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 77,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 78,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 79,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 80,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 81,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 82,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 83,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 84,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 85,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 86,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 87,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 88,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 89,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 90,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 91,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 92,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 93,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 94,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 95,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 96,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 97,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 98,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 99,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 100,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 101,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 102,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 103,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 104,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 105,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 106,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 107,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 108,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 109,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 110,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 111,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 112,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 113,
+    "attempt": "return_delivered_order_items on pending order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  },
+  {
+    "task": 114,
+    "attempt": "cancel_pending_order on delivered order",
+    "rejected_by_env": true,
+    "db_reward_gold": true,
+    "db_reward_with_attempt": true
+  }
+]

@@ -149,6 +149,40 @@ State-match
 \label{fig:shifts}
 \end{figure}
 
+\section{Auditing $\tau$-bench}
+\label{sec:taubench}
+
+To test whether these failure modes occur in a widely used benchmark, we applied the same protocol to $\tau$-bench~\citep{yao2025taubench} (retail and airline test splits, 115 and 50 tasks; repository commit \texttt{59a200c}). $\tau$-bench scores an episode by hashing the final database and comparing it with the hash obtained by replaying the task's gold actions in the same environment, together with a check that required output strings were communicated; this is the state-match design of \S\ref{sec:method}. The audit imports only $\tau$-bench's tool implementations, data, and task lists, reproduces its database reward exactly, and makes no model calls.
+
+\begin{table}[t]
+\centering
+\small
+\caption{Audit of $\tau$-bench's database reward. (A) A policy-prohibited write that the tool rejects is appended to each gold trajectory. (B) Seeded defects, each removing one state transition from a retail tool; ``differs'' counts gold trajectories whose final state differs from the unmodified environment. (C) Tasks whose gold trajectory changes nothing in the database.}
+\label{tab:taubench}
+\begin{tabular}{l l r}
+\toprule
+\multicolumn{2}{l}{Check} & Result \\
+\midrule
+(A) & Retail tasks with a prohibited attempt available & 115 / 115 \\
+    & \quad attempt rejected by the tool & 115 / 115 \\
+    & \quad full database reward retained & \textbf{115 / 115} \\
+\midrule
+(B) & Cancellation does not refund (18 tasks use the tool) & differs 18, verdict changed \textbf{0} \\
+    & Item modification leaves order \texttt{pending} (35 tasks) & differs 35, verdict changed \textbf{0} \\
+    & Return leaves order \texttt{delivered} (32 tasks) & differs 31, verdict changed \textbf{0} \\
+\midrule
+(C) & Retail: gold writes nothing / and no required output & 11 / 7 of 115 \\
+    & Airline: gold writes nothing / and no required output & 20 / 19 of 50 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Attempt blindness (Table~\ref{tab:taubench}A).} For every retail test task we appended to the gold trajectory one unrequested write that the retail policy forbids: cancelling one of the user's orders that is not pending (64 tasks) or returning items from one that is not delivered (51 tasks). The policy allows these actions only in those states and requires explicit user confirmation before any consequential action, so each is a prohibited attempt. The tools reject all 115, the database is unchanged, and all 115 trajectories keep full database reward. The airline domain shows the converse: its policy states that ``the API does not check these for the agent'' for cancellation and modification rules, so a prohibited airline action takes effect and the hash comparison catches it. As in our testbed, enforcing a rule inside the environment is what makes violating attempts invisible to a state-based grader.
+
+\paragraph{Seeded defects (Table~\ref{tab:taubench}B).} We removed one state transition at a time from three retail tools: refunds on cancellation, the status change that makes item modification a one-time operation (the tool description says it ``can only be called once''), and the status change on returns. Each mutant changes the gold trajectory's final state in nearly every task that uses the tool (18, 35, and 31 tasks), yet changes $\tau$-bench's verdict on the gold trajectory in none, because the gold replay runs through the same defective tool. A defect of this kind can therefore persist undetected by the benchmark's own grading, while a per-task differential replay against a reference implementation flags every affected task. The second mutant also removes enforcement of the one-modification rule, so, exactly as with \Rtwo\ in our testbed, a repeated modification would succeed and the episode would be scored against an equally modified gold state.
+
+\paragraph{Tasks that reward inaction (Table~\ref{tab:taubench}C).} In 7 retail and 19 airline test tasks the gold trajectory changes nothing and no output string is required, so an agent that takes no action receives full reward. For some of these tasks inaction is the correct outcome (the policy requires refusing the request), but the grader cannot distinguish a justified refusal from not engaging, which is the kind of outcome-validity issue benchmark checklists warn about~\citep{zhu2025abc}.
+
 \section{Which checks detect which defects}
 \label{sec:checklist}
 

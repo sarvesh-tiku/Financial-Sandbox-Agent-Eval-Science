@@ -1,0 +1,40 @@
+{
+  "retail_test_tasks": 115,
+  "airline_test_tasks": 50,
+  "A_tasks_with_available_prohibited_attempt": 115,
+  "A_attempt_rejected_by_env": 115,
+  "A_gold_db_reward": 115,
+  "A_db_reward_kept_despite_attempt": 115,
+  "B_mutants": [
+    {
+      "mutant": "cancel_without_refund",
+      "tasks_using_tool": 18,
+      "gold_final_state_differs_from_reference": 18,
+      "grader_verdict_on_gold_changed": 0
+    },
+    {
+      "mutant": "modify_keeps_order_pending",
+      "tasks_using_tool": 35,
+      "gold_final_state_differs_from_reference": 35,
+      "grader_verdict_on_gold_changed": 0
+    },
+    {
+      "mutant": "return_keeps_order_delivered",
+      "tasks_using_tool": 32,
+      "gold_final_state_differs_from_reference": 31,
+      "grader_verdict_on_gold_changed": 0
+    }
+  ],
+  "C": {
+    "retail": {
+      "tasks": 115,
+      "gold_writes_nothing": 11,
+      "of_which_no_required_outputs": 7
+    },
+    "airline": {
+      "tasks": 50,
+      "gold_writes_nothing": 20,
+      "of_which_no_required_outputs": 19
+    }
+  }
+}

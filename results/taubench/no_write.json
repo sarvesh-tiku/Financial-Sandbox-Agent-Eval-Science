@@ -1,0 +1,992 @@
+[
+  {
+    "domain": "retail",
+    "task": 0,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 1,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 2,
+    "gold_writes": true,
+    "requires_outputs": true
+  },
+  {
+    "domain": "retail",
+    "task": 3,
+    "gold_writes": true,
+    "requires_outputs": true
+  },
+  {
+    "domain": "retail",
+    "task": 4,
+    "gold_writes": true,
+    "requires_outputs": true
+  },
+  {
+    "domain": "retail",
+    "task": 5,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 6,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 7,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 8,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 9,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 10,
+    "gold_writes": false,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 11,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 12,
+    "gold_writes": false,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 13,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 14,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 15,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 16,
+    "gold_writes": true,
+    "requires_outputs": true
+  },
+  {
+    "domain": "retail",
+    "task": 17,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 18,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 19,
+    "gold_writes": true,
+    "requires_outputs": true
+  },
+  {
+    "domain": "retail",
+    "task": 20,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 21,
+    "gold_writes": true,
+    "requires_outputs": true
+  },
+  {
+    "domain": "retail",
+    "task": 22,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 23,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 24,
+    "gold_writes": false,
+    "requires_outputs": true
+  },
+  {
+    "domain": "retail",
+    "task": 25,
+    "gold_writes": false,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 26,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 27,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 28,
+    "gold_writes": true,
+    "requires_outputs": true
+  },
+  {
+    "domain": "retail",
+    "task": 29,
+    "gold_writes": true,
+    "requires_outputs": true
+  },
+  {
+    "domain": "retail",
+    "task": 30,
+    "gold_writes": true,
+    "requires_outputs": true
+  },
+  {
+    "domain": "retail",
+    "task": 31,
+    "gold_writes": true,
+    "requires_outputs": true
+  },
+  {
+    "domain": "retail",
+    "task": 32,
+    "gold_writes": true,
+    "requires_outputs": true
+  },
+  {
+    "domain": "retail",
+    "task": 33,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 34,
+    "gold_writes": true,
+    "requires_outputs": true
+  },
+  {
+    "domain": "retail",
+    "task": 35,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 36,
+    "gold_writes": true,
+    "requires_outputs": true
+  },
+  {
+    "domain": "retail",
+    "task": 37,
+    "gold_writes": true,
+    "requires_outputs": true
+  },
+  {
+    "domain": "retail",
+    "task": 38,
+    "gold_writes": true,
+    "requires_outputs": true
+  },
+  {
+    "domain": "retail",
+    "task": 39,
+    "gold_writes": true,
+    "requires_outputs": true
+  },
+  {
+    "domain": "retail",
+    "task": 40,
+    "gold_writes": true,
+    "requires_outputs": true
+  },
+  {
+    "domain": "retail",
+    "task": 41,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 42,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 43,
+    "gold_writes": true,
+    "requires_outputs": true
+  },
+  {
+    "domain": "retail",
+    "task": 44,
+    "gold_writes": true,
+    "requires_outputs": true
+  },
+  {
+    "domain": "retail",
+    "task": 45,
+    "gold_writes": true,
+    "requires_outputs": true
+  },
+  {
+    "domain": "retail",
+    "task": 46,
+    "gold_writes": true,
+    "requires_outputs": true
+  },
+  {
+    "domain": "retail",
+    "task": 47,
+    "gold_writes": true,
+    "requires_outputs": true
+  },
+  {
+    "domain": "retail",
+    "task": 48,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 49,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 50,
+    "gold_writes": false,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 51,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 52,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 53,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 54,
+    "gold_writes": true,
+    "requires_outputs": true
+  },
+  {
+    "domain": "retail",
+    "task": 55,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 56,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 57,
+    "gold_writes": false,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 58,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 59,
+    "gold_writes": true,
+    "requires_outputs": true
+  },
+  {
+    "domain": "retail",
+    "task": 60,
+    "gold_writes": true,
+    "requires_outputs": true
+  },
+  {
+    "domain": "retail",
+    "task": 61,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 62,
+    "gold_writes": false,
+    "requires_outputs": true
+  },
+  {
+    "domain": "retail",
+    "task": 63,
+    "gold_writes": true,
+    "requires_outputs": true
+  },
+  {
+    "domain": "retail",
+    "task": 64,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 65,
+    "gold_writes": false,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 66,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 67,
+    "gold_writes": false,
+    "requires_outputs": true
+  },
+  {
+    "domain": "retail",
+    "task": 68,
+    "gold_writes": false,
+    "requires_outputs": true
+  },
+  {
+    "domain": "retail",
+    "task": 69,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 70,
+    "gold_writes": true,
+    "requires_outputs": true
+  },
+  {
+    "domain": "retail",
+    "task": 71,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 72,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 73,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 74,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 75,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 76,
+    "gold_writes": true,
+    "requires_outputs": true
+  },
+  {
+    "domain": "retail",
+    "task": 77,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 78,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 79,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 80,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 81,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 82,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 83,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 84,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 85,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 86,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 87,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 88,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 89,
+    "gold_writes": true,
+    "requires_outputs": true
+  },
+  {
+    "domain": "retail",
+    "task": 90,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 91,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 92,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 93,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 94,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 95,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 96,
+    "gold_writes": true,
+    "requires_outputs": true
+  },
+  {
+    "domain": "retail",
+    "task": 97,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 98,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 99,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 100,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 101,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 102,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 103,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 104,
+    "gold_writes": true,
+    "requires_outputs": true
+  },
+  {
+    "domain": "retail",
+    "task": 105,
+    "gold_writes": true,
+    "requires_outputs": true
+  },
+  {
+    "domain": "retail",
+    "task": 106,
+    "gold_writes": false,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 107,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 108,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 109,
+    "gold_writes": true,
+    "requires_outputs": true
+  },
+  {
+    "domain": "retail",
+    "task": 110,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 111,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 112,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 113,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "retail",
+    "task": 114,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 0,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 1,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 2,
+    "gold_writes": true,
+    "requires_outputs": true
+  },
+  {
+    "domain": "airline",
+    "task": 3,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 4,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 5,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 6,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 7,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 8,
+    "gold_writes": true,
+    "requires_outputs": true
+  },
+  {
+    "domain": "airline",
+    "task": 9,
+    "gold_writes": true,
+    "requires_outputs": true
+  },
+  {
+    "domain": "airline",
+    "task": 10,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 11,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 12,
+    "gold_writes": false,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 13,
+    "gold_writes": false,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 14,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 15,
+    "gold_writes": false,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 16,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 17,
+    "gold_writes": false,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 18,
+    "gold_writes": false,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 19,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 20,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 21,
+    "gold_writes": false,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 22,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 23,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 24,
+    "gold_writes": false,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 25,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 26,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 27,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 28,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 29,
+    "gold_writes": false,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 30,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 31,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 32,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 33,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 34,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 35,
+    "gold_writes": false,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 36,
+    "gold_writes": false,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 37,
+    "gold_writes": false,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 38,
+    "gold_writes": false,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 39,
+    "gold_writes": false,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 40,
+    "gold_writes": false,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 41,
+    "gold_writes": false,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 42,
+    "gold_writes": false,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 43,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 44,
+    "gold_writes": false,
+    "requires_outputs": true
+  },
+  {
+    "domain": "airline",
+    "task": 45,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 46,
+    "gold_writes": true,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 47,
+    "gold_writes": false,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 48,
+    "gold_writes": false,
+    "requires_outputs": false
+  },
+  {
+    "domain": "airline",
+    "task": 49,
+    "gold_writes": false,
+    "requires_outputs": false
+  }
+]

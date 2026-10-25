@@ -145,6 +145,48 @@ def fig_verdicts(rows, out):
     fig.savefig(out / "verdicts.png", dpi=200)
 
 
+LLM_MODELS = [("haiku", "Claude Haiku"), ("sonnet", "Claude Sonnet"), ("gpt-4o-mini", "GPT-4o mini"),
+              ("gpt-4.1-mini", "GPT-4.1 mini"), ("gpt-5-mini", "GPT-5 mini")]
+
+
+def fig_llm(rows, out):
+    defects = VARIANTS[1:]
+    fig, axes = plt.subplots(2, 3, figsize=(7.0, 3.3), sharex=True, sharey=True)
+    for i, (grader, key) in enumerate((("outcome", "outcome"), ("state_match", "state_match"))):
+        for j, v in enumerate(defects):
+            ax = axes[i, j]
+            for y, (m, _) in enumerate(LLM_MODELS):
+                r = next((r for r in rows if r["model"] == m and r["variant"] == v and r["scope"] == "affected"), None)
+                if r is None:
+                    continue
+                t, meas = float(r["oracle"]), float(r[key])
+                ax.plot([t, meas], [y, y], color=RULE, lw=2, zorder=1, solid_capstyle="round")
+                ax.scatter([t], [y], s=30, facecolor="white", edgecolor=INK2, lw=1.2, zorder=2)
+                ax.scatter([meas], [y], s=30, color=BLUE, edgecolor="white", lw=1, zorder=3)
+                ax.text(1.12, y, f"n={r['n']}", va="center", ha="left", fontsize=6, color=INK2)
+            ax.set_xlim(-0.08, 1.08)
+            ax.set_xticks([0, 0.5, 1], ["0", ".5", "1"])
+            ax.grid(axis="x", color=RULE, lw=0.5)
+            ax.set_axisbelow(True)
+            ax.tick_params(length=0)
+            for side in ("top", "right", "left"):
+                ax.spines[side].set_visible(False)
+            if i == 0:
+                ax.set_title(VARIANT_LABEL[v])
+            if j == 0:
+                ax.set_ylabel(GRADER_LABEL[grader], color=INK)
+    axes[0, 0].set_yticks(range(len(LLM_MODELS)), [label for _, label in LLM_MODELS])
+    axes[0, 0].invert_yaxis()
+    for ax in axes[1]:
+        ax.set_xlabel("success rate on affected tasks")
+    handles = [plt.Line2D([], [], marker="o", ls="", markerfacecolor="white", markeredgecolor=INK2,
+                          label="true (specification oracle)"),
+               plt.Line2D([], [], marker="o", ls="", color=BLUE, label="measured (grader)")]
+    fig.legend(handles=handles, loc="upper center", ncol=2, frameon=False, bbox_to_anchor=(0.5, 1.05))
+    fig.savefig(out / "llm.pdf")
+    fig.savefig(out / "llm.png", dpi=200)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--results", type=Path, default=Path("results"))
@@ -154,6 +196,8 @@ def main():
     fig_profiles(read(args.results / "e2_profiles.csv"), args.out)
     fig_shifts(read(args.results / "e3_paired.csv"), args.out)
     fig_verdicts(read(args.results / "e1_replay.csv"), args.out)
+    if (args.results / "llm_summary" / "cells.csv").exists():
+        fig_llm(read(args.results / "llm_summary" / "cells.csv"), args.out)
 
 
 if __name__ == "__main__":
