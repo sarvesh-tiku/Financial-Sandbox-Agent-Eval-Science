@@ -1,0 +1,9 @@
+{"task": "82e2fac_1", "mutant": "reference", "success": true, "crashed": false, "num_tests": 2, "num_failures": 0}
+{"task": "692c77d_1", "mutant": "post", "success": false, "crashed": false, "num_tests": 7, "num_failures": 2}
+{"task": "692c77d_2", "mutant": "patch", "success": false, "crashed": false, "num_tests": 7, "num_failures": 2}
+{"task": "2a163ab_1", "mutant": "reference", "success": true, "crashed": false, "num_tests": 6, "num_failures": 0}
+{"task": "2a163ab_3", "mutant": "reference", "success": true, "crashed": false, "num_tests": 6, "num_failures": 0}
+{"task": "6104387_1", "mutant": "delete", "success": false, "crashed": false, "num_tests": 10, "num_failures": 2}
+{"task": "6104387_3", "mutant": "reference", "success": true, "crashed": false, "num_tests": 10, "num_failures": 0}
+{"task": "29caf6f_1", "mutant": "post", "success": false, "crashed": false, "num_tests": 8, "num_failures": 6}
+{"task": "29caf6f_3", "mutant": "post", "success": false, "crashed": false, "num_tests": 8, "num_failures": 6}

@@ -145,12 +145,13 @@ def fig_verdicts(rows, out):
     fig.savefig(out / "verdicts.png", dpi=200)
 
 
-LLM_MODELS = [("gpt-4o-mini", "GPT-4o mini"), ("gpt-4.1-mini", "GPT-4.1 mini"), ("gpt-5-mini", "GPT-5 mini")]
+LLM_MODELS = [("gpt-4o-mini", "GPT-4o mini"), ("gpt-4.1-mini", "GPT-4.1 mini"), ("gpt-5-mini", "GPT-5 mini"),
+              ("gpt-4.1", "GPT-4.1"), ("gpt-5", "GPT-5")]
 
 
 def fig_llm(rows, out):
     defects = VARIANTS[1:]
-    fig, axes = plt.subplots(2, 3, figsize=(7.0, 2.9), sharex=True, sharey=True)
+    fig, axes = plt.subplots(2, 3, figsize=(7.0, 3.6), sharex=True, sharey=True)
     for i, (grader, key) in enumerate((("outcome", "outcome"), ("state_match", "state_match"))):
         for j, v in enumerate(defects):
             ax = axes[i, j]

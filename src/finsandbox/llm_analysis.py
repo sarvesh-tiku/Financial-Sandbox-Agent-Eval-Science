@@ -19,7 +19,7 @@ from statistics import mean
 from .replay import VARIANTS
 from .rollout import Session
 
-MODEL_ORDER = ["gpt-4o-mini", "gpt-4.1-mini", "gpt-5-mini"]
+MODEL_ORDER = ["gpt-4o-mini", "gpt-4.1-mini", "gpt-5-mini", "gpt-4.1", "gpt-5"]
 AFFECTED = {"no_freeze_propagation": "R1_freeze_propagation",
             "no_approval_invalidation": "R2_approval_invalidation",
             "no_idempotency": "R3_idempotency"}
