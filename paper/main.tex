@@ -88,11 +88,18 @@ Reference      & 0 & 0 & 2 & 0 & 0 & -- & 2 & 0 & 0 & -- \\
 \end{tabular}
 \end{table}
 
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{figures/verdicts.pdf}
+\caption{E1: verdict of each grader on every rule-task trajectory, by environment, relative to the specification oracle. The action sequence in each row is fixed, so every change along a row is caused by the environment. Control trajectories (not shown) agree with the oracle in every cell.}
+\label{fig:verdicts}
+\end{figure}
+
 \paragraph{The oracle and the variants behave as specified.} In the reference environment, implemented and expected transitions agree at every step of all 15 scripts, and the oracle's verdict matches the valid/invalid label of every script. Across the three variants, all 21 control episodes, including the near-miss controls that execute each defective code path, show zero discrepancies and identical grader verdicts. Discrepancies appear only on tasks that exercise the omitted rule (Table~\ref{tab:e1}).
 
 \paragraph{Attempt blindness exists independently of fidelity.} In the \emph{correct} environment, both graders pass the two invalid trajectories in which the agent attempts a prohibited execution that the environment rejects (freezing an account and then trying to execute its pending transfer; executing every queued transfer without checking for a frozen source). The final state is identical to that of a careful agent, so neither an outcome predicate nor a state comparison can see the attempt. As a result, both graders give freeze awareness zero credit in the reference environment although it is worth two tasks (Table~\ref{tab:e2}), and the profile ranking already contains two inversions. Detecting these errors requires checking the action log, not the state.
 
-\paragraph{Each omission changes conclusions, and the direction depends on the grader.} Figure~\ref{fig:profiles} shows measured against true success for the eight profiles.
+\paragraph{Each omission changes conclusions, and the direction depends on the grader.} Figure~\ref{fig:verdicts} shows every verdict change at the level of individual trajectories; Figure~\ref{fig:profiles} shows measured against true success for the eight profiles.
 \begin{itemize}
   \item \emph{\Rone\ omitted.} Under the outcome grader, a competent agent that freezes the account is failed because the pending transfer is not marked blocked, and an agent that skips a frozen account's transfer is failed because the queue is not empty. Meanwhile the careless queue-drainer is passed although money left a frozen account. Freeze awareness now \emph{costs} one task (credit $-1$ against a true $+2$), the ranking falls from $\tau_b{=}0.75$ to $0.49$, and inversions rise from 2 to 6 of 27 distinguishable pairs. The state-match grader shows the opposite: because the defect lets prohibited executions take effect, mistakes become visible in the final state, and the ranking becomes perfect ($\tau_b{=}1.0$). The defect fixes this grader's attempt blindness while corrupting the environment it scores.
   \item \emph{\Rtwo\ omitted.} An agent that changes the payee and executes without re-approval is passed by \emph{both} graders. The state-match grader fails here because the gold trajectory itself runs in the defective environment: its re-approval call is rejected (the transfer never returned to pending), so the gold run ends in the same stale-approval state. The correct trajectory is also passed while executing under a stale approval record, a silent environment violation. In E3 the affected task passes for every profile (measured success $1.0$), so it no longer tells agents apart; agents without approval discipline gain up to $+0.74$ (95\% CI $[0.62, 0.86]$).

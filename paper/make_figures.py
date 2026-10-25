@@ -99,6 +99,52 @@ def fig_shifts(rows, out):
     fig.savefig(out / "shifts.png", dpi=200)
 
 
+SHORT_TASK = {"freeze_fraud": "Freeze fraud", "drain_queue_after_freeze": "Drain queue",
+              "payee_change": "Payee change", "payment_retry": "Payment retry"}
+
+
+def fig_verdicts(rows, out):
+    rule_rows = [r for r in rows if r["rule"] != "control"]
+    scripts = list(dict.fromkeys((r["task"], r["script"], r["script_valid"]) for r in rule_rows))
+    agree = "#efeeeb"
+    fig, axes = plt.subplots(1, 2, figsize=(7.0, 2.9), sharey=True, gridspec_kw={"wspace": 0.08})
+    for ax, (grader, err_key) in zip(axes, (("outcome", "grader_error"), ("state_match", "match_error"))):
+        for y, (task, script, valid) in enumerate(scripts):
+            for x, v in enumerate(VARIANTS):
+                r = next(r for r in rule_rows if r["task"] == task and r["script"] == script and r["variant"] == v)
+                err = r[err_key]
+                fill, text = {"false_pass": (ORANGE, "FP"), "false_failure": (BLUE, "FF")}.get(err, (agree, ""))
+                ax.add_patch(plt.Rectangle((x + 0.04, y + 0.06), 0.92, 0.88, color=fill, lw=0))
+                if grader == "state_match":
+                    silent = r["env_violation"] == "True" and r["match_pass"] == "True"
+                else:
+                    silent = r["env_violation"] == "True" and r["grader_pass"] == "True"
+                label = text + ("*" if silent else "")
+                if label:
+                    ax.text(x + 0.5, y + 0.5, label, ha="center", va="center", fontsize=7, fontweight="bold",
+                            color="white" if text else INK)
+        ax.set_xlim(0, len(VARIANTS))
+        ax.set_ylim(len(scripts), 0)
+        ax.set_xticks([i + 0.5 for i in range(len(VARIANTS))],
+                      ["Ref.", "R1\nomitted", "R2\nomitted", "R3\nomitted"])
+        ax.xaxis.tick_top()
+        ax.tick_params(length=0)
+        for side in ax.spines.values():
+            side.set_visible(False)
+        ax.set_title(GRADER_LABEL[grader], pad=16)
+    axes[0].set_yticks([i + 0.5 for i in range(len(scripts))],
+                       [f"{SHORT_TASK[t]}: {s.replace('_', ' ')} ({'valid' if v == 'True' else 'invalid'})"
+                        for t, s, v in scripts])
+    handles = [plt.Rectangle((0, 0), 1, 1, color=c, label=l) for c, l in
+               ((agree, "agrees with oracle"), (ORANGE, "FP  false pass"), (BLUE, "FF  false failure"))]
+    handles.append(plt.Line2D([], [], ls="", marker="$*$", color=INK, markersize=7,
+                              label="passed despite an environment-caused violation"))
+    fig.legend(handles=handles, loc="lower center", ncol=4, frameon=False, bbox_to_anchor=(0.5, -0.1),
+               handlelength=1.2, columnspacing=1.2)
+    fig.savefig(out / "verdicts.pdf")
+    fig.savefig(out / "verdicts.png", dpi=200)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--results", type=Path, default=Path("results"))
@@ -107,6 +153,7 @@ def main():
     args.out.mkdir(parents=True, exist_ok=True)
     fig_profiles(read(args.results / "e2_profiles.csv"), args.out)
     fig_shifts(read(args.results / "e3_paired.csv"), args.out)
+    fig_verdicts(read(args.results / "e1_replay.csv"), args.out)
 
 
 if __name__ == "__main__":
