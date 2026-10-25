@@ -1,0 +1,1272 @@
+[
+  {
+    "domain": "retail",
+    "task": 22,
+    "trial": 0,
+    "reward": 0.0,
+    "tool": "modify_user_address",
+    "args": "{\"user_id\":\"ethan_garcia_1261\",\"address1\":\"101 Highway\",\"address2\":\"\",\"city\":\"New York\",\"state\":\"New York\",\"country\":\"USA\",\"zip\":\"10001\"}",
+    "previous_user_turn": "I'd like to update it to 101 Highway, New York, New York, 10001.",
+    "response": "{\"name\": {\"first_name\": \"Ethan\", \"last_name\": \"Garcia\"}, \"address\": {\"address1\": \"101 Highway\", \"address2\": \"\", \"city\": "
+  },
+  {
+    "domain": "retail",
+    "task": 23,
+    "trial": 0,
+    "reward": 1.0,
+    "tool": "modify_pending_order_items",
+    "args": "{\"order_id\":\"#W3561391\",\"item_ids\":[\"5946177616\"],\"new_item_ids\":[\"7082455361\"],\"payment_method_id\":\"credit_card_7901829\"}",
+    "previous_user_turn": "I'd like to modify it to the same type as the grill I already received from you. Can you help with that?",
+    "response": "{\"order_id\": \"#W3561391\", \"user_id\": \"sofia_hernandez_5364\", \"address\": {\"address1\": \"652 Laurel Lane\", \"address2\": \"Sui"
+  },
+  {
+    "domain": "retail",
+    "task": 32,
+    "trial": 0,
+    "reward": 0.0,
+    "tool": "cancel_pending_order",
+    "args": "{\"order_id\":\"#W9373487\",\"reason\":\"no longer needed\"}",
+    "previous_user_turn": "Let's cancel it, and the reason is \"no longer needed.\"",
+    "response": "{\"order_id\": \"#W9373487\", \"user_id\": \"olivia_lopez_3865\", \"address\": {\"address1\": \"310 Laurel Lane\", \"address2\": \"Suite "
+  },
+  {
+    "domain": "retail",
+    "task": 32,
+    "trial": 0,
+    "reward": 0.0,
+    "tool": "return_delivered_order_items",
+    "args": "{\"order_id\":\"#W7449508\",\"item_ids\":[\"6477915553\"],\"payment_method_id\":\"gift_card_7711863\"}",
+    "previous_user_turn": "Please refund it to an existing gift card.",
+    "response": "{\"order_id\": \"#W7449508\", \"user_id\": \"olivia_lopez_3865\", \"address\": {\"address1\": \"310 Laurel Lane\", \"address2\": \"Suite "
+  },
+  {
+    "domain": "retail",
+    "task": 33,
+    "trial": 0,
+    "reward": 0.0,
+    "tool": "modify_user_address",
+    "args": "{\"user_id\":\"noah_patel_6952\",\"address1\":\"517 Lakeview Drive\",\"address2\":\"Suite 183\",\"city\":\"Seattle\",\"state\":\"WA\",\"country\":\"USA\",\"zip\":\"98195\"}",
+    "previous_user_turn": "Ah, bummer! Since we can't cancel just the office items, I'll just keep the order as is. But hey, could we update my default address to the Seattle one from the order? I'd appreciate it!",
+    "response": "{\"name\": {\"first_name\": \"Noah\", \"last_name\": \"Patel\"}, \"address\": {\"address1\": \"517 Lakeview Drive\", \"address2\": \"Suite "
+  },
+  {
+    "domain": "retail",
+    "task": 39,
+    "trial": 0,
+    "reward": 1.0,
+    "tool": "modify_user_address",
+    "args": "{\"user_id\":\"fatima_taylor_3452\",\"address1\":\"157 Oak Street\",\"address2\":\"Suite 258\",\"city\":\"Phoenix\",\"state\":\"AZ\",\"country\":\"USA\",\"zip\":\"85033\"}",
+    "previous_user_turn": "$46.66 for a t-shirt? That better come with a cape and a superhero alias! For now, let's get cracking on updating my address. Can you use the address from my last order, please?",
+    "response": "{\"name\": {\"first_name\": \"Fatima\", \"last_name\": \"Taylor\"}, \"address\": {\"address1\": \"157 Oak Street\", \"address2\": \"Suite 2"
+  },
+  {
+    "domain": "retail",
+    "task": 54,
+    "trial": 0,
+    "reward": 1.0,
+    "tool": "cancel_pending_order",
+    "args": "{\"order_id\": \"#W4836353\", \"reason\": \"no longer needed\"}",
+    "previous_user_turn": "Cancel both. Reason: no longer needed.",
+    "response": "{\"order_id\": \"#W4836353\", \"user_id\": \"amelia_silva_7726\", \"address\": {\"address1\": \"182 Elm Avenue\", \"address2\": \"Suite 8"
+  },
+  {
+    "domain": "retail",
+    "task": 54,
+    "trial": 0,
+    "reward": 1.0,
+    "tool": "cancel_pending_order",
+    "args": "{\"order_id\":\"#W7342738\",\"reason\":\"no longer needed\"}",
+    "previous_user_turn": "Cancel both. Reason: no longer needed.",
+    "response": "{\"order_id\": \"#W7342738\", \"user_id\": \"amelia_silva_7726\", \"address\": {\"address1\": \"182 Elm Avenue\", \"address2\": \"Suite 8"
+  },
+  {
+    "domain": "retail",
+    "task": 54,
+    "trial": 0,
+    "reward": 1.0,
+    "tool": "return_delivered_order_items",
+    "args": "{\"order_id\":\"#W4597054\",\"item_ids\":[\"5669664287\",\"4900990404\",\"9862136885\",\"6777246137\"],\"payment_method_id\":\"gift_card_3491931\"}",
+    "previous_user_turn": "Return everything from both delivered orders. Refund to my original payment method.",
+    "response": "{\"order_id\": \"#W4597054\", \"user_id\": \"amelia_silva_7726\", \"address\": {\"address1\": \"182 Elm Avenue\", \"address2\": \"Suite 8"
+  },
+  {
+    "domain": "retail",
+    "task": 54,
+    "trial": 0,
+    "reward": 1.0,
+    "tool": "return_delivered_order_items",
+    "args": "{\"order_id\":\"#W7773202\",\"item_ids\":[\"8277474082\"],\"payment_method_id\":\"gift_card_3491931\"}",
+    "previous_user_turn": "Return everything from both delivered orders. Refund to my original payment method.",
+    "response": "{\"order_id\": \"#W7773202\", \"user_id\": \"amelia_silva_7726\", \"address\": {\"address1\": \"182 Elm Avenue\", \"address2\": \"Suite 8"
+  },
+  {
+    "domain": "retail",
+    "task": 71,
+    "trial": 0,
+    "reward": 1.0,
+    "tool": "modify_pending_order_items",
+    "args": "{\"order_id\":\"#W5270061\",\"item_ids\":[\"2492465580\"],\"new_item_ids\":[\"5917587651\"],\"payment_method_id\":\"paypal_7729105\"}",
+    "previous_user_turn": "On second thought, can we process it using PayPal instead? Just to be safe. Thank you!",
+    "response": "{\"order_id\": \"#W5270061\", \"user_id\": \"ivan_khan_7475\", \"address\": {\"address1\": \"159 Hickory Lane\", \"address2\": \"Suite 99"
+  },
+  {
+    "domain": "retail",
+    "task": 72,
+    "trial": 0,
+    "reward": 0.0,
+    "tool": "modify_pending_order_address",
+    "args": "{\"order_id\": \"#W5270061\", \"address1\": \"159 Hickory Lane\", \"address2\": \"Suite 995\", \"city\": \"Charlotte\", \"state\": \"NC\", \"country\": \"USA\", \"zip\": \"28243\"}",
+    "previous_user_turn": "Firstly, I'd like to change the shipping address to my default address, if that's possible. And for the items, could we please adjust the desk lamp to a black color, and modify the backpack to be medium size and polyester material? If you have other color options for the backpack, I'd prefer grey.",
+    "response": "{\"order_id\": \"#W5270061\", \"user_id\": \"ivan_khan_7475\", \"address\": {\"address1\": \"159 Hickory Lane\", \"address2\": \"Suite 99"
+  },
+  {
+    "domain": "retail",
+    "task": 76,
+    "trial": 0,
+    "reward": 1.0,
+    "tool": "cancel_pending_order",
+    "args": "{\"order_id\":\"#W1242543\",\"reason\":\"ordered by mistake\"}",
+    "previous_user_turn": "The reason for cancellation is \"ordered by mistake.\" Thanks for taking care of that for me!",
+    "response": "{\"order_id\": \"#W1242543\", \"user_id\": \"ava_nguyen_6646\", \"address\": {\"address1\": \"874 Cedar Avenue\", \"address2\": \"Suite 7"
+  },
+  {
+    "domain": "retail",
+    "task": 81,
+    "trial": 0,
+    "reward": 0.0,
+    "tool": "cancel_pending_order",
+    "args": "{\"order_id\":\"#W3289292\",\"reason\":\"no longer needed\"}",
+    "previous_user_turn": "The reason for the cancellation is \"no longer needed.\" Thank you.",
+    "response": "{\"order_id\": \"#W3289292\", \"user_id\": \"james_kim_7213\", \"address\": {\"address1\": \"579 Highland Drive\", \"address2\": \"Suite "
+  },
+  {
+    "domain": "retail",
+    "task": 88,
+    "trial": 0,
+    "reward": 1.0,
+    "tool": "cancel_pending_order",
+    "args": "{\"order_id\":\"#W8835847\",\"reason\":\"ordered by mistake\"}",
+    "previous_user_turn": "I\u2019d like to cancel Order ID: #W8835847. The reason is that I ordered it by mistake.",
+    "response": "{\"order_id\": \"#W8835847\", \"user_id\": \"daiki_silva_2903\", \"address\": {\"address1\": \"713 Park Avenue\", \"address2\": \"Suite 8"
+  },
+  {
+    "domain": "retail",
+    "task": 104,
+    "trial": 0,
+    "reward": 0.0,
+    "tool": "modify_pending_order_items",
+    "args": "{\"order_id\":\"#W4860251\",\"item_ids\":[\"5209958006\"],\"new_item_ids\":[\"8964750292\"],\"payment_method_id\":\"credit_card_2112420\"}",
+    "previous_user_turn": "Let\u2019s go with the 2-piece, red, hardshell option. Thanks!",
+    "response": "{\"order_id\": \"#W4860251\", \"user_id\": \"lucas_brown_6720\", \"address\": {\"address1\": \"921 Park Avenue\", \"address2\": \"Suite 8"
+  },
+  {
+    "domain": "retail",
+    "task": 108,
+    "trial": 0,
+    "reward": 1.0,
+    "tool": "exchange_delivered_order_items",
+    "args": "{\"order_id\":\"#W8353027\",\"item_ids\":[\"6245746168\"],\"new_item_ids\":[\"3112842858\"],\"payment_method_id\":\"paypal_1679017\"}",
+    "previous_user_turn": "That sounds fantastic! Let's go with the 1000-piece fantasy theme with an intermediate difficulty level. Thank you!",
+    "response": "{\"order_id\": \"#W8353027\", \"user_id\": \"yara_ito_8499\", \"address\": {\"address1\": \"179 Broadway\", \"address2\": \"Suite 256\", \""
+  },
+  {
+    "domain": "retail",
+    "task": 110,
+    "trial": 0,
+    "reward": 0.0,
+    "tool": "modify_pending_order_address",
+    "args": "{\"order_id\":\"#W1603792\",\"address1\":\"760 Elm Avenue\",\"address2\":\"Suite 564\",\"city\":\"Houston\",\"state\":\"TX\",\"country\":\"USA\",\"zip\":\"77034\"}",
+    "previous_user_turn": "Thanks, but is it possible for you to update the order to the new address that I already have set up for my other orders?",
+    "response": "{\"order_id\": \"#W1603792\", \"user_id\": \"sophia_martin_8570\", \"address\": {\"address1\": \"760 Elm Avenue\", \"address2\": \"Suite "
+  },
+  {
+    "domain": "retail",
+    "task": 16,
+    "trial": 1,
+    "reward": 0.0,
+    "tool": "cancel_pending_order",
+    "args": "{\"order_id\": \"#W5199551\", \"reason\": \"no longer needed\"}",
+    "previous_user_turn": "I don't have the order IDs with me, but I'd like to cancel all pending orders because they're no longer needed. As for the watch, I don't have its order ID either, but I want to return it using the original payment method.",
+    "response": "{\"order_id\": \"#W5199551\", \"user_id\": \"fatima_johnson_7581\", \"address\": {\"address1\": \"123 Elm Street\", \"address2\": \"Suite"
+  },
+  {
+    "domain": "retail",
+    "task": 16,
+    "trial": 1,
+    "reward": 0.0,
+    "tool": "cancel_pending_order",
+    "args": "{\"order_id\": \"#W8665881\", \"reason\": \"no longer needed\"}",
+    "previous_user_turn": "I don't have the order IDs with me, but I'd like to cancel all pending orders because they're no longer needed. As for the watch, I don't have its order ID either, but I want to return it using the original payment method.",
+    "response": "{\"order_id\": \"#W8665881\", \"user_id\": \"fatima_johnson_7581\", \"address\": {\"address1\": \"123 Elm Street\", \"address2\": \"Suite"
+  },
+  {
+    "domain": "retail",
+    "task": 16,
+    "trial": 1,
+    "reward": 0.0,
+    "tool": "return_delivered_order_items",
+    "args": "{\"order_id\":\"#W9389413\",\"item_ids\":[\"1994478369\"],\"payment_method_id\":\"paypal_5364164\"}",
+    "previous_user_turn": "I don't have the order IDs with me, but I'd like to cancel all pending orders because they're no longer needed. As for the watch, I don't have its order ID either, but I want to return it using the original payment method.",
+    "response": "Error: some item not found"
+  },
+  {
+    "domain": "retail",
+    "task": 16,
+    "trial": 1,
+    "reward": 0.0,
+    "tool": "return_delivered_order_items",
+    "args": "{\"order_id\":\"#W5199551\",\"item_ids\":[\"1994478369\"],\"payment_method_id\":\"paypal_5364164\"}",
+    "previous_user_turn": "I don't have the order IDs with me, but I'd like to cancel all pending orders because they're no longer needed. As for the watch, I don't have its order ID either, but I want to return it using the original payment method.",
+    "response": "Error: non-delivered order cannot be returned"
+  },
+  {
+    "domain": "retail",
+    "task": 30,
+    "trial": 1,
+    "reward": 1.0,
+    "tool": "exchange_delivered_order_items",
+    "args": "{\"order_id\":\"#W2692684\",\"item_ids\":[\"3788616824\"],\"new_item_ids\":[\"3788616824\"],\"payment_method_id\":\"gift_card_7711863\"}",
+    "previous_user_turn": "I want to exchange the tablet for the same exact item, no changes. If there's a price difference, please use the same payment method on file.",
+    "response": "Error: new item 3788616824 not found or available"
+  },
+  {
+    "domain": "retail",
+    "task": 49,
+    "trial": 1,
+    "reward": 1.0,
+    "tool": "exchange_delivered_order_items",
+    "args": "{\"order_id\":\"#W3470184\",\"item_ids\":[\"2757705742\"],\"new_item_ids\":[\"1646531091\"],\"payment_method_id\":\"gift_card_7245904\"}",
+    "previous_user_turn": "I'd like to exchange the third item, with the IPX7 rating, for the cheapest earbud that is in the order with the IPX4 rating. Could you help facilitate this exchange, please?",
+    "response": "{\"order_id\": \"#W3470184\", \"user_id\": \"aarav_anderson_8794\", \"address\": {\"address1\": \"931 Maple Drive\", \"address2\": \"Suit"
+  },
+  {
+    "domain": "retail",
+    "task": 54,
+    "trial": 1,
+    "reward": 0.0,
+    "tool": "return_delivered_order_items",
+    "args": "{\"order_id\":\"#W4597054\",\"item_ids\":[\"5669664287\",\"4900990404\",\"9862136885\",\"6777246137\"],\"payment_method_id\":\"gift_card_3491931\"}",
+    "previous_user_turn": "Return everything from delivered order. Cancel pending order.",
+    "response": "{\"order_id\": \"#W4597054\", \"user_id\": \"amelia_silva_7726\", \"address\": {\"address1\": \"182 Elm Avenue\", \"address2\": \"Suite 8"
+  },
+  {
+    "domain": "retail",
+    "task": 54,
+    "trial": 1,
+    "reward": 0.0,
+    "tool": "cancel_pending_order",
+    "args": "{\"order_id\":\"#W4836353\",\"reason\":\"no longer needed\"}",
+    "previous_user_turn": "Return everything from delivered order. Cancel pending order.",
+    "response": "{\"order_id\": \"#W4836353\", \"user_id\": \"amelia_silva_7726\", \"address\": {\"address1\": \"182 Elm Avenue\", \"address2\": \"Suite 8"
+  },
+  {
+    "domain": "retail",
+    "task": 59,
+    "trial": 1,
+    "reward": 1.0,
+    "tool": "cancel_pending_order",
+    "args": "{\"order_id\":\"#W8268610\",\"reason\":\"no longer needed\"}",
+    "previous_user_turn": "I find the wait time unreasonable, so it's \"no longer needed.\"",
+    "response": "{\"order_id\": \"#W8268610\", \"user_id\": \"yusuf_taylor_7149\", \"address\": {\"address1\": \"163 Cedar Street\", \"address2\": \"Suite"
+  },
+  {
+    "domain": "retail",
+    "task": 63,
+    "trial": 1,
+    "reward": 1.0,
+    "tool": "modify_pending_order_items",
+    "args": "{\"order_id\":\"#W5061109\",\"item_ids\":[\"3254583681\"],\"new_item_ids\":[\"2635605237\"],\"payment_method_id\":\"paypal_3742148\"}",
+    "previous_user_turn": "Please add the cheapest one, the blue speaker with the 20-hour battery life and no water resistance, to my order.",
+    "response": "{\"order_id\": \"#W5061109\", \"user_id\": \"chen_johnson_4204\", \"address\": {\"address1\": \"503 Elm Avenue\", \"address2\": \"Suite 6"
+  },
+  {
+    "domain": "retail",
+    "task": 66,
+    "trial": 1,
+    "reward": 1.0,
+    "tool": "cancel_pending_order",
+    "args": "{\"order_id\":\"#W3361211\",\"reason\":\"no longer needed\"}",
+    "previous_user_turn": "No longer needed, please.",
+    "response": "{\"order_id\": \"#W3361211\", \"user_id\": \"aarav_lee_1982\", \"address\": {\"address1\": \"828 River Road\", \"address2\": \"Suite 312\""
+  },
+  {
+    "domain": "retail",
+    "task": 69,
+    "trial": 1,
+    "reward": 1.0,
+    "tool": "cancel_pending_order",
+    "args": "{\"order_id\":\"#W2417020\",\"reason\":\"no longer needed\"}",
+    "previous_user_turn": "I\u2019d like to cancel because I found a better deal elsewhere, so I guess I'll choose \"no longer needed.\"",
+    "response": "{\"order_id\": \"#W2417020\", \"user_id\": \"emma_smith_8564\", \"address\": {\"address1\": \"243 Hillcrest Drive\", \"address2\": \"Suit"
+  },
+  {
+    "domain": "retail",
+    "task": 79,
+    "trial": 1,
+    "reward": 0.0,
+    "tool": "modify_pending_order_items",
+    "args": "{\"order_id\":\"#W8661412\",\"item_ids\":[\"3453331371\"],\"new_item_ids\":[\"7661609223\"],\"payment_method_id\":\"credit_card_7239357\"}",
+    "previous_user_turn": "I'll go with the stainless steel, black option. Hopefully, it's a good choice.",
+    "response": "{\"order_id\": \"#W8661412\", \"user_id\": \"emma_kovacs_9839\", \"address\": {\"address1\": \"637 Pine Lane\", \"address2\": \"Suite 443"
+  },
+  {
+    "domain": "retail",
+    "task": 83,
+    "trial": 1,
+    "reward": 1.0,
+    "tool": "return_delivered_order_items",
+    "args": "{\"order_id\":\"#W9571698\",\"item_ids\":[\"6065192424\"],\"payment_method_id\":\"gift_card_7250692\"}",
+    "previous_user_turn": "Wait, that\u2019s not what I expected! I want it on the credit card and not a gift card! This is seriously annoying. Ugh, fine, just put it back on the gift card, I guess.",
+    "response": "{\"order_id\": \"#W9571698\", \"user_id\": \"chen_silva_7485\", \"address\": {\"address1\": \"139 River Road\", \"address2\": \"Suite 418"
+  },
+  {
+    "domain": "retail",
+    "task": 87,
+    "trial": 1,
+    "reward": 0.0,
+    "tool": "modify_pending_order_address",
+    "args": "{\"order_id\": \"#W2166301\", \"address1\": \"271 Sunset Drive\", \"address2\": \"Suite 421\", \"city\": \"Washington\", \"state\": \"DC\", \"country\": \"USA\", \"zip\": \"20001\"}",
+    "previous_user_turn": "I'd like to, uh, change all my pending order addresses to the one in Washington DC.",
+    "response": "{\"order_id\": \"#W2166301\", \"user_id\": \"yusuf_hernandez_6785\", \"address\": {\"address1\": \"271 Sunset Drive\", \"address2\": \"Su"
+  },
+  {
+    "domain": "retail",
+    "task": 87,
+    "trial": 1,
+    "reward": 0.0,
+    "tool": "modify_pending_order_address",
+    "args": "{\"order_id\":\"#W2466703\",\"address1\":\"271 Sunset Drive\",\"address2\":\"Suite 421\",\"city\":\"Washington\",\"state\":\"DC\",\"country\":\"USA\",\"zip\":\"20001\"}",
+    "previous_user_turn": "I'd like to, uh, change all my pending order addresses to the one in Washington DC.",
+    "response": "{\"order_id\": \"#W2466703\", \"user_id\": \"yusuf_hernandez_6785\", \"address\": {\"address1\": \"271 Sunset Drive\", \"address2\": \"Su"
+  },
+  {
+    "domain": "retail",
+    "task": 87,
+    "trial": 1,
+    "reward": 0.0,
+    "tool": "modify_user_address",
+    "args": "{\"user_id\":\"yusuf_hernandez_6785\",\"address1\":\"271 Sunset Drive\",\"address2\":\"Suite 421\",\"city\":\"Washington\",\"state\":\"DC\",\"country\":\"USA\",\"zip\":\"20001\"}",
+    "previous_user_turn": "Oh, sorry, I don't recall the specifics. But, it's on one of the orders.",
+    "response": "{\"name\": {\"first_name\": \"Yusuf\", \"last_name\": \"Hernandez\"}, \"address\": {\"address1\": \"271 Sunset Drive\", \"address2\": \"Sui"
+  },
+  {
+    "domain": "retail",
+    "task": 99,
+    "trial": 1,
+    "reward": 0.0,
+    "tool": "exchange_delivered_order_items",
+    "args": "{\"order_id\":\"#W3916020\",\"item_ids\":[\"7758198585\",\"4068787148\",\"5996159312\"],\"new_item_ids\":[\"7758198585\",\"5645314103\",\"8363011723\"],\"payment_method_id\":\"credit_card_3951670\"}",
+    "previous_user_turn": "I'd like the 20MP resolution with 3x zoom and SD card storage for the camera exchange. Thanks!",
+    "response": "Error: 5996159312 not found"
+  },
+  {
+    "domain": "retail",
+    "task": 99,
+    "trial": 1,
+    "reward": 0.0,
+    "tool": "exchange_delivered_order_items",
+    "args": "{\"order_id\": \"#W3916020\", \"item_ids\": [\"7758198585\", \"4068787148\"], \"new_item_ids\": [\"7758198585\", \"5645314103\"], \"payment_method_id\": \"credit_card_3951670\"}",
+    "previous_user_turn": "I'd like the 20MP resolution with 3x zoom and SD card storage for the camera exchange. Thanks!",
+    "response": "{\"order_id\": \"#W3916020\", \"user_id\": \"sofia_li_9219\", \"address\": {\"address1\": \"285 Elm Street\", \"address2\": \"Suite 121\","
+  },
+  {
+    "domain": "retail",
+    "task": 99,
+    "trial": 1,
+    "reward": 0.0,
+    "tool": "exchange_delivered_order_items",
+    "args": "{\"order_id\":\"#W4689314\",\"item_ids\":[\"5996159312\"],\"new_item_ids\":[\"8363011723\"],\"payment_method_id\":\"credit_card_3951670\"}",
+    "previous_user_turn": "I'd like the 20MP resolution with 3x zoom and SD card storage for the camera exchange. Thanks!",
+    "response": "{\"order_id\": \"#W4689314\", \"user_id\": \"sofia_li_9219\", \"address\": {\"address1\": \"786 Elm Street\", \"address2\": \"Suite 546\","
+  },
+  {
+    "domain": "retail",
+    "task": 99,
+    "trial": 1,
+    "reward": 0.0,
+    "tool": "cancel_pending_order",
+    "args": "{\"order_id\":\"#W8855135\",\"reason\":\"no longer needed\"}",
+    "previous_user_turn": "The reason is \"no longer needed.\"",
+    "response": "{\"order_id\": \"#W8855135\", \"user_id\": \"sofia_li_9219\", \"address\": {\"address1\": \"786 Elm Street\", \"address2\": \"Suite 546\","
+  },
+  {
+    "domain": "retail",
+    "task": 100,
+    "trial": 1,
+    "reward": 1.0,
+    "tool": "exchange_delivered_order_items",
+    "args": "{\"order_id\":\"#W4689314\",\"item_ids\":[\"5996159312\"],\"new_item_ids\":[\"8363011723\"],\"payment_method_id\":\"credit_card_3951670\"}",
+    "previous_user_turn": "I'd like to exchange the camera for one with slightly lower resolution, keeping everything else the same. Let's use the Visa card for any price difference.",
+    "response": "{\"order_id\": \"#W4689314\", \"user_id\": \"sofia_li_9219\", \"address\": {\"address1\": \"786 Elm Street\", \"address2\": \"Suite 546\","
+  },
+  {
+    "domain": "retail",
+    "task": 19,
+    "trial": 2,
+    "reward": 0.0,
+    "tool": "return_delivered_order_items",
+    "args": "{\"order_id\":\"#W2890441\",\"item_ids\":[\"2366567022\"],\"payment_method_id\":\"credit_card_1061405\"}",
+    "previous_user_turn": "Let's just return the water bottle then.",
+    "response": "{\"order_id\": \"#W2890441\", \"user_id\": \"mei_davis_8935\", \"address\": {\"address1\": \"698 Maple Drive\", \"address2\": \"Suite 465"
+  },
+  {
+    "domain": "retail",
+    "task": 21,
+    "trial": 2,
+    "reward": 0.0,
+    "tool": "modify_pending_order_items",
+    "args": "{\"order_id\":\"#W9911714\",\"item_ids\":[\"1340995114\"],\"new_item_ids\":[\"9408160950\"],\"payment_method_id\":\"gift_card_4332117\"}",
+    "previous_user_turn": "Let's go with the second option, the Smart Watch in Gold with the leather band. Thanks.",
+    "response": "Error: new item 9408160950 not found or available"
+  },
+  {
+    "domain": "retail",
+    "task": 28,
+    "trial": 2,
+    "reward": 0.0,
+    "tool": "cancel_pending_order",
+    "args": "{\"order_id\":\"#W2575533\",\"reason\":\"no longer needed\"}",
+    "previous_user_turn": "No longer needed.",
+    "response": "{\"order_id\": \"#W2575533\", \"user_id\": \"isabella_johansson_2152\", \"address\": {\"address1\": \"313 Chestnut Street\", \"address2"
+  },
+  {
+    "domain": "retail",
+    "task": 32,
+    "trial": 2,
+    "reward": 1.0,
+    "tool": "return_delivered_order_items",
+    "args": "{\"order_id\":\"#W7449508\",\"item_ids\":[\"6477915553\"],\"payment_method_id\":\"gift_card_7711863\"}",
+    "previous_user_turn": "Please process the return, and have the refund go back to the original payment method, which is the gift card.",
+    "response": "{\"order_id\": \"#W7449508\", \"user_id\": \"olivia_lopez_3865\", \"address\": {\"address1\": \"310 Laurel Lane\", \"address2\": \"Suite "
+  },
+  {
+    "domain": "retail",
+    "task": 35,
+    "trial": 2,
+    "reward": 1.0,
+    "tool": "modify_pending_order_items",
+    "args": "{\"order_id\":\"#W9672333\",\"item_ids\":[\"1684786391\"],\"new_item_ids\":[\"5052031638\"],\"payment_method_id\":\"paypal_7664977\"}",
+    "previous_user_turn": "Go with the first one, the 13-inch i5 in silver.",
+    "response": "{\"order_id\": \"#W9672333\", \"user_id\": \"aarav_santos_2259\", \"address\": {\"address1\": \"822 Elm Avenue\", \"address2\": \"Suite 5"
+  },
+  {
+    "domain": "retail",
+    "task": 38,
+    "trial": 2,
+    "reward": 1.0,
+    "tool": "cancel_pending_order",
+    "args": "{\"order_id\":\"#W9348897\",\"reason\":\"ordered by mistake\"}",
+    "previous_user_turn": "Ordered by mistake.",
+    "response": "{\"order_id\": \"#W9348897\", \"user_id\": \"daiki_sanchez_3253\", \"address\": {\"address1\": \"113 Hickory Lane\", \"address2\": \"Suit"
+  },
+  {
+    "domain": "retail",
+    "task": 62,
+    "trial": 2,
+    "reward": 1.0,
+    "tool": "cancel_pending_order",
+    "args": "{\"order_id\":\"#W5061109\",\"reason\":\"ordered by mistake\"}",
+    "previous_user_turn": "Oh, I didn't realize it was over $300. Could you cancel it from my order? I thought it was cheaper.",
+    "response": "{\"order_id\": \"#W5061109\", \"user_id\": \"chen_johnson_4204\", \"address\": {\"address1\": \"503 Elm Avenue\", \"address2\": \"Suite 6"
+  },
+  {
+    "domain": "retail",
+    "task": 63,
+    "trial": 2,
+    "reward": 1.0,
+    "tool": "modify_pending_order_items",
+    "args": "{\"order_id\":\"#W5061109\",\"item_ids\":[\"3254583681\"],\"new_item_ids\":[\"2635605237\"],\"payment_method_id\":\"paypal_3742148\"}",
+    "previous_user_turn": "Could you please add the cheapest one, the blue speaker with a price of $271.89, to my order?",
+    "response": "{\"order_id\": \"#W5061109\", \"user_id\": \"chen_johnson_4204\", \"address\": {\"address1\": \"503 Elm Avenue\", \"address2\": \"Suite 6"
+  },
+  {
+    "domain": "retail",
+    "task": 66,
+    "trial": 2,
+    "reward": 1.0,
+    "tool": "cancel_pending_order",
+    "args": "{\"order_id\":\"#W3361211\",\"reason\":\"no longer needed\"}",
+    "previous_user_turn": "The reason for cancellation is \"no longer needed.\"",
+    "response": "{\"order_id\": \"#W3361211\", \"user_id\": \"aarav_lee_1982\", \"address\": {\"address1\": \"828 River Road\", \"address2\": \"Suite 312\""
+  },
+  {
+    "domain": "retail",
+    "task": 74,
+    "trial": 2,
+    "reward": 0.0,
+    "tool": "exchange_delivered_order_items",
+    "args": "{\"order_id\": \"#W5166363\", \"item_ids\": [\"3334537816\"], \"new_item_ids\": [\"3265035808\"], \"payment_method_id\": \"paypal_5914760\"}",
+    "previous_user_turn": "Um, I\u2019d like to cancel order ID #W3189752, please.",
+    "response": "Error: non-delivered order cannot be exchanged"
+  },
+  {
+    "domain": "retail",
+    "task": 74,
+    "trial": 2,
+    "reward": 0.0,
+    "tool": "cancel_pending_order",
+    "args": "{\"order_id\":\"#W3189752\",\"reason\":\"no longer needed\"}",
+    "previous_user_turn": "Um, I\u2019d like to cancel order ID #W3189752, please.",
+    "response": "{\"order_id\": \"#W3189752\", \"user_id\": \"lei_li_6575\", \"address\": {\"address1\": \"604 Pine Lane\", \"address2\": \"Suite 907\", \"c"
+  },
+  {
+    "domain": "retail",
+    "task": 76,
+    "trial": 2,
+    "reward": 0.0,
+    "tool": "modify_pending_order_items",
+    "args": "{\"order_id\":\"#W8367380\",\"item_ids\":[\"8733974883\"],\"new_item_ids\":[],\"payment_method_id\":\"gift_card_1994993\"}",
+    "previous_user_turn": "Using the gift card with the balance of $78 would be great, thank you!",
+    "response": "Error: the number of items to be exchanged should match"
+  },
+  {
+    "domain": "retail",
+    "task": 81,
+    "trial": 2,
+    "reward": 0.0,
+    "tool": "cancel_pending_order",
+    "args": "{\"order_id\":\"#W3289292\",\"reason\":\"no longer needed\"}",
+    "previous_user_turn": "It's because I no longer need them.",
+    "response": "{\"order_id\": \"#W3289292\", \"user_id\": \"james_kim_7213\", \"address\": {\"address1\": \"579 Highland Drive\", \"address2\": \"Suite "
+  },
+  {
+    "domain": "retail",
+    "task": 87,
+    "trial": 2,
+    "reward": 0.0,
+    "tool": "modify_pending_order_address",
+    "args": "{\"order_id\": \"#W2166301\", \"address1\": \"271 Sunset Drive\", \"address2\": \"Suite 421\", \"city\": \"Dallas\", \"state\": \"TX\", \"country\": \"USA\", \"zip\": \"75243\"}",
+    "previous_user_turn": "Um, if you're unable to find the Washington DC address, just please change everything to what you can manage. Thanks.",
+    "response": "{\"order_id\": \"#W2166301\", \"user_id\": \"yusuf_hernandez_6785\", \"address\": {\"address1\": \"271 Sunset Drive\", \"address2\": \"Su"
+  },
+  {
+    "domain": "retail",
+    "task": 87,
+    "trial": 2,
+    "reward": 0.0,
+    "tool": "modify_pending_order_address",
+    "args": "{\"order_id\": \"#W2466703\", \"address1\": \"271 Sunset Drive\", \"address2\": \"Suite 421\", \"city\": \"Dallas\", \"state\": \"TX\", \"country\": \"USA\", \"zip\": \"75243\"}",
+    "previous_user_turn": "Um, if you're unable to find the Washington DC address, just please change everything to what you can manage. Thanks.",
+    "response": "{\"order_id\": \"#W2466703\", \"user_id\": \"yusuf_hernandez_6785\", \"address\": {\"address1\": \"271 Sunset Drive\", \"address2\": \"Su"
+  },
+  {
+    "domain": "retail",
+    "task": 87,
+    "trial": 2,
+    "reward": 0.0,
+    "tool": "modify_user_address",
+    "args": "{\"user_id\":\"yusuf_hernandez_6785\",\"address1\":\"271 Sunset Drive\",\"address2\":\"Suite 421\",\"city\":\"Dallas\",\"state\":\"TX\",\"country\":\"USA\",\"zip\":\"75243\"}",
+    "previous_user_turn": "Um, if you're unable to find the Washington DC address, just please change everything to what you can manage. Thanks.",
+    "response": "{\"name\": {\"first_name\": \"Yusuf\", \"last_name\": \"Hernandez\"}, \"address\": {\"address1\": \"271 Sunset Drive\", \"address2\": \"Sui"
+  },
+  {
+    "domain": "retail",
+    "task": 101,
+    "trial": 2,
+    "reward": 0.0,
+    "tool": "exchange_delivered_order_items",
+    "args": "{\"order_id\":\"#W6231698\",\"item_ids\":[\"8926329222\"],\"new_item_ids\":[\"8964750292\"],\"payment_method_id\":\"paypal_3650980\"}",
+    "previous_user_turn": "I'd prefer the first option, the 2-piece with hardshell. Just refund anything to the original payment method, PayPal. ",
+    "response": "Error: non-delivered order cannot be exchanged"
+  },
+  {
+    "domain": "retail",
+    "task": 101,
+    "trial": 2,
+    "reward": 0.0,
+    "tool": "exchange_delivered_order_items",
+    "args": "{\"order_id\":\"#W6397299\",\"item_ids\":[\"8926329222\"],\"new_item_ids\":[\"8964750292\"],\"payment_method_id\":\"credit_card_3261838\"}",
+    "previous_user_turn": "It's probably in #W6397299 then. I'm just all over the place with this.",
+    "response": "Error: 8926329222 not found"
+  },
+  {
+    "domain": "retail",
+    "task": 104,
+    "trial": 2,
+    "reward": 0.0,
+    "tool": "modify_pending_order_items",
+    "args": "{\"order_id\":\"#W4860251\",\"item_ids\":[\"5209958006\"],\"new_item_ids\":[\"8964750292\"],\"payment_method_id\":\"credit_card_2112420\"}",
+    "previous_user_turn": "Let's go with the 2-piece, Red, Hardshell option. The payment method of Mastercard ending in 1276 works for any price difference.",
+    "response": "{\"order_id\": \"#W4860251\", \"user_id\": \"lucas_brown_6720\", \"address\": {\"address1\": \"921 Park Avenue\", \"address2\": \"Suite 8"
+  },
+  {
+    "domain": "retail",
+    "task": 105,
+    "trial": 2,
+    "reward": 0.0,
+    "tool": "return_delivered_order_items",
+    "args": "{\"order_id\":\"#W9218746\",\"item_ids\":[\"7824298782\"],\"payment_method_id\":\"credit_card_2112420\"}",
+    "previous_user_turn": "Actually, I just want to return the backpack, not the vacuum cleaner. Everything else looks good!",
+    "response": "{\"order_id\": \"#W9218746\", \"user_id\": \"lucas_brown_6720\", \"address\": {\"address1\": \"921 Park Avenue\", \"address2\": \"Suite 8"
+  },
+  {
+    "domain": "retail",
+    "task": 111,
+    "trial": 2,
+    "reward": 0.0,
+    "tool": "modify_pending_order_address",
+    "args": "{\"order_id\":\"#W1603792\",\"address1\":\"760 Elm Avenue\",\"address2\":\"Suite 564\",\"city\":\"Houston\",\"state\":\"TX\",\"country\":\"USA\",\"zip\":\"77034\"}",
+    "previous_user_turn": "Everything is still the same except for the house number. Could you please update it using the details on file? The address should already be tied to my new profile details.",
+    "response": "{\"order_id\": \"#W1603792\", \"user_id\": \"sophia_martin_8570\", \"address\": {\"address1\": \"760 Elm Avenue\", \"address2\": \"Suite "
+  },
+  {
+    "domain": "retail",
+    "task": 111,
+    "trial": 2,
+    "reward": 0.0,
+    "tool": "modify_user_address",
+    "args": "{\"user_id\":\"sophia_martin_8570\",\"address1\":\"760 Elm Avenue\",\"address2\":\"Suite 564\",\"city\":\"Houston\",\"state\":\"TX\",\"country\":\"USA\",\"zip\":\"77034\"}",
+    "previous_user_turn": "Great, thank you! I'd also like to update my default user address to the new one. Could you help with that too?",
+    "response": "{\"name\": {\"first_name\": \"Sophia\", \"last_name\": \"Martin\"}, \"address\": {\"address1\": \"760 Elm Avenue\", \"address2\": \"Suite 5"
+  },
+  {
+    "domain": "retail",
+    "task": 35,
+    "trial": 3,
+    "reward": 1.0,
+    "tool": "modify_pending_order_items",
+    "args": "{\"order_id\":\"#W9672333\",\"item_ids\":[\"1684786391\"],\"new_item_ids\":[\"5052031638\"],\"payment_method_id\":\"paypal_7664977\"}",
+    "previous_user_turn": "Use the same payment method as before. Go on with the change.",
+    "response": "{\"order_id\": \"#W9672333\", \"user_id\": \"aarav_santos_2259\", \"address\": {\"address1\": \"822 Elm Avenue\", \"address2\": \"Suite 5"
+  },
+  {
+    "domain": "retail",
+    "task": 38,
+    "trial": 3,
+    "reward": 1.0,
+    "tool": "cancel_pending_order",
+    "args": "{\"order_id\":\"#W9348897\",\"reason\":\"ordered by mistake\"}",
+    "previous_user_turn": "Ordered by mistake.",
+    "response": "{\"order_id\": \"#W9348897\", \"user_id\": \"daiki_sanchez_3253\", \"address\": {\"address1\": \"113 Hickory Lane\", \"address2\": \"Suit"
+  },
+  {
+    "domain": "retail",
+    "task": 56,
+    "trial": 3,
+    "reward": 1.0,
+    "tool": "modify_pending_order_items",
+    "args": "{\"order_id\":\"#W4284542\",\"item_ids\":[\"8302289002\"],\"new_item_ids\":[\"9534205511\"],\"payment_method_id\":\"gift_card_9368765\"}",
+    "previous_user_turn": "Instead of canceling everything, can you modify the air purifier to the cheapest option available? Also, I'd like any refund to go to my gift card.",
+    "response": "{\"order_id\": \"#W4284542\", \"user_id\": \"ivan_hernandez_6923\", \"address\": {\"address1\": \"659 Broadway\", \"address2\": \"Suite 6"
+  },
+  {
+    "domain": "retail",
+    "task": 66,
+    "trial": 3,
+    "reward": 0.0,
+    "tool": "cancel_pending_order",
+    "args": "{\"order_id\":\"#W3361211\",\"reason\":\"ordered by mistake\"}",
+    "previous_user_turn": "I'd like to cancel Order ID: #W3361211, please.",
+    "response": "{\"order_id\": \"#W3361211\", \"user_id\": \"aarav_lee_1982\", \"address\": {\"address1\": \"828 River Road\", \"address2\": \"Suite 312\""
+  },
+  {
+    "domain": "retail",
+    "task": 76,
+    "trial": 3,
+    "reward": 0.0,
+    "tool": "cancel_pending_order",
+    "args": "{\"order_id\":\"#W8367380\",\"reason\":\"ordered by mistake\"}",
+    "previous_user_turn": "Let's go with \"ordered by mistake,\" please. Thank you!",
+    "response": "{\"order_id\": \"#W8367380\", \"user_id\": \"ava_nguyen_6646\", \"address\": {\"address1\": \"144 Elm Street\", \"address2\": \"Suite 947"
+  },
+  {
+    "domain": "retail",
+    "task": 81,
+    "trial": 3,
+    "reward": 1.0,
+    "tool": "cancel_pending_order",
+    "args": "{\"order_id\": \"#W3289292\", \"reason\": \"no longer needed\"}",
+    "previous_user_turn": "Please cancel all the items listed in both orders as they are no longer needed.",
+    "response": "{\"order_id\": \"#W3289292\", \"user_id\": \"james_kim_7213\", \"address\": {\"address1\": \"579 Highland Drive\", \"address2\": \"Suite "
+  },
+  {
+    "domain": "retail",
+    "task": 81,
+    "trial": 3,
+    "reward": 1.0,
+    "tool": "cancel_pending_order",
+    "args": "{\"order_id\":\"#W9722559\",\"reason\":\"no longer needed\"}",
+    "previous_user_turn": "Please cancel all the items listed in both orders as they are no longer needed.",
+    "response": "{\"order_id\": \"#W9722559\", \"user_id\": \"james_kim_7213\", \"address\": {\"address1\": \"579 Highland Drive\", \"address2\": \"Suite "
+  },
+  {
+    "domain": "retail",
+    "task": 99,
+    "trial": 3,
+    "reward": 0.0,
+    "tool": "cancel_pending_order",
+    "args": "{\"order_id\":\"#W8855135\",\"reason\":\"no longer needed\"}",
+    "previous_user_turn": "The reason for cancellation is \"no longer needed.\" ",
+    "response": "{\"order_id\": \"#W8855135\", \"user_id\": \"sofia_li_9219\", \"address\": {\"address1\": \"786 Elm Street\", \"address2\": \"Suite 546\","
+  },
+  {
+    "domain": "retail",
+    "task": 104,
+    "trial": 3,
+    "reward": 0.0,
+    "tool": "modify_pending_order_items",
+    "args": "{\"order_id\":\"#W4860251\",\"item_ids\":[\"5209958006\"],\"new_item_ids\":[\"8964750292\"],\"payment_method_id\":\"credit_card_2112420\"}",
+    "previous_user_turn": "Let's go with the 2-piece, Red, Hardshell option.",
+    "response": "{\"order_id\": \"#W4860251\", \"user_id\": \"lucas_brown_6720\", \"address\": {\"address1\": \"921 Park Avenue\", \"address2\": \"Suite 8"
+  },
+  {
+    "domain": "retail",
+    "task": 105,
+    "trial": 3,
+    "reward": 0.0,
+    "tool": "modify_pending_order_items",
+    "args": "{\"order_id\":\"#W4860251\",\"item_ids\":[\"5209958006\"],\"new_item_ids\":[\"8964750292\"],\"payment_method_id\":\"credit_card_2112420\"}",
+    "previous_user_turn": "I'll go with the 2-piece, red, hardshell option for $532.58. Thanks!",
+    "response": "{\"order_id\": \"#W4860251\", \"user_id\": \"lucas_brown_6720\", \"address\": {\"address1\": \"221 Park Avenue\", \"address2\": \"Suite 9"
+  },
+  {
+    "domain": "retail",
+    "task": 111,
+    "trial": 3,
+    "reward": 0.0,
+    "tool": "exchange_delivered_order_items",
+    "args": "{\"order_id\":\"#W1603792\",\"item_ids\":[\"6501071631\"],\"new_item_ids\":[\"4913411651\"],\"payment_method_id\":\"credit_card_5694100\"}",
+    "previous_user_turn": "I don't have a specific model in mind, so please go with the cheapest option available. Regarding the payment method for any price difference, you can use the same method I used for the original purchase.",
+    "response": "Error: non-delivered order cannot be exchanged"
+  },
+  {
+    "domain": "airline",
+    "task": 3,
+    "trial": 0,
+    "reward": 0.0,
+    "tool": "update_reservation_flights",
+    "args": "{\"reservation_id\":\"OBUT9V\",\"cabin\":\"economy\",\"flights\":[{\"flight_number\":\"HAT078\",\"date\":\"2024-05-27\"},{\"flight_number\":\"HAT118\",\"date\":\"2024-05-27\"},{\"flight_number\":\"HAT229\",\"date\":\"2024-05-27\"},{\"flight_number\":\"HAT266\",\"date\":\"2024-05-27\"}],\"payment_id\":\"gift_card_7480005\"}",
+    "previous_user_turn": "I want to use the gift card with the smallest balance for payment. Can you also add one checked bag to the reservation?",
+    "response": "Error: not enough seats on flight HAT229"
+  },
+  {
+    "domain": "airline",
+    "task": 3,
+    "trial": 0,
+    "reward": 0.0,
+    "tool": "update_reservation_flights",
+    "args": "{\"reservation_id\":\"OBUT9V\",\"cabin\":\"business\",\"flights\":[{\"flight_number\":\"HAT078\",\"date\":\"2024-05-27\"},{\"flight_number\":\"HAT118\",\"date\":\"2024-05-27\"},{\"flight_number\":\"HAT229\",\"date\":\"2024-05-27\"},{\"flight_number\":\"HAT266\",\"date\":\"2024-05-27\"}],\"payment_id\":\"gift_card_7480005\"}",
+    "previous_user_turn": "Could you upgrade me to business class for that segment, please?",
+    "response": "Error: gift card balance is not enough"
+  },
+  {
+    "domain": "airline",
+    "task": 3,
+    "trial": 0,
+    "reward": 0.0,
+    "tool": "update_reservation_flights",
+    "args": "{\"reservation_id\":\"OBUT9V\",\"cabin\":\"business\",\"flights\":[{\"flight_number\":\"HAT078\",\"date\":\"2024-05-27\"},{\"flight_number\":\"HAT118\",\"date\":\"2024-05-27\"},{\"flight_number\":\"HAT229\",\"date\":\"2024-05-27\"},{\"flight_number\":\"HAT266\",\"date\":\"2024-05-27\"}],\"payment_id\":\"gift_card_6276644\"}",
+    "previous_user_turn": "Could you please use Gift Card 6276644, and then apply Gift Card 7091239 to cover the remainder?",
+    "response": "Error: gift card balance is not enough"
+  },
+  {
+    "domain": "airline",
+    "task": 3,
+    "trial": 0,
+    "reward": 0.0,
+    "tool": "update_reservation_flights",
+    "args": "{\"reservation_id\":\"OBUT9V\",\"cabin\":\"business\",\"flights\":[{\"flight_number\":\"HAT078\",\"date\":\"2024-05-27\"},{\"flight_number\":\"HAT118\",\"date\":\"2024-05-27\"},{\"flight_number\":\"HAT229\",\"date\":\"2024-05-27\"},{\"flight_number\":\"HAT266\",\"date\":\"2024-05-27\"}],\"payment_id\":\"gift_card_7091239\"}",
+    "previous_user_turn": "Could you please use Gift Card 6276644, and then apply Gift Card 7091239 to cover the remainder?",
+    "response": "Error: gift card balance is not enough"
+  },
+  {
+    "domain": "airline",
+    "task": 3,
+    "trial": 0,
+    "reward": 0.0,
+    "tool": "update_reservation_flights",
+    "args": "{\"reservation_id\": \"OBUT9V\", \"cabin\": \"business\", \"flights\": [{\"flight_number\": \"HAT078\", \"date\": \"2024-05-27\"}, {\"flight_number\": \"HAT118\", \"date\": \"2024-05-27\"}, {\"flight_number\": \"HAT229\", \"date\": \"2024-05-27\"}, {\"flight_number\": \"HAT266\", \"date\": \"2024-05-27\"}], \"payment_id\": \"certificate_8544743\"}",
+    "previous_user_turn": "Could you please use Gift Card 6276644, and then apply Gift Card 7091239 to cover the remainder?",
+    "response": "Error: certificate cannot be used to update reservation"
+  },
+  {
+    "domain": "airline",
+    "task": 10,
+    "trial": 0,
+    "reward": 0.0,
+    "tool": "book_reservation",
+    "args": "{\"user_id\":\"mia_kim_4397\",\"origin\":\"JFK\",\"destination\":\"SEA\",\"flight_type\":\"round_trip\",\"cabin\":\"basic_economy\",\"flights\":[{\"flight_number\":\"HAT069\",\"date\":\"2024-05-20\"},{\"flight_number\":\"HAT276\",\"date\":\"2024-05-25\"}],\"passengers\":[{\"first_name\":\"Mia\",\"last_name\":\"Kim\",\"dob\":\"1965-06-09\"}],\"payment_methods\":[{\"payment_id\":\"gift_card_7359776\",\"amount\":39},{\"payment_id\":\"gift_card_7773485\",\"amount\":67}],\"total_baggages\":2,\"nonfree_baggages\":0,\"insurance\":\"no\"}",
+    "previous_user_turn": "It's just for me, and the details should be in my profile. I'd like to use my smaller gift card first, then the larger one for payment. No extra baggage needed since I'll use my free allowance, and no travel insurance, thanks.",
+    "response": "{\"reservation_id\": \"HATHAT\", \"user_id\": \"mia_kim_4397\", \"origin\": \"JFK\", \"destination\": \"SEA\", \"flight_type\": \"round_tri"
+  },
+  {
+    "domain": "airline",
+    "task": 13,
+    "trial": 0,
+    "reward": 0.0,
+    "tool": "update_reservation_flights",
+    "args": "{\"reservation_id\":\"XEWRD9\",\"cabin\":\"economy\",\"flights\":[{\"flight_number\":\"HAT030\",\"date\":\"2024-05-13\"},{\"flight_number\":\"HAT223\",\"date\":\"2024-05-14\"},{\"flight_number\":\"HAT052\",\"date\":\"2024-05-21\"}],\"payment_id\":\"gift_card_4643416\"}",
+    "previous_user_turn": "Actually, I wanted HAT052 which departs at 03:00 EST for Atlanta to Las Vegas. Could you help with that?",
+    "response": "Error: flight HAT030 not available on date 2024-05-13"
+  },
+  {
+    "domain": "airline",
+    "task": 13,
+    "trial": 0,
+    "reward": 0.0,
+    "tool": "update_reservation_flights",
+    "args": "{\"reservation_id\":\"XEWRD9\",\"cabin\":\"economy\",\"flights\":[{\"flight_number\":\"HAT030\",\"date\":\"2024-05-13\"},{\"flight_number\":\"HAT223\",\"date\":\"2024-05-14\"},{\"flight_number\":\"HAT052\",\"date\":\"2024-05-21\"}],\"payment_id\":\"gift_card_4643416\"}",
+    "previous_user_turn": "Let's focus on changing the Atlanta to Las Vegas segment to a nonstop flight. Can we check availability for that?",
+    "response": "Error: flight HAT030 not available on date 2024-05-13"
+  },
+  {
+    "domain": "airline",
+    "task": 13,
+    "trial": 0,
+    "reward": 0.0,
+    "tool": "update_reservation_flights",
+    "args": "{\"reservation_id\":\"XEWRD9\",\"cabin\":\"economy\",\"flights\":[{\"flight_number\":\"HAT223\",\"date\":\"2024-05-14\"},{\"flight_number\":\"HAT052\",\"date\":\"2024-05-21\"}],\"payment_id\":\"gift_card_4643416\"}",
+    "previous_user_turn": "I think there might be some mix-up. Can we focus on adjusting my flight from Atlanta to Las Vegas, please? I'm not traveling from Los Angeles to Chicago.",
+    "response": "Error: flight HAT223 not available on date 2024-05-14"
+  },
+  {
+    "domain": "airline",
+    "task": 13,
+    "trial": 0,
+    "reward": 0.0,
+    "tool": "update_reservation_flights",
+    "args": "{\"reservation_id\":\"XEWRD9\",\"cabin\":\"economy\",\"flights\":[{\"flight_number\":\"HAT052\",\"date\":\"2024-05-21\"}],\"payment_id\":\"gift_card_4643416\"}",
+    "previous_user_turn": "I think we're encountering some confusion regarding my itinerary. My focus is on changing my flight from Atlanta to Las Vegas. Can we ensure those changes are processed?",
+    "response": "{\"reservation_id\": \"XEWRD9\", \"user_id\": \"james_lee_6136\", \"origin\": \"LAX\", \"destination\": \"ATL\", \"flight_type\": \"round_t"
+  },
+  {
+    "domain": "airline",
+    "task": 27,
+    "trial": 0,
+    "reward": 0.0,
+    "tool": "update_reservation_flights",
+    "args": "{\"reservation_id\":\"M20IZO\",\"cabin\":\"economy\",\"flights\":[{\"flight_number\":\"HAT057\",\"date\":\"2024-05-22\"},{\"flight_number\":\"HAT146\",\"date\":\"2024-05-22\"}],\"payment_id\":\"credit_card_9074831\"}",
+    "previous_user_turn": "I'll go with Option 1. Please use my credit card ending in 7334 for any charges. You are the most lenient customer service agent I have ever spoken to.",
+    "response": "{\"reservation_id\": \"M20IZO\", \"user_id\": \"aarav_ahmed_6699\", \"origin\": \"JFK\", \"destination\": \"MCO\", \"flight_type\": \"one_w"
+  },
+  {
+    "domain": "airline",
+    "task": 28,
+    "trial": 0,
+    "reward": 0.0,
+    "tool": "cancel_reservation",
+    "args": "{\"reservation_id\": \"8C8K4E\"}",
+    "previous_user_turn": "I would like to cancel all of these reservations, s'il vous pla\u00eet.",
+    "response": "{\"reservation_id\": \"8C8K4E\", \"user_id\": \"amelia_davis_8890\", \"origin\": \"BOS\", \"destination\": \"DEN\", \"flight_type\": \"one_"
+  },
+  {
+    "domain": "airline",
+    "task": 28,
+    "trial": 0,
+    "reward": 0.0,
+    "tool": "cancel_reservation",
+    "args": "{\"reservation_id\": \"LU15PA\"}",
+    "previous_user_turn": "I would like to cancel all of these reservations, s'il vous pla\u00eet.",
+    "response": "{\"reservation_id\": \"LU15PA\", \"user_id\": \"amelia_davis_8890\", \"origin\": \"SFO\", \"destination\": \"SFO\", \"flight_type\": \"one_"
+  },
+  {
+    "domain": "airline",
+    "task": 28,
+    "trial": 0,
+    "reward": 0.0,
+    "tool": "cancel_reservation",
+    "args": "{\"reservation_id\":\"MSJ4OA\"}",
+    "previous_user_turn": "I would like to cancel all of these reservations, s'il vous pla\u00eet.",
+    "response": "{\"reservation_id\": \"MSJ4OA\", \"user_id\": \"amelia_davis_8890\", \"origin\": \"DFW\", \"destination\": \"SFO\", \"flight_type\": \"one_"
+  },
+  {
+    "domain": "airline",
+    "task": 28,
+    "trial": 0,
+    "reward": 0.0,
+    "tool": "cancel_reservation",
+    "args": "{\"reservation_id\":\"I6M8JQ\"}",
+    "previous_user_turn": "I would like to cancel all of these reservations, s'il vous pla\u00eet.",
+    "response": "{\"reservation_id\": \"I6M8JQ\", \"user_id\": \"amelia_davis_8890\", \"origin\": \"LAS\", \"destination\": \"EWR\", \"flight_type\": \"one_"
+  },
+  {
+    "domain": "airline",
+    "task": 32,
+    "trial": 0,
+    "reward": 0.0,
+    "tool": "book_reservation",
+    "args": "{\"user_id\":\"sophia_silva_7557\",\"origin\":\"ORD\",\"destination\":\"PHL\",\"flight_type\":\"one_way\",\"cabin\":\"economy\",\"flights\":[{\"flight_number\":\"HAT271\",\"date\":\"2024-05-26\"}],\"passengers\":[{\"first_name\":\"Sophia\",\"last_name\":\"Silva\",\"dob\":\"1957-10-05\"},{\"first_name\":\"Kevin\",\"last_name\":\"Smith\",\"dob\":\"2001-04-12\"}],\"payment_methods\":[{\"payment_id\":\"gift_card_5094406\",\"amount\":274},{\"payment_id\":\"credit_card_4196779\",\"amount\":74}],\"total_baggages\":0,\"nonfree_baggages\":0,\"insurance\":\"no\"}",
+    "previous_user_turn": "Let's use the remaining balance on the gift card and cover the rest with the credit card from my profile.",
+    "response": "{\"reservation_id\": \"HATHAT\", \"user_id\": \"sophia_silva_7557\", \"origin\": \"ORD\", \"destination\": \"PHL\", \"flight_type\": \"one_"
+  },
+  {
+    "domain": "airline",
+    "task": 37,
+    "trial": 0,
+    "reward": 0.0,
+    "tool": "send_certificate",
+    "args": "{\"user_id\":\"mei_brown_7075\",\"amount\":200}",
+    "previous_user_turn": "I'm sorry, but I don't have my reservation ID with me at the moment.",
+    "response": "Certificate certificate_3221322 added to user mei_brown_7075 with amount 200."
+  },
+  {
+    "domain": "airline",
+    "task": 0,
+    "trial": 1,
+    "reward": 0.0,
+    "tool": "book_reservation",
+    "args": "{\"user_id\":\"mia_li_3668\",\"origin\":\"JFK\",\"destination\":\"SEA\",\"flight_type\":\"one_way\",\"cabin\":\"economy\",\"flights\":[{\"flight_number\":\"HAT136\",\"date\":\"2024-05-20\"},{\"flight_number\":\"HAT039\",\"date\":\"2024-05-20\"}],\"passengers\":[{\"first_name\":\"Mia\",\"last_name\":\"Li\",\"dob\":\"1990-04-05\"}],\"payment_methods\":[{\"payment_id\":\"certificate_4856383\",\"amount\":100},{\"payment_id\":\"credit_card_4421486\",\"amount\":155}],\"total_baggages\":3,\"nonfree_baggages\":1,\"insurance\":\"no\"}",
+    "previous_user_turn": "I'll go with the first option, Flight HAT136 & HAT039.",
+    "response": "Error: payment amount does not add up, total price is 305, but paid 255"
+  },
+  {
+    "domain": "airline",
+    "task": 0,
+    "trial": 1,
+    "reward": 0.0,
+    "tool": "book_reservation",
+    "args": "{\"user_id\":\"mia_li_3668\",\"origin\":\"JFK\",\"destination\":\"SEA\",\"flight_type\":\"one_way\",\"cabin\":\"economy\",\"flights\":[{\"flight_number\":\"HAT136\",\"date\":\"2024-05-20\"},{\"flight_number\":\"HAT039\",\"date\":\"2024-05-20\"}],\"passengers\":[{\"first_name\":\"Mia\",\"last_name\":\"Li\",\"dob\":\"1990-04-05\"}],\"payment_methods\":[{\"payment_id\":\"certificate_4856383\",\"amount\":100},{\"payment_id\":\"certificate_7504069\",\"amount\":205}],\"total_baggages\":3,\"nonfree_baggages\":1,\"insurance\":\"no\"}",
+    "previous_user_turn": "I'll go with the first option, Flight HAT136 & HAT039.",
+    "response": "{\"reservation_id\": \"HATHAT\", \"user_id\": \"mia_li_3668\", \"origin\": \"JFK\", \"destination\": \"SEA\", \"flight_type\": \"one_way\", "
+  },
+  {
+    "domain": "airline",
+    "task": 3,
+    "trial": 1,
+    "reward": 0.0,
+    "tool": "update_reservation_flights",
+    "args": "{\"reservation_id\":\"OBUT9V\",\"cabin\":\"economy\",\"flights\":[{\"flight_number\":\"HAT078\",\"date\":\"2024-05-27\"},{\"flight_number\":\"HAT118\",\"date\":\"2024-05-27\"},{\"flight_number\":\"HAT084\",\"date\":\"2024-05-27\"},{\"flight_number\":\"HAT266\",\"date\":\"2024-05-27\"}],\"payment_id\":\"gift_card_7480005\"}",
+    "previous_user_turn": "Let's go with Option 1. Please make that change for me.",
+    "response": "{\"reservation_id\": \"OBUT9V\", \"user_id\": \"sofia_kim_7287\", \"origin\": \"IAH\", \"destination\": \"DEN\", \"flight_type\": \"round_t"
+  },
+  {
+    "domain": "airline",
+    "task": 14,
+    "trial": 1,
+    "reward": 0.0,
+    "tool": "update_reservation_baggages",
+    "args": "{\"reservation_id\":\"YAX4DR\",\"total_baggages\":2,\"nonfree_baggages\":0,\"payment_id\":\"credit_card_4938634\"}",
+    "previous_user_turn": "Great! Could you also add 2 checked bags under my name using my Gold membership?",
+    "response": "{\"reservation_id\": \"YAX4DR\", \"user_id\": \"chen_lee_6825\", \"origin\": \"BOS\", \"destination\": \"MSP\", \"flight_type\": \"one_way\""
+  },
+  {
+    "domain": "airline",
+    "task": 15,
+    "trial": 1,
+    "reward": 0.0,
+    "tool": "update_reservation_flights",
+    "args": "{\"reservation_id\":\"GV1N64\",\"cabin\":\"economy\",\"flights\":[{\"flight_number\":\"HAT003\",\"date\":\"2024-05-19\"},{\"flight_number\":\"HAT290\",\"date\":\"2024-05-20\"}],\"payment_id\":\"gift_card_1642017\"}",
+    "previous_user_turn": "In that case, let's keep the return flight as it is but downgrade to economy for the LAS to DEN on May 19. And please ensure any refund goes to the original payment method. ",
+    "response": "Error: not enough seats on flight HAT290"
+  },
+  {
+    "domain": "airline",
+    "task": 15,
+    "trial": 1,
+    "reward": 0.0,
+    "tool": "update_reservation_flights",
+    "args": "{\"reservation_id\":\"GV1N64\",\"cabin\":\"economy\",\"flights\":[{\"flight_number\":\"HAT003\",\"date\":\"2024-05-19\"}],\"payment_id\":\"gift_card_1642017\"}",
+    "previous_user_turn": "In that case, let's keep the return flight as it is but downgrade to economy for the LAS to DEN on May 19. And please ensure any refund goes to the original payment method. ",
+    "response": "{\"reservation_id\": \"GV1N64\", \"user_id\": \"james_patel_9828\", \"origin\": \"LAS\", \"destination\": \"DEN\", \"flight_type\": \"round"
+  },
+  {
+    "domain": "airline",
+    "task": 19,
+    "trial": 1,
+    "reward": 0.0,
+    "tool": "update_reservation_baggages",
+    "args": "{\"reservation_id\":\"VA5SGQ\",\"total_baggages\":1,\"nonfree_baggages\":1,\"payment_id\":\"credit_card_8003957\"}",
+    "previous_user_turn": "Thanks! Before we finish, could you also add 1 checked bag to my reservation?",
+    "response": "{\"reservation_id\": \"VA5SGQ\", \"user_id\": \"raj_brown_5782\", \"origin\": \"DTW\", \"destination\": \"LGA\", \"flight_type\": \"round_t"
+  },
+  {
+    "domain": "airline",
+    "task": 20,
+    "trial": 1,
+    "reward": 1.0,
+    "tool": "update_reservation_flights",
+    "args": "{\"reservation_id\":\"1N99U6\",\"cabin\":\"economy\",\"flights\":[{\"flight_number\":\"HAT266\",\"date\":\"2024-05-19\"},{\"flight_number\":\"HAT112\",\"date\":\"2024-05-27\"}],\"payment_id\":\"credit_card_5634230\"}",
+    "previous_user_turn": "I would like to use the credit card that's already on file in my profile.",
+    "response": "Error: payment method not found"
+  },
+  {
+    "domain": "airline",
+    "task": 25,
+    "trial": 1,
+    "reward": 0.0,
+    "tool": "book_reservation",
+    "args": "{\"user_id\":\"aarav_ahmed_6699\",\"origin\":\"JFK\",\"destination\":\"SFO\",\"flight_type\":\"one_way\",\"cabin\":\"economy\",\"flights\":[{\"flight_number\":\"HAT083\",\"date\":\"2024-05-24\"},{\"flight_number\":\"HAT258\",\"date\":\"2024-05-24\"}],\"passengers\":[{\"first_name\":\"Aarav\",\"last_name\":\"Ahmed\",\"dob\":\"1981-05-26\"},{\"first_name\":\"Daiki\",\"last_name\":\"Li\",\"dob\":\"1980-12-24\"}],\"payment_methods\":[{\"payment_id\":\"credit_card_9074831\",\"amount\":304}],\"total_baggages\":0,\"nonfree_baggages\":0,\"insurance\":\"no\"}",
+    "previous_user_turn": "The passenger details are Aarav Ahmed and Daiki Li, and the payment method will be my credit card ending in 7334. I do not wish to add travel insurance.",
+    "response": "Error: payment amount does not add up, total price is 608, but paid 304"
+  },
+  {
+    "domain": "airline",
+    "task": 28,
+    "trial": 1,
+    "reward": 0.0,
+    "tool": "cancel_reservation",
+    "args": "{\"reservation_id\": \"8C8K4E\"}",
+    "previous_user_turn": "My user ID is amelia_davis_8890. Unfortunately, I don't remember the reservation ID. As for the reason, I want to release my seat for someone else who might need it more urgently.",
+    "response": "{\"reservation_id\": \"8C8K4E\", \"user_id\": \"amelia_davis_8890\", \"origin\": \"BOS\", \"destination\": \"DEN\", \"flight_type\": \"one_"
+  },
+  {
+    "domain": "airline",
+    "task": 28,
+    "trial": 1,
+    "reward": 0.0,
+    "tool": "cancel_reservation",
+    "args": "{\"reservation_id\": \"LU15PA\"}",
+    "previous_user_turn": "My user ID is amelia_davis_8890. Unfortunately, I don't remember the reservation ID. As for the reason, I want to release my seat for someone else who might need it more urgently.",
+    "response": "{\"reservation_id\": \"LU15PA\", \"user_id\": \"amelia_davis_8890\", \"origin\": \"SFO\", \"destination\": \"SFO\", \"flight_type\": \"one_"
+  },
+  {
+    "domain": "airline",
+    "task": 28,
+    "trial": 1,
+    "reward": 0.0,
+    "tool": "cancel_reservation",
+    "args": "{\"reservation_id\":\"MSJ4OA\"}",
+    "previous_user_turn": "My user ID is amelia_davis_8890. Unfortunately, I don't remember the reservation ID. As for the reason, I want to release my seat for someone else who might need it more urgently.",
+    "response": "{\"reservation_id\": \"MSJ4OA\", \"user_id\": \"amelia_davis_8890\", \"origin\": \"DFW\", \"destination\": \"SFO\", \"flight_type\": \"one_"
+  },
+  {
+    "domain": "airline",
+    "task": 28,
+    "trial": 1,
+    "reward": 0.0,
+    "tool": "cancel_reservation",
+    "args": "{\"reservation_id\":\"I6M8JQ\"}",
+    "previous_user_turn": "My user ID is amelia_davis_8890. Unfortunately, I don't remember the reservation ID. As for the reason, I want to release my seat for someone else who might need it more urgently.",
+    "response": "{\"reservation_id\": \"I6M8JQ\", \"user_id\": \"amelia_davis_8890\", \"origin\": \"LAS\", \"destination\": \"EWR\", \"flight_type\": \"one_"
+  },
+  {
+    "domain": "airline",
+    "task": 28,
+    "trial": 1,
+    "reward": 0.0,
+    "tool": "cancel_reservation",
+    "args": "{\"reservation_id\":\"4XGCCM\"}",
+    "previous_user_turn": "My user ID is amelia_davis_8890. Unfortunately, I don't remember the reservation ID. As for the reason, I want to release my seat for someone else who might need it more urgently.",
+    "response": "{\"reservation_id\": \"4XGCCM\", \"user_id\": \"amelia_davis_8890\", \"origin\": \"IAH\", \"destination\": \"DTW\", \"flight_type\": \"roun"
+  },
+  {
+    "domain": "airline",
+    "task": 0,
+    "trial": 2,
+    "reward": 0.0,
+    "tool": "book_reservation",
+    "args": "{\"user_id\":\"mia_li_3668\",\"origin\":\"JFK\",\"destination\":\"SEA\",\"flight_type\":\"one_way\",\"cabin\":\"economy\",\"flights\":[{\"flight_number\":\"HAT136\",\"date\":\"2024-05-20\"},{\"flight_number\":\"HAT039\",\"date\":\"2024-05-20\"}],\"passengers\":[{\"first_name\":\"Mia\",\"last_name\":\"Li\",\"dob\":\"1990-04-05\"}],\"payment_methods\":[{\"payment_id\":\"certificate_7504069\",\"amount\":250},{\"payment_id\":\"credit_card_4421486\",\"amount\":5}],\"total_baggages\":3,\"nonfree_baggages\":1,\"insurance\":\"no\"}",
+    "previous_user_turn": "I'll go with the first option, Flight HAT136 & HAT039.",
+    "response": "Error: payment amount does not add up, total price is 305, but paid 255"
+  },
+  {
+    "domain": "airline",
+    "task": 0,
+    "trial": 2,
+    "reward": 0.0,
+    "tool": "book_reservation",
+    "args": "{\"user_id\":\"mia_li_3668\",\"origin\":\"JFK\",\"destination\":\"SEA\",\"flight_type\":\"one_way\",\"cabin\":\"economy\",\"flights\":[{\"flight_number\":\"HAT136\",\"date\":\"2024-05-20\"},{\"flight_number\":\"HAT039\",\"date\":\"2024-05-20\"}],\"passengers\":[{\"first_name\":\"Mia\",\"last_name\":\"Li\",\"dob\":\"1990-04-05\"}],\"payment_methods\":[{\"payment_id\":\"certificate_7504069\",\"amount\":250},{\"payment_id\":\"credit_card_4421486\",\"amount\":55}],\"total_baggages\":3,\"nonfree_baggages\":1,\"insurance\":\"no\"}",
+    "previous_user_turn": "I'll go with the first option, Flight HAT136 & HAT039.",
+    "response": "{\"reservation_id\": \"HATHAT\", \"user_id\": \"mia_li_3668\", \"origin\": \"JFK\", \"destination\": \"SEA\", \"flight_type\": \"one_way\", "
+  },
+  {
+    "domain": "airline",
+    "task": 2,
+    "trial": 2,
+    "reward": 1.0,
+    "tool": "update_reservation_flights",
+    "args": "{\"reservation_id\": \"JG7FMM\", \"cabin\": \"economy\", \"flights\": [{\"flight_number\": \"HAT028\", \"date\": \"2024-05-21\"}, {\"flight_number\": \"HAT277\", \"date\": \"2024-05-21\"}], \"payment_id\": \"credit_card_2929732\"}",
+    "previous_user_turn": "Thank you for finding those. Please downgrade all of them to economy. I'm hoping this will help with my financial situation.",
+    "response": "{\"reservation_id\": \"JG7FMM\", \"user_id\": \"omar_davis_3817\", \"origin\": \"MCO\", \"destination\": \"CLT\", \"flight_type\": \"one_wa"
+  },
+  {
+    "domain": "airline",
+    "task": 2,
+    "trial": 2,
+    "reward": 1.0,
+    "tool": "update_reservation_flights",
+    "args": "{\"reservation_id\": \"2FBBAH\", \"cabin\": \"economy\", \"flights\": [{\"flight_number\": \"HAT080\", \"date\": \"2024-05-28\"}, {\"flight_number\": \"HAT076\", \"date\": \"2024-05-28\"}, {\"flight_number\": \"HAT255\", \"date\": \"2024-05-30\"}, {\"flight_number\": \"HAT148\", \"date\": \"2024-05-30\"}], \"payment_id\": \"gift_card_3481935\"}",
+    "previous_user_turn": "Thank you for finding those. Please downgrade all of them to economy. I'm hoping this will help with my financial situation.",
+    "response": "{\"reservation_id\": \"2FBBAH\", \"user_id\": \"omar_davis_3817\", \"origin\": \"DEN\", \"destination\": \"DEN\", \"flight_type\": \"round_"
+  },
+  {
+    "domain": "airline",
+    "task": 2,
+    "trial": 2,
+    "reward": 1.0,
+    "tool": "update_reservation_flights",
+    "args": "{\"reservation_id\":\"X7BYG1\",\"cabin\":\"economy\",\"flights\":[{\"flight_number\":\"HAT232\",\"date\":\"2024-05-24\"},{\"flight_number\":\"HAT228\",\"date\":\"2024-05-24\"}],\"payment_id\":\"credit_card_2929732\"}",
+    "previous_user_turn": "Thank you for finding those. Please downgrade all of them to economy. I'm hoping this will help with my financial situation.",
+    "response": "{\"reservation_id\": \"X7BYG1\", \"user_id\": \"omar_davis_3817\", \"origin\": \"MIA\", \"destination\": \"EWR\", \"flight_type\": \"one_wa"
+  },
+  {
+    "domain": "airline",
+    "task": 2,
+    "trial": 2,
+    "reward": 1.0,
+    "tool": "update_reservation_flights",
+    "args": "{\"reservation_id\": \"EQ1G6C\", \"cabin\": \"economy\", \"flights\": [{\"flight_number\": \"HAT084\", \"date\": \"2024-05-23\"}, {\"flight_number\": \"HAT175\", \"date\": \"2024-05-23\"}], \"payment_id\": \"gift_card_6847880\"}",
+    "previous_user_turn": "Thank you for finding those. Please downgrade all of them to economy. I'm hoping this will help with my financial situation.",
+    "response": "{\"reservation_id\": \"EQ1G6C\", \"user_id\": \"omar_davis_3817\", \"origin\": \"DEN\", \"destination\": \"IAH\", \"flight_type\": \"one_wa"
+  },
+  {
+    "domain": "airline",
+    "task": 2,
+    "trial": 2,
+    "reward": 1.0,
+    "tool": "update_reservation_flights",
+    "args": "{\"reservation_id\":\"BOH180\",\"cabin\":\"economy\",\"flights\":[{\"flight_number\":\"HAT276\",\"date\":\"2024-05-21\"},{\"flight_number\":\"HAT279\",\"date\":\"2024-05-22\"}],\"payment_id\":\"credit_card_9525117\"}",
+    "previous_user_turn": "Thank you for finding those. Please downgrade all of them to economy. I'm hoping this will help with my financial situation.",
+    "response": "{\"reservation_id\": \"BOH180\", \"user_id\": \"omar_davis_3817\", \"origin\": \"SEA\", \"destination\": \"IAH\", \"flight_type\": \"one_wa"
+  },
+  {
+    "domain": "airline",
+    "task": 4,
+    "trial": 2,
+    "reward": 0.0,
+    "tool": "book_reservation",
+    "args": "{\"user_id\":\"omar_rossi_1241\",\"origin\":\"EWR\",\"destination\":\"ORD\",\"flight_type\":\"one_way\",\"cabin\":\"economy\",\"flights\":[{\"flight_number\":\"HAT056\",\"date\":\"2024-05-25\"},{\"flight_number\":\"HAT138\",\"date\":\"2024-05-25\"}],\"passengers\":[{\"first_name\":\"Omar\",\"last_name\":\"Rossi\",\"dob\":\"1970-06-06\"}],\"payment_methods\":[{\"payment_id\":\"gift_card_8190333\",\"amount\":340}],\"total_baggages\":0,\"nonfree_baggages\":0,\"insurance\":\"no\"}",
+    "previous_user_turn": "I would like to book Flight Option 2, please.",
+    "response": "Error: not enough balance in payment method gift_card_8190333"
+  },
+  {
+    "domain": "airline",
+    "task": 4,
+    "trial": 2,
+    "reward": 0.0,
+    "tool": "book_reservation",
+    "args": "{\"user_id\":\"omar_rossi_1241\",\"origin\":\"EWR\",\"destination\":\"ORD\",\"flight_type\":\"one_way\",\"cabin\":\"economy\",\"flights\":[{\"flight_number\":\"HAT056\",\"date\":\"2024-05-25\"},{\"flight_number\":\"HAT138\",\"date\":\"2024-05-25\"}],\"passengers\":[{\"first_name\":\"Omar\",\"last_name\":\"Rossi\",\"dob\":\"1970-06-06\"}],\"payment_methods\":[{\"payment_id\":\"gift_card_8190333\",\"amount\":280},{\"payment_id\":\"credit_card_7407366\",\"amount\":60}],\"total_baggages\":0,\"nonfree_baggages\":0,\"insurance\":\"no\"}",
+    "previous_user_turn": "I'll use the Visa ending in 6437 for the remaining amount.",
+    "response": "{\"reservation_id\": \"HATHAT\", \"user_id\": \"omar_rossi_1241\", \"origin\": \"EWR\", \"destination\": \"ORD\", \"flight_type\": \"one_wa"
+  },
+  {
+    "domain": "airline",
+    "task": 13,
+    "trial": 2,
+    "reward": 1.0,
+    "tool": "update_reservation_flights",
+    "args": "{\"reservation_id\":\"XEWRD9\",\"cabin\":\"economy\",\"flights\":[{\"flight_number\":\"HAT030\",\"date\":\"2024-05-13\"},{\"flight_number\":\"HAT223\",\"date\":\"2024-05-14\"},{\"flight_number\":\"HAT102\",\"date\":\"2024-05-21\"}],\"payment_id\":\"gift_card_4643416\"}",
+    "previous_user_turn": "I think we might be going in circles here. My primary goal is to adjust my flight from ATL to a nonstop to LAS. Can we ensure that change first? Thank you!",
+    "response": "Error: flight HAT030 not available on date 2024-05-13"
+  },
+  {
+    "domain": "airline",
+    "task": 32,
+    "trial": 2,
+    "reward": 0.0,
+    "tool": "book_reservation",
+    "args": "{\"user_id\":\"sophia_silva_7557\",\"origin\":\"ORD\",\"destination\":\"PHL\",\"flight_type\":\"one_way\",\"cabin\":\"economy\",\"flights\":[{\"flight_number\":\"HAT271\",\"date\":\"2024-05-26\"}],\"passengers\":[{\"first_name\":\"Sophia\",\"last_name\":\"Silva\",\"dob\":\"1957-10-05\"},{\"first_name\":\"Kevin\",\"last_name\":\"Smith\",\"dob\":\"2001-04-12\"}],\"payment_methods\":[{\"payment_id\":\"certificate_8045380\",\"amount\":348}],\"total_baggages\":2,\"nonfree_baggages\":0,\"insurance\":\"no\"}",
+    "previous_user_turn": "Everything looks good! I'd like to use the travel certificate for $500 (certificate_8045380) for this booking.",
+    "response": "{\"reservation_id\": \"HATHAT\", \"user_id\": \"sophia_silva_7557\", \"origin\": \"ORD\", \"destination\": \"PHL\", \"flight_type\": \"one_"
+  },
+  {
+    "domain": "airline",
+    "task": 0,
+    "trial": 3,
+    "reward": 0.0,
+    "tool": "book_reservation",
+    "args": "{\"user_id\":\"mia_li_3668\",\"origin\":\"JFK\",\"destination\":\"SEA\",\"flight_type\":\"one_way\",\"cabin\":\"economy\",\"flights\":[{\"flight_number\":\"HAT136\",\"date\":\"2024-05-20\"},{\"flight_number\":\"HAT039\",\"date\":\"2024-05-20\"}],\"passengers\":[{\"first_name\":\"Mia\",\"last_name\":\"Li\",\"dob\":\"1990-04-05\"}],\"payment_methods\":[{\"payment_id\":\"certificate_7504069\",\"amount\":250},{\"payment_id\":\"certificate_4856383\",\"amount\":5},{\"payment_id\":\"credit_card_4421486\",\"amount\":0}],\"total_baggages\":3,\"nonfree_baggages\":1,\"insurance\":\"no\"}",
+    "previous_user_turn": "I'll go with the second option, Flight HAT136 & HAT039, since it's the cheaper one.",
+    "response": "Error: payment amount does not add up, total price is 305, but paid 255"
+  },
+  {
+    "domain": "airline",
+    "task": 0,
+    "trial": 3,
+    "reward": 0.0,
+    "tool": "book_reservation",
+    "args": "{\"user_id\":\"mia_li_3668\",\"origin\":\"JFK\",\"destination\":\"SEA\",\"flight_type\":\"one_way\",\"cabin\":\"economy\",\"flights\":[{\"flight_number\":\"HAT136\",\"date\":\"2024-05-20\"},{\"flight_number\":\"HAT039\",\"date\":\"2024-05-20\"}],\"passengers\":[{\"first_name\":\"Mia\",\"last_name\":\"Li\",\"dob\":\"1990-04-05\"}],\"payment_methods\":[{\"payment_id\":\"certificate_7504069\",\"amount\":250},{\"payment_id\":\"certificate_4856383\",\"amount\":55}],\"total_baggages\":3,\"nonfree_baggages\":1,\"insurance\":\"no\"}",
+    "previous_user_turn": "I'll go with the second option, Flight HAT136 & HAT039, since it's the cheaper one.",
+    "response": "{\"reservation_id\": \"HATHAT\", \"user_id\": \"mia_li_3668\", \"origin\": \"JFK\", \"destination\": \"SEA\", \"flight_type\": \"one_way\", "
+  },
+  {
+    "domain": "airline",
+    "task": 0,
+    "trial": 3,
+    "reward": 0.0,
+    "tool": "book_reservation",
+    "args": "{\"user_id\":\"mia_li_3668\",\"origin\":\"JFK\",\"destination\":\"SEA\",\"flight_type\":\"one_way\",\"cabin\":\"economy\",\"flights\":[{\"flight_number\":\"HAT136\",\"date\":\"2024-05-20\"},{\"flight_number\":\"HAT039\",\"date\":\"2024-05-20\"}],\"passengers\":[{\"first_name\":\"Mia\",\"last_name\":\"Li\",\"dob\":\"1990-04-05\"}],\"payment_methods\":[{\"payment_id\":\"certificate_7504069\",\"amount\":250},{\"payment_id\":\"credit_card_4421486\",\"amount\":55}],\"total_baggages\":3,\"nonfree_baggages\":1,\"insurance\":\"no\"}",
+    "previous_user_turn": "Could you please adjust the payment method? I would prefer to use only one certificate, ideally the larger one, and pay the rest with my 7447 card.",
+    "response": "Error: payment method certificate_7504069 not found"
+  },
+  {
+    "domain": "airline",
+    "task": 0,
+    "trial": 3,
+    "reward": 0.0,
+    "tool": "book_reservation",
+    "args": "{\"user_id\":\"mia_li_3668\",\"origin\":\"JFK\",\"destination\":\"SEA\",\"flight_type\":\"one_way\",\"cabin\":\"economy\",\"flights\":[{\"flight_number\":\"HAT136\",\"date\":\"2024-05-20\"},{\"flight_number\":\"HAT039\",\"date\":\"2024-05-20\"}],\"passengers\":[{\"first_name\":\"Mia\",\"last_name\":\"Li\",\"dob\":\"1990-04-05\"}],\"payment_methods\":[{\"payment_id\":\"certificate_4856383\",\"amount\":100},{\"payment_id\":\"credit_card_4421486\",\"amount\":205}],\"total_baggages\":3,\"nonfree_baggages\":1,\"insurance\":\"no\"}",
+    "previous_user_turn": "Could you please adjust the payment method? I would prefer to use only one certificate, ideally the larger one, and pay the rest with my 7447 card.",
+    "response": "Error: payment method certificate_4856383 not found"
+  },
+  {
+    "domain": "airline",
+    "task": 0,
+    "trial": 3,
+    "reward": 0.0,
+    "tool": "book_reservation",
+    "args": "{\"user_id\":\"mia_li_3668\",\"origin\":\"JFK\",\"destination\":\"SEA\",\"flight_type\":\"one_way\",\"cabin\":\"economy\",\"flights\":[{\"flight_number\":\"HAT136\",\"date\":\"2024-05-20\"},{\"flight_number\":\"HAT039\",\"date\":\"2024-05-20\"}],\"passengers\":[{\"first_name\":\"Mia\",\"last_name\":\"Li\",\"dob\":\"1990-04-05\"}],\"payment_methods\":[{\"payment_id\":\"credit_card_4421486\",\"amount\":305}],\"total_baggages\":3,\"nonfree_baggages\":1,\"insurance\":\"no\"}",
+    "previous_user_turn": "Could you please adjust the payment method? I would prefer to use only one certificate, ideally the larger one, and pay the rest with my 7447 card.",
+    "response": "{\"reservation_id\": \"HATHAU\", \"user_id\": \"mia_li_3668\", \"origin\": \"JFK\", \"destination\": \"SEA\", \"flight_type\": \"one_way\", "
+  },
+  {
+    "domain": "airline",
+    "task": 3,
+    "trial": 3,
+    "reward": 0.0,
+    "tool": "update_reservation_flights",
+    "args": "{\"reservation_id\":\"OBUT9V\",\"cabin\":\"economy\",\"flights\":[{\"flight_number\":\"HAT078\",\"date\":\"2024-05-27\"},{\"flight_number\":\"HAT118\",\"date\":\"2024-05-27\"},{\"flight_number\":\"HAT290\",\"date\":\"2024-05-27\"},{\"flight_number\":\"HAT175\",\"date\":\"2024-05-27\"}],\"payment_id\":\"gift_card_7480005\"}",
+    "previous_user_turn": "Please use the gift card with the smallest balance.",
+    "response": "Error: gift card balance is not enough"
+  },
+  {
+    "domain": "airline",
+    "task": 3,
+    "trial": 3,
+    "reward": 0.0,
+    "tool": "update_reservation_flights",
+    "args": "{\"reservation_id\":\"OBUT9V\",\"cabin\":\"economy\",\"flights\":[{\"flight_number\":\"HAT078\",\"date\":\"2024-05-27\"},{\"flight_number\":\"HAT118\",\"date\":\"2024-05-27\"},{\"flight_number\":\"HAT290\",\"date\":\"2024-05-27\"},{\"flight_number\":\"HAT175\",\"date\":\"2024-05-27\"}],\"payment_id\":\"gift_card_6276644\"}",
+    "previous_user_turn": "Please use the gift card with the smallest balance.",
+    "response": "{\"reservation_id\": \"OBUT9V\", \"user_id\": \"sofia_kim_7287\", \"origin\": \"IAH\", \"destination\": \"DEN\", \"flight_type\": \"round_t"
+  },
+  {
+    "domain": "airline",
+    "task": 19,
+    "trial": 3,
+    "reward": 0.0,
+    "tool": "update_reservation_baggages",
+    "args": "{\"reservation_id\":\"VA5SGQ\",\"total_baggages\":1,\"nonfree_baggages\":1,\"payment_id\":\"credit_card_8003957\"}",
+    "previous_user_turn": "Great, thank you! Before we finish, could you please add one checked bag to my reservation?",
+    "response": "{\"reservation_id\": \"VA5SGQ\", \"user_id\": \"raj_brown_5782\", \"origin\": \"DTW\", \"destination\": \"LGA\", \"flight_type\": \"round_t"
+  },
+  {
+    "domain": "airline",
+    "task": 20,
+    "trial": 3,
+    "reward": 1.0,
+    "tool": "update_reservation_flights",
+    "args": "{\"reservation_id\":\"1N99U6\",\"cabin\":\"economy\",\"flights\":[{\"flight_number\":\"HAT266\",\"date\":\"2024-05-19\"},{\"flight_number\":\"HAT112\",\"date\":\"2024-05-27\"}],\"payment_id\":\"gift_card_5634230\"}",
+    "previous_user_turn": "Let's use the gift card to cover the difference, please.",
+    "response": "{\"reservation_id\": \"1N99U6\", \"user_id\": \"james_taylor_7043\", \"origin\": \"LAS\", \"destination\": \"IAH\", \"flight_type\": \"roun"
+  },
+  {
+    "domain": "airline",
+    "task": 23,
+    "trial": 3,
+    "reward": 0.0,
+    "tool": "update_reservation_flights",
+    "args": "{\"reservation_id\":\"HXDUBJ\",\"cabin\":\"business\",\"flights\":[{\"flight_number\":\"HAT072\",\"date\":\"2024-05-19\"},{\"flight_number\":\"HAT278\",\"date\":\"2024-05-23\"}],\"payment_id\":\"gift_card_1646646\"}",
+    "previous_user_turn": "Let's use the Gift Card with the $200 balance, please.",
+    "response": "Error: gift card balance is not enough"
+  },
+  {
+    "domain": "airline",
+    "task": 29,
+    "trial": 3,
+    "reward": 0.0,
+    "tool": "cancel_reservation",
+    "args": "{\"reservation_id\":\"UDMOP1\"}",
+    "previous_user_turn": "I would like to cancel all the reservations that only have one passenger on them, please.",
+    "response": "{\"reservation_id\": \"UDMOP1\", \"user_id\": \"amelia_davis_8890\", \"origin\": \"SFO\", \"destination\": \"SFO\", \"flight_type\": \"roun"
+  },
+  {
+    "domain": "airline",
+    "task": 29,
+    "trial": 3,
+    "reward": 0.0,
+    "tool": "cancel_reservation",
+    "args": "{\"reservation_id\":\"4XGCCM\"}",
+    "previous_user_turn": "I would like to cancel all the reservations that only have one passenger on them, please.",
+    "response": "{\"reservation_id\": \"4XGCCM\", \"user_id\": \"amelia_davis_8890\", \"origin\": \"IAH\", \"destination\": \"DTW\", \"flight_type\": \"roun"
+  }
+]

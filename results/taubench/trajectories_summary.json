@@ -1,0 +1,24 @@
+{
+  "retail": {
+    "episodes": 460,
+    "rewarded": 278,
+    "episodes_with_guard_attempt": 44,
+    "rewarded_with_guard_attempt": 7,
+    "episodes_with_write": 388,
+    "episodes_with_unconfirmed_write": 54,
+    "rewarded_with_unconfirmed_write": 25,
+    "writes": 666,
+    "unconfirmed_writes": 73
+  },
+  "airline": {
+    "episodes": 200,
+    "rewarded": 84,
+    "episodes_with_guard_attempt": 0,
+    "rewarded_with_guard_attempt": 0,
+    "episodes_with_write": 118,
+    "episodes_with_unconfirmed_write": 26,
+    "rewarded_with_unconfirmed_write": 4,
+    "writes": 250,
+    "unconfirmed_writes": 54
+  }
+}
