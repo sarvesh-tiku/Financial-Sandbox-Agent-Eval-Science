@@ -38,7 +38,9 @@ def run(task_id: str, mutant: str | None) -> dict:
     code = (root / "data" / "tasks" / task_id / "ground_truth" / "compiled_solution.py").read_text()
     code += "\nsolution(apis, requester)\n"
     try:
-        with AppWorld(task_id=task_id, experiment_name=f"audit_{mutant or 'reference'}") as world:
+        # Same settings as AppWorld's own ground-truth verification (appworld/verify.py).
+        with AppWorld(task_id=task_id, experiment_name=f"audit_{mutant or 'reference'}",
+                      raise_on_failure=False, ground_truth_mode="full") as world:
             output = world.execute(code)
             crashed = "Execution successful" not in str(output)
             result = world.evaluate().to_dict()

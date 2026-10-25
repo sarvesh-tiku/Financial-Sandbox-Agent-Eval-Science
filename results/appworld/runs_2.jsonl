@@ -4,6 +4,3 @@
 {"task": "2a163ab_2", "mutant": "reference", "success": true, "crashed": false, "num_tests": 6, "num_failures": 0}
 {"task": "6104387_1", "mutant": "reference", "success": true, "crashed": false, "num_tests": 10, "num_failures": 0}
 {"task": "6104387_2", "mutant": "post", "success": false, "crashed": false, "num_tests": 10, "num_failures": 8}
-{"task": "6104387_3", "mutant": "delete", "success": false, "crashed": false, "num_tests": 10, "num_failures": 2}
-{"task": "29caf6f_2", "mutant": "post", "success": false, "crashed": false, "num_tests": 8, "num_failures": 6}
-{"task": "afc0fce_1", "mutant": "post", "success": false, "crashed": false, "num_tests": 9, "num_failures": 5}
