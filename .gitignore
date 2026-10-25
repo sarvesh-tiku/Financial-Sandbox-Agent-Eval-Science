@@ -6,3 +6,6 @@ paper/*.log
 paper/*.bbl
 paper/*.blg
 paper/*.out
+paper/*.xdv
+paper/*.fdb_latexmk
+paper/*.fls

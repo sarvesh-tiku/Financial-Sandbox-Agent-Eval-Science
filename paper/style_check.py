@@ -7,7 +7,7 @@ import statistics
 from collections import Counter
 
 tex = open("paper/main.tex").read()
-body = tex[tex.index("\\begin{abstract}"):tex.index("\\bibliographystyle")]
+body = tex[tex.index("\\begin{abstract}"):tex.index("\\bibliography{")]
 t = re.sub(r"\\begin\{(table|figure)\}.*?\\end\{(table|figure)\}", " ", body, flags=re.S)
 t = re.sub(r"\\(cite|citet|citep)\{[^}]*\}", "X", t)
 t = re.sub(r"\\[a-zA-Z]+\*?(\[[^\]]*\])?", "", t)
