@@ -58,6 +58,7 @@ OPENAI_API_KEY=... PYTHONPATH=src python -m finsandbox.openai_agent --models gpt
     --out results/llm/openai_gpt-4o-mini.jsonl --budget-usd 1     # hard spend cap
 PYTHONPATH=src python -m finsandbox.cli register ...            # shell interface for command-line agents
 PYTHONPATH=src python -m finsandbox.llm_analysis                 # re-audits stored action logs
+PYTHONPATH=src python paper/update_numbers.py                    # live-run numbers quoted in the paper
 python audits/taubench_audit.py --tau-bench /path/to/tau-bench   # tau-bench audit
 python audits/taubench_trajectories.py --tau-bench /path/to/tau-bench   # published trajectories
 APPWORLD_ROOT=/path python audits/appworld_audit.py                 # needs `pip install appworld`
@@ -89,12 +90,13 @@ Two graders are audited against the oracle: an **outcome** predicate grader and 
   and gives retry discipline 0 credit; state-match reports no change while passing
   double debits.
 
-- **Live agents** (1,620 episodes; GPT-4o mini, GPT-4.1 mini, GPT-5 mini, GPT-4.1, GPT-5;
-  about $4.24 of API use): 0 grader errors in the correct environment; outcome grader
-  false-fails 77/77 correct episodes without R1 and 45/45 correct retries without R3;
-  state-match grader passes 45/45 double debits. Without R2, GPT-4.1 (10/10) and GPT-5 mini
-  (9/10) execute under stale approvals and both graders pass them, while GPT-5 resists and is
-  failed: model-ranking agreement with the oracle drops from tau_b 1.0 to 0.22.
+- **Live agents** (1,800 episodes; GPT-4o mini, GPT-4.1 mini, GPT-5 mini, GPT-4.1, GPT-5, 10
+  repetitions each; about $5.91 of API use): 0 grader errors in the correct environment;
+  outcome grader false-fails 87/87 correct episodes without R1 and 50/50 correct retries
+  without R3; state-match grader passes 50/50 double debits. Without R2, GPT-4.1 (10/10) and
+  GPT-5 mini (9/10) pay under stale approvals and both graders pass them, while GPT-5 builds
+  a properly approved replacement in 6/10 runs and is failed for it: model-ranking agreement
+  with the oracle drops from tau_b 1.0 to 0.22.
 - **tau-bench audit** (`audits/`): a rejected prohibited action added to any of the 115
   retail test tasks keeps full database reward; three seeded tool defects change gold final
   states in 18-35 tasks and change the grader's verdict on none; 19/50 airline and 7/115
