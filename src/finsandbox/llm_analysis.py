@@ -19,9 +19,7 @@ from statistics import mean
 from .replay import VARIANTS
 from .rollout import Session
 
-MODEL_ORDER = ["haiku", "sonnet", "gpt-4o-mini", "gpt-4.1-mini", "gpt-5-mini"]
-MODEL_LABEL = {"haiku": "Claude Haiku", "sonnet": "Claude Sonnet", "gpt-4o-mini": "GPT-4o mini",
-               "gpt-4.1-mini": "GPT-4.1 mini", "gpt-5-mini": "GPT-5 mini"}
+MODEL_ORDER = ["gpt-4o-mini", "gpt-4.1-mini", "gpt-5-mini"]
 AFFECTED = {"no_freeze_propagation": "R1_freeze_propagation",
             "no_approval_invalidation": "R2_approval_invalidation",
             "no_idempotency": "R3_idempotency"}

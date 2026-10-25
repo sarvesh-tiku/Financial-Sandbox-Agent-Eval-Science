@@ -107,7 +107,7 @@ def fig_verdicts(rows, out):
     rule_rows = [r for r in rows if r["rule"] != "control"]
     scripts = list(dict.fromkeys((r["task"], r["script"], r["script_valid"]) for r in rule_rows))
     agree = "#efeeeb"
-    fig, axes = plt.subplots(1, 2, figsize=(7.0, 2.9), sharey=True, gridspec_kw={"wspace": 0.08})
+    fig, axes = plt.subplots(1, 2, figsize=(7.0, 2.5), sharey=True, gridspec_kw={"wspace": 0.08})
     for ax, (grader, err_key) in zip(axes, (("outcome", "grader_error"), ("state_match", "match_error"))):
         for y, (task, script, valid) in enumerate(scripts):
             for x, v in enumerate(VARIANTS):
@@ -145,13 +145,12 @@ def fig_verdicts(rows, out):
     fig.savefig(out / "verdicts.png", dpi=200)
 
 
-LLM_MODELS = [("haiku", "Claude Haiku"), ("sonnet", "Claude Sonnet"), ("gpt-4o-mini", "GPT-4o mini"),
-              ("gpt-4.1-mini", "GPT-4.1 mini"), ("gpt-5-mini", "GPT-5 mini")]
+LLM_MODELS = [("gpt-4o-mini", "GPT-4o mini"), ("gpt-4.1-mini", "GPT-4.1 mini"), ("gpt-5-mini", "GPT-5 mini")]
 
 
 def fig_llm(rows, out):
     defects = VARIANTS[1:]
-    fig, axes = plt.subplots(2, 3, figsize=(7.0, 3.3), sharex=True, sharey=True)
+    fig, axes = plt.subplots(2, 3, figsize=(7.0, 2.9), sharex=True, sharey=True)
     for i, (grader, key) in enumerate((("outcome", "outcome"), ("state_match", "state_match"))):
         for j, v in enumerate(defects):
             ax = axes[i, j]
@@ -174,7 +173,7 @@ def fig_llm(rows, out):
             if i == 0:
                 ax.set_title(VARIANT_LABEL[v])
             if j == 0:
-                ax.set_ylabel(GRADER_LABEL[grader], color=INK)
+                ax.set_ylabel(GRADER_LABEL[grader].replace(" grader", ""), color=INK)
     axes[0, 0].set_yticks(range(len(LLM_MODELS)), [label for _, label in LLM_MODELS])
     axes[0, 0].invert_yaxis()
     for ax in axes[1]:
@@ -182,7 +181,7 @@ def fig_llm(rows, out):
     handles = [plt.Line2D([], [], marker="o", ls="", markerfacecolor="white", markeredgecolor=INK2,
                           label="true (specification oracle)"),
                plt.Line2D([], [], marker="o", ls="", color=BLUE, label="measured (grader)")]
-    fig.legend(handles=handles, loc="upper center", ncol=2, frameon=False, bbox_to_anchor=(0.5, 1.05))
+    fig.legend(handles=handles, loc="upper center", ncol=2, frameon=False, bbox_to_anchor=(0.5, 1.1))
     fig.savefig(out / "llm.pdf")
     fig.savefig(out / "llm.png", dpi=200)
 
