@@ -30,6 +30,13 @@ class SessionTest(unittest.TestCase):
         live.env.db.close()
         self.assertEqual(rebuilt.finish(model="t")["grader_error"], "false_failure")
 
+    def test_failed_first_call_keeps_seed_data(self):
+        # Regression: a failing first call used to roll back the uncommitted seed accounts.
+        s = Session(RETRY, "reference")
+        self.assertIn("error", s.call("get_account", {"account_id": "Z"}))
+        self.assertEqual(set(s.env.snapshot()["accounts"]), {"A", "B", "V"})
+        s.env.db.close()
+
     def test_unknown_tool_is_not_logged(self):
         s = Session(RETRY, "reference")
         self.assertIn("error", s.call("delete_everything", {}))

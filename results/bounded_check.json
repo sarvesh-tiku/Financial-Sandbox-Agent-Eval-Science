@@ -1,0 +1,37 @@
+{
+ "depth": 4,
+ "alphabet_size": 12,
+ "sequences": 22620,
+ "variants": {
+  "reference": {
+   "steps_compared": 88428,
+   "sequences_diverging": 0,
+   "first_divergence_by_action": {},
+   "pass": true
+  },
+  "no_freeze_propagation": {
+   "steps_compared": 87888,
+   "sequences_diverging": 719,
+   "first_divergence_by_action": {
+    "freeze_account": 719
+   },
+   "pass": true
+  },
+  "no_approval_invalidation": {
+   "steps_compared": 88404,
+   "sequences_diverging": 85,
+   "first_divergence_by_action": {
+    "edit_transfer": 85
+   },
+   "pass": true
+  },
+  "no_idempotency": {
+   "steps_compared": 87324,
+   "sequences_diverging": 1516,
+   "first_divergence_by_action": {
+    "submit_payment": 1516
+   },
+   "pass": true
+  }
+ }
+}

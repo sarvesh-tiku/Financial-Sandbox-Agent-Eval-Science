@@ -59,6 +59,9 @@ OPENAI_API_KEY=... PYTHONPATH=src python -m finsandbox.openai_agent --models gpt
 PYTHONPATH=src python -m finsandbox.cli register ...            # shell interface for command-line agents
 PYTHONPATH=src python -m finsandbox.llm_analysis                 # re-audits stored action logs
 PYTHONPATH=src python paper/update_numbers.py                    # live-run numbers quoted in the paper
+PYTHONPATH=src python -m finsandbox.stats                        # Wilson intervals, bootstrap and leave-one-out ranking
+PYTHONPATH=src python audits/bounded_check.py --depth 4          # exhaustive env-vs-oracle check
+PYTHONPATH=src python audits/oracle_correction.py                # effect of the payee-goal correction
 python audits/taubench_audit.py --tau-bench /path/to/tau-bench   # tau-bench audit
 python audits/taubench_trajectories.py --tau-bench /path/to/tau-bench   # published trajectories
 APPWORLD_ROOT=/path python audits/appworld_audit.py                 # needs `pip install appworld`
@@ -96,20 +99,23 @@ Two graders are audited against the oracle: an **outcome** predicate grader and 
   without R3; state-match grader passes 50/50 double debits. Without R2, GPT-4.1 (10/10) and
   GPT-5 mini (9/10) pay under stale approvals and both graders pass them, while GPT-5 builds
   a properly approved replacement in 6/10 runs and is failed for it: model-ranking agreement
-  with the oracle drops from tau_b 1.0 to 0.22.
+  with the oracle drops from tau_b 1.0 to 0.22 (episode bootstrap 95% CI 0.11-0.44; the effect
+  comes from the payee-change task, without which tau_b is 1.0).
 - **tau-bench audit** (`audits/`): a rejected prohibited action added to any of the 115
   retail test tasks keeps full database reward; three seeded tool defects change gold final
   states in 18-35 tasks and change the grader's verdict on none; 19/50 airline and 7/115
   retail tasks give full reward to an agent that does nothing. In tau-bench's published
-  GPT-4o trajectories, 32/278 rewarded retail and 4/84 rewarded airline episodes contain a
-  policy violation the grader cannot see (rejected status-guard attempt or unconfirmed
-  write). Retail test task 64's gold trajectory itself contains a prohibited attempt, and its
+  GPT-4o trajectories, every flagged write in a rewarded episode was adjudicated by hand
+  (`results/taubench/adjudication.json`): the status-guard flag is 7/7 correct, the lexical
+  confirmation flag 11/37 (15/37 counting technical cases), leaving 12/278 rewarded retail and
+  2/84 rewarded airline episodes with a confirmed policy violation the grader cannot see. Retail test task 64's gold trajectory itself contains a prohibited attempt, and its
   `user_id` does not match the user it acts on.
 
 - **AppWorld audit** (`audits/appworld_audit.py`): with AppWorld's own verification settings
   all 147 train/dev ground-truth solutions pass; seeded write defects (POST/PATCH/DELETE return
   success without being applied) make the evaluation fail the ground truth in 114/114 affected
-  runs, i.e. assertion-based grading exposes the defects that tau-bench's gold replay misses.
+  runs (105 failed assertions, 9 crashes). This is a different mutation from the tau-bench one,
+  so it is not a controlled comparison.
   Only aggregate results and task ids are stored (AppWorld data must stay encrypted).
 
 Paper: `paper/main.tex` / `paper/main.pdf`.

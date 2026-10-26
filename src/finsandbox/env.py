@@ -68,6 +68,8 @@ class BankEnv:
                 "INSERT INTO accounts VALUES (?, ?, ?, ?)",
                 (a["id"], a["owner"], a["balance"], a.get("status", "active")),
             )
+        # Commit the seed data: otherwise a failing first tool call rolls it back.
+        self.db.commit()
         self.initial_snapshot = self.snapshot()
         self.log: list[dict[str, Any]] = []
 

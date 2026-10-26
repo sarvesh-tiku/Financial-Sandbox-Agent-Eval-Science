@@ -25,9 +25,10 @@ def check(key, label, cond):
     print(f"{'PASS' if cond else 'FAIL'}  {key:26s} {label}")
 
 ARXIV = {"yao2025taubench": "2406.12045", "barres2025tau2": "2506.07982", "zhu2025abc": "2507.02825",
-         "trivedi2024appworld": "2407.18901", "jimenez2024swebench": "2310.06770", "zhou2024webarena": "2307.13854"}
+         "trivedi2024appworld": "2407.18901", "jimenez2024swebench": "2310.06770", "zhou2024webarena": "2307.13854",
+         "chen2026unreliable": "2610.16067", "he2026sscbench": "2610.11514", "shao2026protocol": "2607.22368"}
 for key, aid in ARXIV.items():
-    xml = get(f"http://export.arxiv.org/api/query?id_list={aid}")
+    xml = get(f"https://export.arxiv.org/api/query?id_list={aid}")
     entry = xml.split("<entry>")[1]
     title = re.search(r"<title>(.*?)</title>", entry, re.S).group(1)
     authors = [norm(a.split()[-1]) for a in re.findall(r"<name>(.*?)</name>", entry)]

@@ -1,0 +1,549 @@
+{
+ "sampling_unit": "episode within a fixed (model, task, environment) cell; intervals are conditional on the nine fixed tasks",
+ "rates": {
+  "no_freeze_propagation/outcome": {
+   "false_failure": [
+    87,
+    87,
+    [
+     0.958,
+     1.0
+    ]
+   ],
+   "false_pass": [
+    0,
+    13,
+    [
+     0.0,
+     0.228
+    ]
+   ],
+   "silent": [
+    0,
+    100,
+    [
+     0.0,
+     0.037
+    ]
+   ]
+  },
+  "no_freeze_propagation/state_match": {
+   "false_failure": [
+    0,
+    87,
+    [
+     0.0,
+     0.042
+    ]
+   ],
+   "false_pass": [
+    0,
+    13,
+    [
+     0.0,
+     0.228
+    ]
+   ],
+   "silent": [
+    0,
+    100,
+    [
+     0.0,
+     0.037
+    ]
+   ]
+  },
+  "no_freeze_propagation/per_model_outcome_ff": {
+   "gpt-4o-mini": [
+    12,
+    12
+   ],
+   "gpt-4.1-mini": [
+    20,
+    20
+   ],
+   "gpt-5-mini": [
+    20,
+    20
+   ],
+   "gpt-4.1": [
+    15,
+    15
+   ],
+   "gpt-5": [
+    20,
+    20
+   ]
+  },
+  "no_approval_invalidation/outcome": {
+   "false_failure": [
+    14,
+    27,
+    [
+     0.34,
+     0.693
+    ]
+   ],
+   "false_pass": [
+    21,
+    23,
+    [
+     0.732,
+     0.976
+    ]
+   ],
+   "silent": [
+    13,
+    50,
+    [
+     0.159,
+     0.396
+    ]
+   ]
+  },
+  "no_approval_invalidation/state_match": {
+   "false_failure": [
+    14,
+    27,
+    [
+     0.34,
+     0.693
+    ]
+   ],
+   "false_pass": [
+    21,
+    23,
+    [
+     0.732,
+     0.976
+    ]
+   ],
+   "silent": [
+    13,
+    50,
+    [
+     0.159,
+     0.396
+    ]
+   ]
+  },
+  "no_approval_invalidation/per_model_outcome_ff": {
+   "gpt-4o-mini": [
+    8,
+    8
+   ],
+   "gpt-4.1-mini": [
+    0,
+    8
+   ],
+   "gpt-5-mini": [
+    0,
+    1
+   ],
+   "gpt-4.1": [
+    0,
+    0
+   ],
+   "gpt-5": [
+    6,
+    10
+   ]
+  },
+  "no_idempotency/outcome": {
+   "false_failure": [
+    50,
+    50,
+    [
+     0.929,
+     1.0
+    ]
+   ],
+   "false_pass": [
+    0,
+    0,
+    [
+     null,
+     null
+    ]
+   ],
+   "silent": [
+    0,
+    50,
+    [
+     0.0,
+     0.071
+    ]
+   ]
+  },
+  "no_idempotency/state_match": {
+   "false_failure": [
+    0,
+    50,
+    [
+     0.0,
+     0.071
+    ]
+   ],
+   "false_pass": [
+    0,
+    0,
+    [
+     null,
+     null
+    ]
+   ],
+   "silent": [
+    50,
+    50,
+    [
+     0.929,
+     1.0
+    ]
+   ]
+  },
+  "no_idempotency/per_model_outcome_ff": {
+   "gpt-4o-mini": [
+    10,
+    10
+   ],
+   "gpt-4.1-mini": [
+    10,
+    10
+   ],
+   "gpt-5-mini": [
+    10,
+    10
+   ],
+   "gpt-4.1": [
+    10,
+    10
+   ],
+   "gpt-5": [
+    10,
+    10
+   ]
+  }
+ },
+ "ranking": {
+  "reference/outcome": {
+   "tau_b": 1.0,
+   "measured": {
+    "gpt-4o-mini": 0.825,
+    "gpt-4.1-mini": 1.0,
+    "gpt-5-mini": 1.0,
+    "gpt-4.1": 0.75,
+    "gpt-5": 1.0
+   },
+   "true": {
+    "gpt-4o-mini": 0.825,
+    "gpt-4.1-mini": 1.0,
+    "gpt-5-mini": 1.0,
+    "gpt-4.1": 0.75,
+    "gpt-5": 1.0
+   },
+   "bootstrap": {
+    "median": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ],
+    "p_tau_below_0.5": 0.0,
+    "p_at_least_one_inversion": 0.0,
+    "p_gpt5_true_best_but_ranked_below_two": 0.0
+   },
+   "leave_one_task_out": {
+    "freeze_fraud": 1.0,
+    "drain_queue_after_freeze": null,
+    "payee_change": 1.0,
+    "payment_retry": 1.0
+   },
+   "leave_one_model_out": {
+    "gpt-4o-mini": 1.0,
+    "gpt-4.1-mini": 1.0,
+    "gpt-5-mini": 1.0,
+    "gpt-4.1": 1.0,
+    "gpt-5": 1.0
+   }
+  },
+  "reference/state_match": {
+   "tau_b": 1.0,
+   "measured": {
+    "gpt-4o-mini": 0.825,
+    "gpt-4.1-mini": 1.0,
+    "gpt-5-mini": 1.0,
+    "gpt-4.1": 0.75,
+    "gpt-5": 1.0
+   },
+   "true": {
+    "gpt-4o-mini": 0.825,
+    "gpt-4.1-mini": 1.0,
+    "gpt-5-mini": 1.0,
+    "gpt-4.1": 0.75,
+    "gpt-5": 1.0
+   },
+   "bootstrap": {
+    "median": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ],
+    "p_tau_below_0.5": 0.0,
+    "p_at_least_one_inversion": 0.0,
+    "p_gpt5_true_best_but_ranked_below_two": 0.0
+   },
+   "leave_one_task_out": {
+    "freeze_fraud": 1.0,
+    "drain_queue_after_freeze": null,
+    "payee_change": 1.0,
+    "payment_retry": 1.0
+   },
+   "leave_one_model_out": {
+    "gpt-4o-mini": 1.0,
+    "gpt-4.1-mini": 1.0,
+    "gpt-5-mini": 1.0,
+    "gpt-4.1": 1.0,
+    "gpt-5": 1.0
+   }
+  },
+  "no_freeze_propagation/outcome": {
+   "tau_b": 0.756,
+   "measured": {
+    "gpt-4o-mini": 0.475,
+    "gpt-4.1-mini": 0.5,
+    "gpt-5-mini": 0.5,
+    "gpt-4.1": 0.5,
+    "gpt-5": 0.5
+   },
+   "true": {
+    "gpt-4o-mini": 0.775,
+    "gpt-4.1-mini": 1.0,
+    "gpt-5-mini": 1.0,
+    "gpt-4.1": 0.875,
+    "gpt-5": 1.0
+   },
+   "bootstrap": {
+    "median": 0.756,
+    "ci95": [
+     0.612,
+     0.756
+    ],
+    "p_tau_below_0.5": 0.009,
+    "p_at_least_one_inversion": 0.006,
+    "p_gpt5_true_best_but_ranked_below_two": 0.0
+   },
+   "leave_one_task_out": {
+    "freeze_fraud": 0.756,
+    "drain_queue_after_freeze": 1.0,
+    "payee_change": null,
+    "payment_retry": 0.756
+   },
+   "leave_one_model_out": {
+    "gpt-4o-mini": null,
+    "gpt-4.1-mini": 0.775,
+    "gpt-5-mini": 0.775,
+    "gpt-4.1": 1.0,
+    "gpt-5": 0.775
+   }
+  },
+  "no_freeze_propagation/state_match": {
+   "tau_b": 1.0,
+   "measured": {
+    "gpt-4o-mini": 0.775,
+    "gpt-4.1-mini": 1.0,
+    "gpt-5-mini": 1.0,
+    "gpt-4.1": 0.875,
+    "gpt-5": 1.0
+   },
+   "true": {
+    "gpt-4o-mini": 0.775,
+    "gpt-4.1-mini": 1.0,
+    "gpt-5-mini": 1.0,
+    "gpt-4.1": 0.875,
+    "gpt-5": 1.0
+   },
+   "bootstrap": {
+    "median": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ],
+    "p_tau_below_0.5": 0.0,
+    "p_at_least_one_inversion": 0.0,
+    "p_gpt5_true_best_but_ranked_below_two": 0.0
+   },
+   "leave_one_task_out": {
+    "freeze_fraud": 1.0,
+    "drain_queue_after_freeze": 1.0,
+    "payee_change": 1.0,
+    "payment_retry": 1.0
+   },
+   "leave_one_model_out": {
+    "gpt-4o-mini": 1.0,
+    "gpt-4.1-mini": 1.0,
+    "gpt-5-mini": 1.0,
+    "gpt-4.1": 1.0,
+    "gpt-5": 1.0
+   }
+  },
+  "no_approval_invalidation/outcome": {
+   "tau_b": 0.222,
+   "measured": {
+    "gpt-4o-mini": 0.575,
+    "gpt-4.1-mini": 1.0,
+    "gpt-5-mini": 1.0,
+    "gpt-4.1": 0.75,
+    "gpt-5": 0.85
+   },
+   "true": {
+    "gpt-4o-mini": 0.775,
+    "gpt-4.1-mini": 0.95,
+    "gpt-5-mini": 0.775,
+    "gpt-4.1": 0.5,
+    "gpt-5": 1.0
+   },
+   "bootstrap": {
+    "median": 0.222,
+    "ci95": [
+     0.105,
+     0.444
+    ],
+    "p_tau_below_0.5": 1.0,
+    "p_at_least_one_inversion": 1.0,
+    "p_gpt5_true_best_but_ranked_below_two": 1.0
+   },
+   "leave_one_task_out": {
+    "freeze_fraud": 0.222,
+    "drain_queue_after_freeze": -0.504,
+    "payee_change": 1.0,
+    "payment_retry": 0.222
+   },
+   "leave_one_model_out": {
+    "gpt-4o-mini": 0.183,
+    "gpt-4.1-mini": 0.183,
+    "gpt-5-mini": 0.333,
+    "gpt-4.1": 0.0,
+    "gpt-5": 0.4
+   }
+  },
+  "no_approval_invalidation/state_match": {
+   "tau_b": 0.222,
+   "measured": {
+    "gpt-4o-mini": 0.575,
+    "gpt-4.1-mini": 1.0,
+    "gpt-5-mini": 1.0,
+    "gpt-4.1": 0.75,
+    "gpt-5": 0.85
+   },
+   "true": {
+    "gpt-4o-mini": 0.775,
+    "gpt-4.1-mini": 0.95,
+    "gpt-5-mini": 0.775,
+    "gpt-4.1": 0.5,
+    "gpt-5": 1.0
+   },
+   "bootstrap": {
+    "median": 0.222,
+    "ci95": [
+     0.105,
+     0.444
+    ],
+    "p_tau_below_0.5": 1.0,
+    "p_at_least_one_inversion": 1.0,
+    "p_gpt5_true_best_but_ranked_below_two": 1.0
+   },
+   "leave_one_task_out": {
+    "freeze_fraud": 0.222,
+    "drain_queue_after_freeze": -0.504,
+    "payee_change": 1.0,
+    "payment_retry": 0.222
+   },
+   "leave_one_model_out": {
+    "gpt-4o-mini": 0.183,
+    "gpt-4.1-mini": 0.183,
+    "gpt-5-mini": 0.333,
+    "gpt-4.1": 0.0,
+    "gpt-5": 0.4
+   }
+  },
+  "no_idempotency/outcome": {
+   "tau_b": 1.0,
+   "measured": {
+    "gpt-4o-mini": 0.6,
+    "gpt-4.1-mini": 0.75,
+    "gpt-5-mini": 0.75,
+    "gpt-4.1": 0.5,
+    "gpt-5": 0.75
+   },
+   "true": {
+    "gpt-4o-mini": 0.85,
+    "gpt-4.1-mini": 1.0,
+    "gpt-5-mini": 1.0,
+    "gpt-4.1": 0.75,
+    "gpt-5": 1.0
+   },
+   "bootstrap": {
+    "median": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ],
+    "p_tau_below_0.5": 0.0,
+    "p_at_least_one_inversion": 0.0,
+    "p_gpt5_true_best_but_ranked_below_two": 0.0
+   },
+   "leave_one_task_out": {
+    "freeze_fraud": 1.0,
+    "drain_queue_after_freeze": null,
+    "payee_change": 1.0,
+    "payment_retry": 1.0
+   },
+   "leave_one_model_out": {
+    "gpt-4o-mini": 1.0,
+    "gpt-4.1-mini": 1.0,
+    "gpt-5-mini": 1.0,
+    "gpt-4.1": 1.0,
+    "gpt-5": 1.0
+   }
+  },
+  "no_idempotency/state_match": {
+   "tau_b": 1.0,
+   "measured": {
+    "gpt-4o-mini": 0.85,
+    "gpt-4.1-mini": 1.0,
+    "gpt-5-mini": 1.0,
+    "gpt-4.1": 0.75,
+    "gpt-5": 1.0
+   },
+   "true": {
+    "gpt-4o-mini": 0.85,
+    "gpt-4.1-mini": 1.0,
+    "gpt-5-mini": 1.0,
+    "gpt-4.1": 0.75,
+    "gpt-5": 1.0
+   },
+   "bootstrap": {
+    "median": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ],
+    "p_tau_below_0.5": 0.0,
+    "p_at_least_one_inversion": 0.0,
+    "p_gpt5_true_best_but_ranked_below_two": 0.0
+   },
+   "leave_one_task_out": {
+    "freeze_fraud": 1.0,
+    "drain_queue_after_freeze": null,
+    "payee_change": 1.0,
+    "payment_retry": 1.0
+   },
+   "leave_one_model_out": {
+    "gpt-4o-mini": 1.0,
+    "gpt-4.1-mini": 1.0,
+    "gpt-5-mini": 1.0,
+    "gpt-4.1": 1.0,
+    "gpt-5": 1.0
+   }
+  }
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "verdicts_changed": 14,
+ "changed_by": {
+  "gpt-4o-mini/no_approval_invalidation": 8,
+  "gpt-5/no_approval_invalidation": 6
+ },
+ "all_changed_are_cancel_and_recreate": true,
+ "r2_payee_oracle_pass": {
+  "original_goal": 13,
+  "corrected_goal": 27
+ },
+ "r2_payee_false_pass": {
+  "original_goal": 21,
+  "corrected_goal": 21
+ },
+ "r2_tau_b": {
+  "original_goal": 0.527,
+  "corrected_goal": 0.222
+ }
+}
