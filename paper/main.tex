@@ -1,7 +1,7 @@
 % !TeX program = xelatex
 % Agent Evaluation Science (AES) template v0.1. Compile with: latexmk -xelatex main.tex
 \documentclass[11pt,a4paper]{article}
-\usepackage[review]{aes} % Anonymous review mode; switch to \usepackage{aes} for the camera-ready version.
+\usepackage{aes} % Public mode (AES submissions are not anonymous).
 \usepackage{amsmath,amssymb}
 
 \setlength{\emergencystretch}{3em}
@@ -31,8 +31,10 @@
 
 \title[State-Transition Fidelity in Financial Agent Evaluation]{How State-Transition Fidelity Affects Financial Agent Evaluation}
 
-% Authors omitted for anonymous review; add \aesauthor/\aesaffiliation for the camera-ready version.
-\aesauthor{Anonymous}
+\aesauthor[affil={1},corresponding]{Gauri Sharma}
+\aesauthor[affil={1}]{Sarvesh Tiku}
+\aesaffiliation{1}{Georgia Institute of Technology}
+\aesemails{\aesemail{gsharma80@gatech.edu}\quad\aesemail{stiku6@gatech.edu}}
 \aeskeywords{Agent evaluation; Benchmark validity; Stateful environments; Financial agents}
 
 \begin{document}
@@ -49,7 +51,7 @@ Suppose a fraud team asks an agent to freeze a customer's account, and the agent
 
 Benchmarks such as $\tau$-bench~\citep{yao2025taubench,barres2025tau2}, AppWorld~\citep{trivedi2024appworld}, and WebArena~\citep{zhou2024webarena} score agents by what their actions do to a simulated system. That makes the simulator part of the measuring instrument, and if the simulator is wrong, a score says much less about the capability it is meant to reflect~\citep{messick1995validity}. Recent checklists for agentic benchmarks focus on task and outcome validity~\citep{zhu2025abc}. Our question is narrower. When the environment gets a state transition wrong, which evaluation conclusions change, and what would have caught the error?
 
-Our method borrows from mutation testing~\citep{demillo1978hints,jia2011mutation}. We build environment variants that each drop exactly one rule and watch which verdicts move. Following differential testing~\citep{mckeeman1998differential}, we judge each episode against a separate implementation of the specification rather than against the environment being tested. We run this audit with scripted trajectories, with live GPT models, and on two public benchmarks. Code, logs, adjudication labels, and the commands that regenerate every number will be released with the paper and are described in Appendix~\ref{app:repro}.
+Our method borrows from mutation testing~\citep{demillo1978hints,jia2011mutation}. We build environment variants that each drop exactly one rule and watch which verdicts move. Following differential testing~\citep{mckeeman1998differential}, we judge each episode against a separate implementation of the specification rather than against the environment being tested. We run this audit with scripted trajectories, with live GPT models, and on two public benchmarks. Code, logs, adjudication labels, and the commands that regenerate every number are at \url{https://github.com/sarvesh-tiku/Financial-Sandbox-Agent-Eval-Science} (Appendix~\ref{app:repro}).
 
 \section{Testbed and audit protocol}
 \label{sec:method}
