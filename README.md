@@ -114,7 +114,7 @@ Two graders are audited against the oracle: an **outcome** predicate grader and 
 - **AppWorld audit** (`audits/appworld_audit.py`): with AppWorld's own verification settings
   all 147 train/dev ground-truth solutions pass; seeded write defects (POST/PATCH/DELETE return
   success without being applied) make the evaluation fail the ground truth in 114/114 affected
-  runs (105 failed assertions, 9 crashes). This is a different mutation from the tau-bench one,
+  runs through failed assertions (in 9 of them the solution code also stopped with an error). This is a different mutation from the tau-bench one,
   so it is not a controlled comparison.
   Only aggregate results and task ids are stored (AppWorld data must stay encrypted).
 
