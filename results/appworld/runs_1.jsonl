@@ -1,0 +1,65 @@
+{"task": "82e2fac_2", "mutant": "reference", "success": true, "crashed": false, "num_tests": 2, "num_failures": 0}
+{"task": "692c77d_3", "mutant": "reference", "success": true, "crashed": false, "num_tests": 7, "num_failures": 0}
+{"task": "692c77d_3", "mutant": "post", "success": false, "crashed": false, "num_tests": 7, "num_failures": 2, "response_fallbacks": 0}
+{"task": "692c77d_3", "mutant": "patch", "success": false, "crashed": false, "num_tests": 7, "num_failures": 2, "response_fallbacks": 0}
+{"task": "6104387_1", "mutant": "reference", "success": true, "crashed": false, "num_tests": 10, "num_failures": 0}
+{"task": "6104387_1", "mutant": "post", "success": false, "crashed": false, "num_tests": 10, "num_failures": 8, "response_fallbacks": 0}
+{"task": "6104387_1", "mutant": "delete", "success": false, "crashed": false, "num_tests": 10, "num_failures": 2, "response_fallbacks": 0}
+{"task": "29caf6f_2", "mutant": "reference", "success": true, "crashed": false, "num_tests": 8, "num_failures": 0}
+{"task": "29caf6f_2", "mutant": "post", "success": false, "crashed": false, "num_tests": 8, "num_failures": 6, "response_fallbacks": 0}
+{"task": "afc0fce_3", "mutant": "reference", "success": true, "crashed": false, "num_tests": 9, "num_failures": 0}
+{"task": "afc0fce_3", "mutant": "post", "success": false, "crashed": false, "num_tests": 9, "num_failures": 5, "response_fallbacks": 0}
+{"task": "27e1026_1", "mutant": "reference", "success": true, "crashed": false, "num_tests": 2, "num_failures": 0}
+{"task": "22cc237_2", "mutant": "reference", "success": true, "crashed": false, "num_tests": 4, "num_failures": 0}
+{"task": "22cc237_2", "mutant": "post", "success": false, "crashed": false, "num_tests": 4, "num_failures": 2, "response_fallbacks": 0}
+{"task": "d0b1f43_3", "mutant": "reference", "success": true, "crashed": false, "num_tests": 2, "num_failures": 0}
+{"task": "76f2c72_1", "mutant": "reference", "success": true, "crashed": false, "num_tests": 2, "num_failures": 0}
+{"task": "34d9492_2", "mutant": "reference", "success": true, "crashed": false, "num_tests": 5, "num_failures": 0}
+{"task": "34d9492_2", "mutant": "post", "success": false, "crashed": false, "num_tests": 5, "num_failures": 2, "response_fallbacks": 0}
+{"task": "ce359b5_3", "mutant": "reference", "success": true, "crashed": false, "num_tests": 8, "num_failures": 0}
+{"task": "ce359b5_3", "mutant": "delete", "success": false, "crashed": false, "num_tests": 8, "num_failures": 5, "response_fallbacks": 0}
+{"task": "229360a_1", "mutant": "reference", "success": true, "crashed": false, "num_tests": 6, "num_failures": 0}
+{"task": "229360a_1", "mutant": "delete", "success": false, "crashed": false, "num_tests": 6, "num_failures": 3, "response_fallbacks": 0}
+{"task": "7d7fbf6_2", "mutant": "reference", "success": true, "crashed": false, "num_tests": 8, "num_failures": 0}
+{"task": "7d7fbf6_2", "mutant": "post", "success": false, "crashed": false, "num_tests": 8, "num_failures": 5, "response_fallbacks": 0}
+{"task": "e3d6c94_3", "mutant": "reference", "success": true, "crashed": false, "num_tests": 9, "num_failures": 0}
+{"task": "e3d6c94_3", "mutant": "post", "success": false, "crashed": false, "num_tests": 9, "num_failures": 7, "response_fallbacks": 0}
+{"task": "60d0b5b_1", "mutant": "reference", "success": true, "crashed": false, "num_tests": 7, "num_failures": 0}
+{"task": "60d0b5b_1", "mutant": "post", "success": false, "crashed": false, "num_tests": 7, "num_failures": 6, "response_fallbacks": 0}
+{"task": "771d8fc_2", "mutant": "reference", "success": true, "crashed": false, "num_tests": 6, "num_failures": 0}
+{"task": "771d8fc_2", "mutant": "delete", "success": false, "crashed": false, "num_tests": 6, "num_failures": 3, "response_fallbacks": 0}
+{"task": "07b42fd_3", "mutant": "reference", "success": true, "crashed": false, "num_tests": 5, "num_failures": 0}
+{"task": "07b42fd_3", "mutant": "post", "success": false, "crashed": false, "num_tests": 5, "num_failures": 3, "response_fallbacks": 0}
+{"task": "cf6abd2_1", "mutant": "reference", "success": true, "crashed": false, "num_tests": 8, "num_failures": 0}
+{"task": "cf6abd2_1", "mutant": "patch", "success": false, "crashed": false, "num_tests": 8, "num_failures": 6, "response_fallbacks": 0}
+{"task": "302c169_2", "mutant": "reference", "success": true, "crashed": false, "num_tests": 8, "num_failures": 0}
+{"task": "302c169_2", "mutant": "patch", "success": false, "crashed": false, "num_tests": 8, "num_failures": 6, "response_fallbacks": 0}
+{"task": "e7a10f8_3", "mutant": "reference", "success": true, "crashed": false, "num_tests": 2, "num_failures": 0}
+{"task": "6ea6792_1", "mutant": "reference", "success": true, "crashed": false, "num_tests": 6, "num_failures": 0}
+{"task": "6ea6792_1", "mutant": "post", "success": false, "crashed": false, "num_tests": 6, "num_failures": 4, "response_fallbacks": 0}
+{"task": "e85d92a_2", "mutant": "reference", "success": true, "crashed": false, "num_tests": 2, "num_failures": 0}
+{"task": "aa8502b_3", "mutant": "reference", "success": true, "crashed": false, "num_tests": 4, "num_failures": 0}
+{"task": "aa8502b_3", "mutant": "post", "success": false, "crashed": false, "num_tests": 4, "num_failures": 2, "response_fallbacks": 0}
+{"task": "fac291d_1", "mutant": "reference", "success": true, "crashed": false, "num_tests": 2, "num_failures": 0}
+{"task": "530b157_2", "mutant": "reference", "success": true, "crashed": false, "num_tests": 10, "num_failures": 0}
+{"task": "530b157_2", "mutant": "post", "success": false, "crashed": false, "num_tests": 10, "num_failures": 8, "response_fallbacks": 0}
+{"task": "4ec8de5_3", "mutant": "reference", "success": true, "crashed": false, "num_tests": 2, "num_failures": 0}
+{"task": "d4e9306_1", "mutant": "reference", "success": true, "crashed": false, "num_tests": 6, "num_failures": 0}
+{"task": "d4e9306_1", "mutant": "post", "success": false, "crashed": false, "num_tests": 6, "num_failures": 4, "response_fallbacks": 0}
+{"task": "0d8a4ee_2", "mutant": "reference", "success": true, "crashed": false, "num_tests": 5, "num_failures": 0}
+{"task": "0d8a4ee_2", "mutant": "post", "success": false, "crashed": false, "num_tests": 5, "num_failures": 3, "response_fallbacks": 0}
+{"task": "37a8675_3", "mutant": "reference", "success": true, "crashed": false, "num_tests": 6, "num_failures": 0}
+{"task": "37a8675_3", "mutant": "post", "success": false, "crashed": false, "num_tests": 6, "num_failures": 5, "response_fallbacks": 0}
+{"task": "df61dc5_1", "mutant": "reference", "success": true, "crashed": false, "num_tests": 7, "num_failures": 0}
+{"task": "df61dc5_1", "mutant": "post", "success": false, "crashed": false, "num_tests": 7, "num_failures": 4, "response_fallbacks": 0}
+{"task": "383cbac_2", "mutant": "reference", "success": true, "crashed": false, "num_tests": 2, "num_failures": 0}
+{"task": "23cf851_3", "mutant": "reference", "success": true, "crashed": false, "num_tests": 2, "num_failures": 0}
+{"task": "68ee2c9_1", "mutant": "reference", "success": true, "crashed": false, "num_tests": 5, "num_failures": 0}
+{"task": "68ee2c9_1", "mutant": "post", "success": false, "crashed": false, "num_tests": 5, "num_failures": 3, "response_fallbacks": 0}
+{"task": "6bdbc26_2", "mutant": "reference", "success": true, "crashed": false, "num_tests": 2, "num_failures": 0}
+{"task": "6171bbc_3", "mutant": "reference", "success": true, "crashed": false, "num_tests": 7, "num_failures": 0}
+{"task": "6171bbc_3", "mutant": "post", "success": false, "crashed": false, "num_tests": 7, "num_failures": 5, "response_fallbacks": 0}
+{"task": "396c5a2_1", "mutant": "reference", "success": true, "crashed": false, "num_tests": 6, "num_failures": 0}
+{"task": "396c5a2_1", "mutant": "post", "success": false, "crashed": false, "num_tests": 6, "num_failures": 5, "response_fallbacks": 0}
+{"task": "4fab96f_2", "mutant": "reference", "success": true, "crashed": false, "num_tests": 8, "num_failures": 0}
+{"task": "4fab96f_2", "mutant": "post", "success": false, "crashed": false, "num_tests": 8, "num_failures": 6, "response_fallbacks": 0}

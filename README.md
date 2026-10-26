@@ -112,9 +112,10 @@ Two graders are audited against the oracle: an **outcome** predicate grader and 
   `user_id` does not match the user it acts on.
 
 - **AppWorld audit** (`audits/appworld_audit.py`): with AppWorld's own verification settings
-  all 147 train/dev ground-truth solutions pass; seeded write defects (POST/PATCH/DELETE return
-  success without being applied) make the evaluation fail the ground truth in 114/114 affected
-  runs through failed assertions (in 9 of them the solution code also stopped with an error). This is a different mutation from the tau-bench one,
+  all 147 train/dev ground-truth solutions pass; seeded write defects (POST/PATCH/DELETE are not applied
+  but return the real API's response) make the evaluation fail the ground truth in 114/114 affected
+  runs through failed assertions (in 3 runs one
+  task loops until AppWorld's request limit). This is a different mutation from the tau-bench one,
   so it is not a controlled comparison.
   Only aggregate results and task ids are stored (AppWorld data must stay encrypted).
 

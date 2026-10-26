@@ -1,0 +1,65 @@
+{"task": "692c77d_1", "mutant": "reference", "success": true, "crashed": false, "num_tests": 7, "num_failures": 0}
+{"task": "692c77d_1", "mutant": "post", "success": false, "crashed": false, "num_tests": 7, "num_failures": 2, "response_fallbacks": 0}
+{"task": "692c77d_1", "mutant": "patch", "success": false, "crashed": false, "num_tests": 7, "num_failures": 2, "response_fallbacks": 0}
+{"task": "2a163ab_2", "mutant": "reference", "success": true, "crashed": false, "num_tests": 6, "num_failures": 0}
+{"task": "2a163ab_2", "mutant": "post", "success": false, "crashed": false, "num_tests": 6, "num_failures": 4, "response_fallbacks": 0}
+{"task": "6104387_3", "mutant": "reference", "success": true, "crashed": false, "num_tests": 10, "num_failures": 0}
+{"task": "6104387_3", "mutant": "post", "success": false, "crashed": false, "num_tests": 10, "num_failures": 8, "response_fallbacks": 0}
+{"task": "6104387_3", "mutant": "delete", "success": false, "crashed": false, "num_tests": 10, "num_failures": 2, "response_fallbacks": 0}
+{"task": "afc0fce_1", "mutant": "reference", "success": true, "crashed": false, "num_tests": 9, "num_failures": 0}
+{"task": "afc0fce_1", "mutant": "post", "success": false, "crashed": false, "num_tests": 9, "num_failures": 5, "response_fallbacks": 0}
+{"task": "287e338_2", "mutant": "reference", "success": true, "crashed": false, "num_tests": 2, "num_failures": 0}
+{"task": "27e1026_3", "mutant": "reference", "success": true, "crashed": false, "num_tests": 2, "num_failures": 0}
+{"task": "d0b1f43_1", "mutant": "reference", "success": true, "crashed": false, "num_tests": 2, "num_failures": 0}
+{"task": "b7a9ee9_2", "mutant": "reference", "success": true, "crashed": false, "num_tests": 4, "num_failures": 0}
+{"task": "b7a9ee9_2", "mutant": "post", "success": false, "crashed": false, "num_tests": 4, "num_failures": 2, "response_fallbacks": 0}
+{"task": "76f2c72_3", "mutant": "reference", "success": true, "crashed": false, "num_tests": 2, "num_failures": 0}
+{"task": "ce359b5_1", "mutant": "reference", "success": true, "crashed": false, "num_tests": 8, "num_failures": 0}
+{"task": "ce359b5_1", "mutant": "delete", "success": false, "crashed": false, "num_tests": 8, "num_failures": 5, "response_fallbacks": 0}
+{"task": "b0a8eae_2", "mutant": "reference", "success": true, "crashed": false, "num_tests": 5, "num_failures": 0}
+{"task": "b0a8eae_2", "mutant": "post", "success": false, "crashed": false, "num_tests": 5, "num_failures": 4, "response_fallbacks": 0}
+{"task": "229360a_3", "mutant": "reference", "success": true, "crashed": false, "num_tests": 6, "num_failures": 0}
+{"task": "229360a_3", "mutant": "delete", "success": false, "crashed": false, "num_tests": 6, "num_failures": 3, "response_fallbacks": 0}
+{"task": "e3d6c94_1", "mutant": "reference", "success": true, "crashed": false, "num_tests": 9, "num_failures": 0}
+{"task": "e3d6c94_1", "mutant": "post", "success": false, "crashed": false, "num_tests": 9, "num_failures": 7, "response_fallbacks": 0}
+{"task": "ccb4494_2", "mutant": "reference", "success": true, "crashed": false, "num_tests": 5, "num_failures": 0}
+{"task": "ccb4494_2", "mutant": "post", "success": false, "crashed": false, "num_tests": 5, "num_failures": 3, "response_fallbacks": 0}
+{"task": "60d0b5b_3", "mutant": "reference", "success": true, "crashed": false, "num_tests": 7, "num_failures": 0}
+{"task": "60d0b5b_3", "mutant": "post", "success": false, "crashed": false, "num_tests": 7, "num_failures": 6, "response_fallbacks": 0}
+{"task": "07b42fd_1", "mutant": "reference", "success": true, "crashed": false, "num_tests": 5, "num_failures": 0}
+{"task": "07b42fd_1", "mutant": "post", "success": false, "crashed": false, "num_tests": 5, "num_failures": 3, "response_fallbacks": 0}
+{"task": "3c13f5a_2", "mutant": "reference", "success": true, "crashed": false, "num_tests": 6, "num_failures": 0}
+{"task": "3c13f5a_2", "mutant": "post", "success": false, "crashed": false, "num_tests": 6, "num_failures": 4, "response_fallbacks": 0}
+{"task": "cf6abd2_3", "mutant": "reference", "success": true, "crashed": false, "num_tests": 8, "num_failures": 0}
+{"task": "cf6abd2_3", "mutant": "patch", "success": false, "crashed": false, "num_tests": 8, "num_failures": 6, "response_fallbacks": 0}
+{"task": "e7a10f8_1", "mutant": "reference", "success": true, "crashed": false, "num_tests": 2, "num_failures": 0}
+{"task": "c901732_2", "mutant": "reference", "success": true, "crashed": false, "num_tests": 6, "num_failures": 0}
+{"task": "c901732_2", "mutant": "post", "success": false, "crashed": false, "num_tests": 6, "num_failures": 5, "response_fallbacks": 0}
+{"task": "6ea6792_3", "mutant": "reference", "success": true, "crashed": false, "num_tests": 6, "num_failures": 0}
+{"task": "6ea6792_3", "mutant": "post", "success": false, "crashed": false, "num_tests": 6, "num_failures": 4, "response_fallbacks": 0}
+{"task": "aa8502b_1", "mutant": "reference", "success": true, "crashed": false, "num_tests": 4, "num_failures": 0}
+{"task": "aa8502b_1", "mutant": "post", "success": false, "crashed": false, "num_tests": 4, "num_failures": 2, "response_fallbacks": 0}
+{"task": "50e1ac9_2", "mutant": "reference", "success": true, "crashed": false, "num_tests": 2, "num_failures": 0}
+{"task": "fac291d_3", "mutant": "reference", "success": true, "crashed": false, "num_tests": 2, "num_failures": 0}
+{"task": "4ec8de5_1", "mutant": "reference", "success": true, "crashed": false, "num_tests": 2, "num_failures": 0}
+{"task": "b119b1f_2", "mutant": "reference", "success": true, "crashed": false, "num_tests": 6, "num_failures": 0}
+{"task": "b119b1f_2", "mutant": "post", "success": false, "crashed": true, "num_tests": 6, "num_failures": 6, "crash_type": "Exception", "response_fallbacks": 494}
+{"task": "d4e9306_3", "mutant": "reference", "success": true, "crashed": false, "num_tests": 6, "num_failures": 0}
+{"task": "d4e9306_3", "mutant": "post", "success": false, "crashed": false, "num_tests": 6, "num_failures": 4, "response_fallbacks": 0}
+{"task": "37a8675_1", "mutant": "reference", "success": true, "crashed": false, "num_tests": 6, "num_failures": 0}
+{"task": "37a8675_1", "mutant": "post", "success": false, "crashed": false, "num_tests": 6, "num_failures": 5, "response_fallbacks": 0}
+{"task": "3ab5b8b_2", "mutant": "reference", "success": true, "crashed": false, "num_tests": 6, "num_failures": 0}
+{"task": "3ab5b8b_2", "mutant": "post", "success": false, "crashed": false, "num_tests": 6, "num_failures": 4, "response_fallbacks": 0}
+{"task": "df61dc5_3", "mutant": "reference", "success": true, "crashed": false, "num_tests": 7, "num_failures": 0}
+{"task": "df61dc5_3", "mutant": "post", "success": false, "crashed": false, "num_tests": 7, "num_failures": 4, "response_fallbacks": 0}
+{"task": "23cf851_1", "mutant": "reference", "success": true, "crashed": false, "num_tests": 2, "num_failures": 0}
+{"task": "57c3486_2", "mutant": "reference", "success": true, "crashed": false, "num_tests": 5, "num_failures": 0}
+{"task": "57c3486_2", "mutant": "post", "success": false, "crashed": false, "num_tests": 5, "num_failures": 3, "response_fallbacks": 0}
+{"task": "68ee2c9_3", "mutant": "reference", "success": true, "crashed": false, "num_tests": 5, "num_failures": 0}
+{"task": "68ee2c9_3", "mutant": "post", "success": false, "crashed": false, "num_tests": 5, "num_failures": 3, "response_fallbacks": 0}
+{"task": "6171bbc_1", "mutant": "reference", "success": true, "crashed": false, "num_tests": 7, "num_failures": 0}
+{"task": "6171bbc_1", "mutant": "post", "success": false, "crashed": false, "num_tests": 7, "num_failures": 5, "response_fallbacks": 0}
+{"task": "6c2c621_2", "mutant": "reference", "success": true, "crashed": false, "num_tests": 8, "num_failures": 0}
+{"task": "6c2c621_2", "mutant": "post", "success": false, "crashed": false, "num_tests": 8, "num_failures": 6, "response_fallbacks": 0}
+{"task": "396c5a2_3", "mutant": "reference", "success": true, "crashed": false, "num_tests": 6, "num_failures": 0}
+{"task": "396c5a2_3", "mutant": "post", "success": false, "crashed": false, "num_tests": 6, "num_failures": 5, "response_fallbacks": 0}
